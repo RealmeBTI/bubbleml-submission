@@ -57,6 +57,17 @@ not available from the package index used by a reviewer, use the platform wheel
 source that supplied the recorded build; no alternate version has been declared
 equivalent here.
 
+Submission-document generation has a separate lightweight dependency file:
+
+```bash
+python -m pip install -r requirements-submission.txt
+python scripts/build_submission_pdfs.py --output-dir output/pdf
+```
+
+Rebuilding the Elsevier manuscript source also requires Pandoc; compiling it
+requires an `elsarticle`-capable TeX engine. The checked PDF was compiled with
+Pandoc 3.8.3 and Tectonic 0.16.9.
+
 ## Fast evidence self-test
 
 This test uses only Python's standard library. It recomputes paired means and
@@ -126,6 +137,7 @@ test executed during package assembly.
 - `phase_history/`: chronological phase reports.
 - `manuscript/`: supplied Markdown and generated LaTeX source.
 - `submission/`: attachments, figures, metadata, and upload package.
+- `output/`: checked PDFs, consolidated ZIP, and final SHA-256 manifest.
 - `tests/`: BubbleML-only tests.
 
 ## Citation and license status
@@ -134,4 +146,3 @@ The verified BubbleML bibliographic record and other identifiable references are
 listed in `BIBLIOGRAPHY_VERIFICATION.md` and `manuscript/references.bib`. The code
 license was not supplied; no license is asserted. A human repository owner must
 choose and add one before public release.
-

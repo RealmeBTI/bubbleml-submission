@@ -149,8 +149,11 @@ def main() -> None:
         attachments / "reproducibility_manifest.md",
         ROOT / "submission/supplementary/statistical_audit_note.md",
         ROOT / "submission/supplementary/runtime_environment.md",
+        ROOT / "REPRODUCIBILITY_SELFTEST.md",
         ROOT / "CHECKSUMS.md",
         ROOT / "ARTIFACT_GAPS.md",
+        ROOT / "BIBLIOGRAPHY_VERIFICATION.md",
+        ROOT / "FIGURE_QA.md",
     ]
     build(supplementary, output / "supplementary_material.pdf", page_breaks=True)
     print(f"Generated PDFs in {output}")
@@ -158,4 +161,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
