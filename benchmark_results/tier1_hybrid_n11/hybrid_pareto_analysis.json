@@ -1,0 +1,87 @@
+{
+  "protocol": {
+    "family": "three predeclared lower-is-better Pareto targets",
+    "alpha": 0.05,
+    "margin_policy": "fixed 5% of the relevant Phase-1 11-seed baseline mean",
+    "decision_rule": "Holm p < 0.05 and paired bootstrap upper CI < margin",
+    "bootstrap_samples": 10000
+  },
+  "tests": {
+    "mass_conservation_mae": {
+      "comparator": "unet",
+      "margin": 0.008292845428963615,
+      "seeds": [
+        7,
+        17,
+        42,
+        100,
+        314,
+        1234,
+        2025,
+        2718,
+        4242,
+        7777,
+        9999
+      ],
+      "n_seeds": 11,
+      "mean_hybrid_minus_comparator": 0.038759070898152205,
+      "paired_bootstrap_ci95_low": 0.03170714623800649,
+      "paired_bootstrap_ci95_high": 0.0465085593844891,
+      "noninferiority_sign_flip_p": 1.0,
+      "holm_noninferiority_p": 1.0,
+      "noninferior": false,
+      "superior": false
+    },
+    "interface_temperature_rmse": {
+      "comparator": "tfno",
+      "margin": 0.7540349168587817,
+      "seeds": [
+        7,
+        17,
+        42,
+        100,
+        314,
+        1234,
+        2025,
+        2718,
+        4242,
+        7777,
+        9999
+      ],
+      "n_seeds": 11,
+      "mean_hybrid_minus_comparator": -0.16341633449901236,
+      "paired_bootstrap_ci95_low": -0.35559720532325173,
+      "paired_bootstrap_ci95_high": 0.023565702508795795,
+      "noninferiority_sign_flip_p": 0.0009760858955588092,
+      "holm_noninferiority_p": 0.0029282576866764276,
+      "noninferior": true,
+      "superior": false
+    },
+    "interface_temperature_jump_mae": {
+      "comparator": "tfno",
+      "margin": 0.7887777907739986,
+      "seeds": [
+        7,
+        17,
+        42,
+        100,
+        314,
+        1234,
+        2025,
+        2718,
+        4242,
+        7777,
+        9999
+      ],
+      "n_seeds": 11,
+      "mean_hybrid_minus_comparator": -0.17061389077793476,
+      "paired_bootstrap_ci95_low": -0.2611778189323169,
+      "paired_bootstrap_ci95_high": -0.07631828404556629,
+      "noninferiority_sign_flip_p": 0.0009760858955588092,
+      "holm_noninferiority_p": 0.0029282576866764276,
+      "noninferior": true,
+      "superior": true
+    }
+  },
+  "pareto_break": false
+}

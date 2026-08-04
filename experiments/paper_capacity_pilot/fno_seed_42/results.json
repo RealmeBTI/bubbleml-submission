@@ -1,0 +1,40 @@
+{
+  "status": "completed",
+  "model": "fno",
+  "seed": 42,
+  "git_commit": "6e71435f8ea6b988ccfa674fe6ffcecb257e2c64",
+  "history": [
+    {
+      "epoch": 1.0,
+      "train_mse": 0.6848422546386719,
+      "val_mse": 0.5708934868706598,
+      "learning_rate": 0.001,
+      "gradient_norm_before_clip": 0.38044742718338964,
+      "epoch_seconds": 4.832748541986803,
+      "plateau_relative_improvement": NaN
+    }
+  ],
+  "best_validation_mse": 0.5708934868706598,
+  "best_epoch": 1,
+  "stopped_reason": "max_epochs",
+  "plateau_reached": false,
+  "wall_seconds": 4.966695874987636,
+  "parameters": 1547993,
+  "real_scalar_parameters": 3038937,
+  "device": "cpu",
+  "requested_modes": [
+    64,
+    64
+  ],
+  "effective_modes": [
+    13,
+    13
+  ],
+  "checkpoint": "/Users/sbmahafujbondhon/dev/DD-PINNs/checkpoints/paper_capacity_pilot/fno_seed_42.pt",
+  "runtime": {
+    "python": "3.12.7",
+    "torch": "2.13.0",
+    "mps_available": true,
+    "cuda_available": false
+  }
+}

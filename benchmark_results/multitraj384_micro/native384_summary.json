@@ -1,0 +1,16 @@
+{
+  "status": "feasibility_only",
+  "device": "cuda: NVIDIA Tesla T4",
+  "resolution": [384, 384],
+  "seed": 42,
+  "batch_size": 1,
+  "epochs": 1,
+  "frame_records_per_source": 15,
+  "models": {
+    "tfno": {"parameters": 548837, "effective_modes": [24, 24], "wall_seconds": 5.91311534, "validation_mse": 1.088551, "validation_divergence_mae": 0.1999932, "validation_interface_temperature_rmse": 14.38935},
+    "unet": {"parameters": 7770169, "wall_seconds": 2.768747281, "validation_mse": 1.278840, "validation_divergence_mae": 0.08985865, "validation_interface_temperature_rmse": 17.20412},
+    "hybrid_tfno": {"parameters": 696549, "effective_modes": [24, 24], "wall_seconds": 6.08993141, "validation_mse": 0.9141924, "validation_divergence_mae": 0.1475336, "validation_interface_temperature_rmse": 14.66767},
+    "hybrid_div": {"parameters": 696549, "effective_modes": [24, 24], "wall_seconds": 6.991886577, "validation_mse": 0.9186181, "validation_divergence_mae": 0.08771386, "validation_interface_temperature_rmse": 14.81045}
+  },
+  "claim_boundary": "One epoch is a direct-resolution execution check, not an accuracy or convergence comparison."
+}

@@ -1,0 +1,40 @@
+{
+  "status": "completed",
+  "model": "unet",
+  "seed": 42,
+  "git_commit": "95e3ec7b8db73276a778ba7cf3eb7aae82fff294",
+  "history": [
+    {
+      "epoch": 1.0,
+      "train_mse": 0.9215351825290256,
+      "val_mse": 0.8553828311496311,
+      "learning_rate": 0.001,
+      "gradient_norm_before_clip": 0.34870554506778717,
+      "epoch_seconds": 4.449916959012626,
+      "plateau_relative_improvement": NaN
+    }
+  ],
+  "best_validation_mse": 0.8553828311496311,
+  "best_epoch": 1,
+  "stopped_reason": "max_epochs",
+  "plateau_reached": false,
+  "wall_seconds": 4.468659833015408,
+  "parameters": 122977,
+  "real_scalar_parameters": 122977,
+  "device": "mps",
+  "requested_modes": [
+    4,
+    4
+  ],
+  "effective_modes": [
+    4,
+    4
+  ],
+  "checkpoint": "/Users/sbmahafujbondhon/dev/DD-PINNs/checkpoints/gpu_smoke_pre_fix/unet_seed_42.pt",
+  "runtime": {
+    "python": "3.12.7",
+    "torch": "2.13.0",
+    "mps_available": true,
+    "cuda_available": false
+  }
+}

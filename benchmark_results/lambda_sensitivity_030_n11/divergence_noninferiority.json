@@ -1,0 +1,32 @@
+{
+  "protocol": {
+    "metric": "mass_conservation_mae",
+    "comparator": "unet",
+    "margin": 0.008292845428963615,
+    "alpha": 0.05,
+    "family_size": 1,
+    "bootstrap_samples": 10000
+  },
+  "result": {
+    "seeds": [
+      7,
+      17,
+      42,
+      100,
+      314,
+      1234,
+      2025,
+      2718,
+      4242,
+      7777,
+      9999
+    ],
+    "n_seeds": 11,
+    "mean_hybrid_div_minus_unet": -0.07212217173708434,
+    "paired_bootstrap_ci95_low": -0.07939723733408292,
+    "paired_bootstrap_ci95_high": -0.0653462299536067,
+    "noninferiority_sign_flip_p": 0.00048828125,
+    "holm_noninferiority_p": 0.00048828125,
+    "noninferior": true
+  }
+}

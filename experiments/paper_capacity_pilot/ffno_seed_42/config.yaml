@@ -1,0 +1,65 @@
+{
+  "data_dir": "data/bubbleml/smoke_restore",
+  "experiment_dir": "experiments/paper_capacity_pilot",
+  "checkpoints_dir": "checkpoints/paper_capacity_pilot",
+  "seeds": [
+    42
+  ],
+  "models": [
+    "fno",
+    "tfno",
+    "ffno",
+    "unet"
+  ],
+  "max_epochs": 1,
+  "min_epochs": 1,
+  "batch_size": 8,
+  "num_workers": 0,
+  "history_size": 5,
+  "future_size": 5,
+  "learning_rate": 0.001,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.03,
+  "step_factor": 0.5,
+  "step_patience_epochs": 75,
+  "gradient_clip": 1.0,
+  "horizontal_reflection": true,
+  "fourier_downsample_factor": 2,
+  "requested_modes": 64,
+  "fno_width": 64,
+  "fno_layers": 4,
+  "ffno_width": 64,
+  "ffno_layers": 4,
+  "tfno_rank": 0.1,
+  "unet_features": 32,
+  "unet_depth": 4,
+  "domain_padding": 0.1,
+  "plateau_window": 1,
+  "plateau_patience_windows": 1,
+  "plateau_relative_delta": 0.001,
+  "max_minutes_per_run": 0.0,
+  "device": "cpu",
+  "model": "ffno",
+  "seed": 42,
+  "git_commit": "6e71435f8ea6b988ccfa674fe6ffcecb257e2c64",
+  "model_spec": {
+    "kind": "ffno",
+    "in_channels": 25,
+    "out_channels": 25,
+    "requested_modes": [
+      64,
+      64
+    ],
+    "effective_modes": [
+      13,
+      13
+    ],
+    "width": 64,
+    "layers": 4,
+    "domain_padding": 0.1,
+    "tfno_rank": 0.1,
+    "unet_features": 32,
+    "unet_depth": 4
+  },
+  "protocol": "custom-five-field-temporal-bundle"
+}

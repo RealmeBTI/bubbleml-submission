@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "data_dir": "data/bubbleml/smoke_restore",
+    "checkpoints_dir": "checkpoints/phase1_gpu_decisive",
+    "output": "benchmark_results/lambda_sensitivity/reference.json",
+    "models": [
+      "hybrid_tfno"
+    ],
+    "seeds": [
+      42,
+      100,
+      1234
+    ],
+    "batch_size": 8,
+    "cache_frames": true,
+    "device": "mps"
+  },
+  "models": {
+    "hybrid_tfno": {
+      "42": {
+        "validation_mse": 0.4519621124267578,
+        "validation_spectral_divergence_mae": 0.260683736205101,
+        "validation_interface_temperature_rmse": 14.476689453125,
+        "device": "mps"
+      },
+      "100": {
+        "validation_mse": 0.45405480109320745,
+        "validation_spectral_divergence_mae": 0.27875383421778677,
+        "validation_interface_temperature_rmse": 14.689542922973633,
+        "device": "mps"
+      },
+      "1234": {
+        "validation_mse": 0.45443067084418404,
+        "validation_spectral_divergence_mae": 0.24806573241949081,
+        "validation_interface_temperature_rmse": 14.438564262390138,
+        "device": "mps"
+      }
+    }
+  }
+}

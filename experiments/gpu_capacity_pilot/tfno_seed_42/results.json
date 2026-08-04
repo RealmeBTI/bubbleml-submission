@@ -1,0 +1,58 @@
+{
+  "status": "completed",
+  "model": "tfno",
+  "seed": 42,
+  "git_commit": "6dcede6e1f0495c0a298ff7c34cba3f71e4b583f",
+  "history": [
+    {
+      "epoch": 1.0,
+      "train_mse": 0.7721844075520833,
+      "val_mse": 0.5836348741319445,
+      "learning_rate": 0.001,
+      "gradient_norm_before_clip": 0.3971818044781685,
+      "epoch_seconds": 7.543853417009814,
+      "plateau_relative_improvement": NaN
+    },
+    {
+      "epoch": 2.0,
+      "train_mse": 0.5659015316433377,
+      "val_mse": 0.5267465989854601,
+      "learning_rate": 0.001,
+      "gradient_norm_before_clip": 0.226971535384655,
+      "epoch_seconds": 6.698797459015623,
+      "plateau_relative_improvement": NaN
+    },
+    {
+      "epoch": 3.0,
+      "train_mse": 0.5250879007975261,
+      "val_mse": 0.5066980777316623,
+      "learning_rate": 0.001,
+      "gradient_norm_before_clip": 0.22518053352832795,
+      "epoch_seconds": 6.272773250006139,
+      "plateau_relative_improvement": NaN
+    }
+  ],
+  "best_validation_mse": 0.5066980777316623,
+  "best_epoch": 3,
+  "stopped_reason": "max_epochs",
+  "plateau_reached": false,
+  "wall_seconds": 20.67260012499173,
+  "parameters": 548837,
+  "real_scalar_parameters": 1040625,
+  "device": "mps",
+  "requested_modes": [
+    24,
+    24
+  ],
+  "effective_modes": [
+    24,
+    24
+  ],
+  "checkpoint": "/Users/sbmahafujbondhon/dev/DD-PINNs/checkpoints/gpu_capacity_pilot/tfno_seed_42.pt",
+  "runtime": {
+    "python": "3.12.7",
+    "torch": "2.13.0",
+    "mps_available": true,
+    "cuda_available": false
+  }
+}

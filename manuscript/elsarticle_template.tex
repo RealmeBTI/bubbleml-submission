@@ -1,0 +1,46 @@
+\documentclass[preprint,12pt]{elsarticle}
+
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,longtable,array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{xcolor}
+\usepackage{seqsplit}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\newcolumntype{P}[1]{>{\raggedright\arraybackslash}p{#1}}
+\setlength{\emergencystretch}{3em}
+
+\journal{[Journal Name]}
+
+\begin{document}
+\sloppy
+\begin{frontmatter}
+
+\title{$title$}
+\author{[Author information required]}
+\address{[Affiliation required]}
+
+\begin{abstract}
+$abstract$
+\end{abstract}
+
+\begin{keyword}
+neural operator \sep Fourier neural operator \sep pool boiling \sep phase-resolved forecasting \sep conservation laws \sep BubbleML
+\end{keyword}
+
+\end{frontmatter}
+
+$body$
+
+\section*{Bibliographic verification status}
+Seven identifiable works were independently checked against primary publication
+records and are listed below. The remaining prose allusions are not identifiable
+from the supplied manuscript alone and remain \textbf{[VERIFY]}; see
+\texttt{BIBLIOGRAPHY\_VERIFICATION.md}. No bibliographic details were inferred.
+
+\nocite{hassan2023bubbleml,li2021fno,ronneberger2015unet,tran2023ffno,rahman2022uno,hassan2025bubbleformer,zuber1959hydrodynamic}
+\bibliographystyle{elsarticle-num}
+\bibliography{references}
+
+\end{document}

@@ -1,0 +1,40 @@
+{
+  "status": "completed",
+  "model": "fno",
+  "seed": 42,
+  "git_commit": "95e3ec7b8db73276a778ba7cf3eb7aae82fff294",
+  "history": [
+    {
+      "epoch": 1.0,
+      "train_mse": 0.8422369672987197,
+      "val_mse": 0.8240548366970486,
+      "learning_rate": 0.001,
+      "gradient_norm_before_clip": 0.27361078299582003,
+      "epoch_seconds": 6.066855707991635,
+      "plateau_relative_improvement": NaN
+    }
+  ],
+  "best_validation_mse": 0.8240548366970486,
+  "best_epoch": 1,
+  "stopped_reason": "max_epochs",
+  "plateau_reached": false,
+  "wall_seconds": 6.087052417016821,
+  "parameters": 3001,
+  "real_scalar_parameters": 4537,
+  "device": "mps",
+  "requested_modes": [
+    4,
+    4
+  ],
+  "effective_modes": [
+    4,
+    4
+  ],
+  "checkpoint": "/Users/sbmahafujbondhon/dev/DD-PINNs/checkpoints/gpu_smoke_pre_fix/fno_seed_42.pt",
+  "runtime": {
+    "python": "3.12.7",
+    "torch": "2.13.0",
+    "mps_available": true,
+    "cuda_available": false
+  }
+}

@@ -1,0 +1,386 @@
+{
+  "metadata": {
+    "data_dir": "data/bubbleml/smoke_restore",
+    "checkpoints_dir": "checkpoints/restore_smoke",
+    "output_dir": "benchmark_results/restore_smoke",
+    "seeds": [
+      42
+    ],
+    "batch_size": 4,
+    "num_workers": 0,
+    "device": "cpu",
+    "fno_device": "cpu",
+    "use_amp": false,
+    "warmup_batches": 2,
+    "rollout_steps": 2,
+    "bootstrap_samples": 100
+  },
+  "raw_seed_metrics": {
+    "fno": {
+      "42": {
+        "alpha_gwrmse": 0.40688506121466145,
+        "gwrmse": 13.318269828367516,
+        "interface_alpha_rmse": 0.5467167143991007,
+        "interface_temperature_jump_mae": 19.478035960677108,
+        "interface_temperature_rmse": 23.682878686126166,
+        "interior_edge_divergence_mae": 0.18854726762813928,
+        "interior_edge_rmse": 13.333009793208195,
+        "mass_conservation_mae": 0.0939618571270147,
+        "relative_l2": 0.9833732138018636,
+        "rmse": 10.135205474830943,
+        "temperature_gwrmse": 19.267696341113933,
+        "rollout_alpha_gwrmse": 0.42007946818185277,
+        "rollout_relative_l2": 0.9936775175424722,
+        "throughput_fps": 179.9091353018997,
+        "latency_ms_per_sample": 5.558361437966628,
+        "parameters": 6101.0,
+        "real_scalar_parameters": 10197.0,
+        "device": "cpu"
+      }
+    },
+    "unet": {
+      "42": {
+        "alpha_gwrmse": 0.3952745929272217,
+        "gwrmse": 13.259289383182864,
+        "interface_alpha_rmse": 0.5242057680730989,
+        "interface_temperature_jump_mae": 19.16474689393354,
+        "interface_temperature_rmse": 21.606818780391173,
+        "interior_edge_divergence_mae": 0.26514315693336127,
+        "interior_edge_rmse": 13.170093372728697,
+        "mass_conservation_mae": 0.16943938047046492,
+        "relative_l2": 1.1609328198715074,
+        "rmse": 10.745196497651952,
+        "temperature_gwrmse": 16.837151256538707,
+        "rollout_alpha_gwrmse": 0.4031883262141922,
+        "rollout_relative_l2": 1.1665579911167099,
+        "throughput_fps": 241.35909448803687,
+        "latency_ms_per_sample": 4.143204142032301,
+        "parameters": 121357.0,
+        "real_scalar_parameters": 121357.0,
+        "device": "cpu"
+      }
+    }
+  },
+  "aggregate": {
+    "fno": {
+      "alpha_gwrmse": {
+        "mean": 0.40688506121466145,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "gwrmse": {
+        "mean": 13.318269828367516,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interface_alpha_rmse": {
+        "mean": 0.5467167143991007,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interface_temperature_jump_mae": {
+        "mean": 19.478035960677108,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interface_temperature_rmse": {
+        "mean": 23.682878686126166,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interior_edge_divergence_mae": {
+        "mean": 0.18854726762813928,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interior_edge_rmse": {
+        "mean": 13.333009793208195,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "latency_ms_per_sample": {
+        "mean": 5.558361437966628,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "mass_conservation_mae": {
+        "mean": 0.0939618571270147,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "parameters": {
+        "mean": 6101.0,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "real_scalar_parameters": {
+        "mean": 10197.0,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "relative_l2": {
+        "mean": 0.9833732138018636,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "rmse": {
+        "mean": 10.135205474830943,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "rollout_alpha_gwrmse": {
+        "mean": 0.42007946818185277,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "rollout_relative_l2": {
+        "mean": 0.9936775175424722,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "temperature_gwrmse": {
+        "mean": 19.267696341113933,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "throughput_fps": {
+        "mean": 179.9091353018997,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      }
+    },
+    "unet": {
+      "alpha_gwrmse": {
+        "mean": 0.3952745929272217,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "gwrmse": {
+        "mean": 13.259289383182864,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interface_alpha_rmse": {
+        "mean": 0.5242057680730989,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interface_temperature_jump_mae": {
+        "mean": 19.16474689393354,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interface_temperature_rmse": {
+        "mean": 21.606818780391173,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interior_edge_divergence_mae": {
+        "mean": 0.26514315693336127,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interior_edge_rmse": {
+        "mean": 13.170093372728697,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "latency_ms_per_sample": {
+        "mean": 4.143204142032301,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "mass_conservation_mae": {
+        "mean": 0.16943938047046492,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "parameters": {
+        "mean": 121357.0,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "real_scalar_parameters": {
+        "mean": 121357.0,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "relative_l2": {
+        "mean": 1.1609328198715074,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "rmse": {
+        "mean": 10.745196497651952,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "rollout_alpha_gwrmse": {
+        "mean": 0.4031883262141922,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "rollout_relative_l2": {
+        "mean": 1.1665579911167099,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "temperature_gwrmse": {
+        "mean": 16.837151256538707,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "throughput_fps": {
+        "mean": 241.35909448803687,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      }
+    }
+  },
+  "paired_fno_minus_unet": {
+    "alpha_gwrmse": {
+      "mean_fno_minus_unet": 0.011610468287439724,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "gwrmse": {
+      "mean_fno_minus_unet": 0.05898044518465184,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "interface_alpha_rmse": {
+      "mean_fno_minus_unet": 0.022510946326001813,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "interface_temperature_jump_mae": {
+      "mean_fno_minus_unet": 0.31328906674356816,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "interface_temperature_rmse": {
+      "mean_fno_minus_unet": 2.0760599057349935,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "interior_edge_divergence_mae": {
+      "mean_fno_minus_unet": -0.07659588930522199,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "interior_edge_rmse": {
+      "mean_fno_minus_unet": 0.1629164204794975,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "mass_conservation_mae": {
+      "mean_fno_minus_unet": -0.07547752334345022,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "relative_l2": {
+      "mean_fno_minus_unet": -0.17755960606964383,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "rmse": {
+      "mean_fno_minus_unet": -0.6099910228210081,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "rollout_alpha_gwrmse": {
+      "mean_fno_minus_unet": 0.01689114196766056,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "rollout_relative_l2": {
+      "mean_fno_minus_unet": -0.17288047357423764,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "temperature_gwrmse": {
+      "mean_fno_minus_unet": 2.4305450845752254,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    }
+  },
+  "metric_definitions": {
+    "gwrmse": "Reference-gradient-weighted RMSE; lower is better.",
+    "interior_edge_rmse": "Error at the outer interior cells supplied by BubbleML, not a physical wall residual.",
+    "interface_*": "Computed around true dfun-derived vapor/liquid interfaces; lower is better.",
+    "rollout_*": "True autoregressive error against preprocessed future frames; lower is better."
+  }
+}

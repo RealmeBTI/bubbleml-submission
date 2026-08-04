@@ -1,0 +1,40 @@
+{
+  "status": "completed",
+  "model": "tfno",
+  "seed": 42,
+  "git_commit": "6e71435f8ea6b988ccfa674fe6ffcecb257e2c64",
+  "history": [
+    {
+      "epoch": 1.0,
+      "train_mse": 0.676635030110677,
+      "val_mse": 0.5775515475802951,
+      "learning_rate": 0.001,
+      "gradient_norm_before_clip": 0.37479851841926576,
+      "epoch_seconds": 4.8918967909994535,
+      "plateau_relative_improvement": NaN
+    }
+  ],
+  "best_validation_mse": 0.5775515475802951,
+  "best_epoch": 1,
+  "stopped_reason": "max_epochs",
+  "plateau_reached": false,
+  "wall_seconds": 4.913320040999679,
+  "parameters": 212645,
+  "real_scalar_parameters": 368241,
+  "device": "cpu",
+  "requested_modes": [
+    64,
+    64
+  ],
+  "effective_modes": [
+    13,
+    13
+  ],
+  "checkpoint": "/Users/sbmahafujbondhon/dev/DD-PINNs/checkpoints/paper_capacity_pilot/tfno_seed_42.pt",
+  "runtime": {
+    "python": "3.12.7",
+    "torch": "2.13.0",
+    "mps_available": true,
+    "cuda_available": false
+  }
+}

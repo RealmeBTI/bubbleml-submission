@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "data_dir": "data/bubbleml/smoke_restore",
+    "checkpoints_dir": "checkpoints/lambda_sensitivity_030",
+    "output": "benchmark_results/lambda_sensitivity/lambda_030.json",
+    "models": [
+      "hybrid_div"
+    ],
+    "seeds": [
+      42,
+      100,
+      1234
+    ],
+    "batch_size": 8,
+    "cache_frames": true,
+    "device": "mps"
+  },
+  "models": {
+    "hybrid_div": {
+      "42": {
+        "validation_mse": 0.44863246832953557,
+        "validation_spectral_divergence_mae": 0.0844236247241497,
+        "validation_interface_temperature_rmse": 14.301561775207519,
+        "device": "mps"
+      },
+      "100": {
+        "validation_mse": 0.45136719597710506,
+        "validation_spectral_divergence_mae": 0.09005225636065006,
+        "validation_interface_temperature_rmse": 14.443758659362793,
+        "device": "mps"
+      },
+      "1234": {
+        "validation_mse": 0.45089920552571616,
+        "validation_spectral_divergence_mae": 0.08736641705036163,
+        "validation_interface_temperature_rmse": 14.513886337280274,
+        "device": "mps"
+      }
+    }
+  }
+}

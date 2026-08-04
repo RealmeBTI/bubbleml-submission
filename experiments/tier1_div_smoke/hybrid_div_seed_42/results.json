@@ -1,0 +1,44 @@
+{
+  "status": "completed",
+  "model": "hybrid_div",
+  "seed": 42,
+  "git_commit": "f44dfbb0fdcab7453d7bb3a0736327b08b3ad6d2",
+  "history": [
+    {
+      "epoch": 1.0,
+      "train_mse": 0.7373726552327474,
+      "val_mse": 0.5555629492865668,
+      "learning_rate": 0.001,
+      "gradient_norm_before_clip": 0.3835463285446167,
+      "train_divergence_mae": 0.2828138567507267,
+      "val_divergence_mae": 0.22221086844801902,
+      "train_total_loss": 0.7402007938002547,
+      "epoch_seconds": 10.22324149999622,
+      "plateau_relative_improvement": NaN
+    }
+  ],
+  "best_validation_mse": 0.5555629492865668,
+  "best_validation_divergence_mae": 0.22221086844801902,
+  "best_epoch": 1,
+  "stopped_reason": "max_epochs",
+  "plateau_reached": false,
+  "wall_seconds": 10.26479712499713,
+  "parameters": 696549,
+  "real_scalar_parameters": 1188337,
+  "device": "mps",
+  "requested_modes": [
+    24,
+    24
+  ],
+  "effective_modes": [
+    24,
+    24
+  ],
+  "checkpoint": "/Users/sbmahafujbondhon/dev/DD-PINNs/checkpoints/tier1_div_smoke/hybrid_div_seed_42.pt",
+  "runtime": {
+    "python": "3.12.7",
+    "torch": "2.13.0",
+    "mps_available": true,
+    "cuda_available": false
+  }
+}

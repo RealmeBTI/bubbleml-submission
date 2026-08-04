@@ -1,0 +1,386 @@
+{
+  "metadata": {
+    "data_dir": "data/bubbleml/smoke_benchmark_pt",
+    "checkpoints_dir": "checkpoints/smoke_benchmark",
+    "output_dir": "benchmark_results/smoke_benchmark",
+    "seeds": [
+      42
+    ],
+    "batch_size": 4,
+    "num_workers": 0,
+    "device": "cpu",
+    "fno_device": "cpu",
+    "use_amp": false,
+    "warmup_batches": 2,
+    "rollout_steps": 1,
+    "bootstrap_samples": 100
+  },
+  "raw_seed_metrics": {
+    "fno": {
+      "42": {
+        "alpha_gwrmse": 0.5018442698887416,
+        "gwrmse": 0.7370762326279465,
+        "interface_alpha_rmse": 0.5735820458859814,
+        "interface_temperature_jump_mae": 0.061301590684725314,
+        "interface_temperature_rmse": 0.13505557027398324,
+        "interior_edge_divergence_mae": 0.008339759380537637,
+        "interior_edge_rmse": 0.4104830306403491,
+        "mass_conservation_mae": 0.005283994514647187,
+        "relative_l2": 0.9805370654378619,
+        "rmse": 0.632274442789506,
+        "temperature_gwrmse": 0.24581218556481965,
+        "rollout_alpha_gwrmse": 0.5018442698887416,
+        "rollout_relative_l2": 0.9805370678707045,
+        "throughput_fps": 131.8081842466889,
+        "latency_ms_per_sample": 7.586782305781749,
+        "parameters": 5964.0,
+        "real_scalar_parameters": 10060.0,
+        "device": "cpu"
+      }
+    },
+    "unet": {
+      "42": {
+        "alpha_gwrmse": 0.5121858448398356,
+        "gwrmse": 0.6297601838501132,
+        "interface_alpha_rmse": 0.5793419443831151,
+        "interface_temperature_jump_mae": 0.06749289923784685,
+        "interface_temperature_rmse": 0.11127810818808419,
+        "interior_edge_divergence_mae": 0.1290341662813206,
+        "interior_edge_rmse": 0.39214566471625345,
+        "mass_conservation_mae": 0.09489489544411095,
+        "relative_l2": 0.8205443584189123,
+        "rmse": 0.5291485239048394,
+        "temperature_gwrmse": 0.1969067457379127,
+        "rollout_alpha_gwrmse": 0.5121858448398356,
+        "rollout_relative_l2": 0.8205443584189123,
+        "throughput_fps": 185.50121797454707,
+        "latency_ms_per_sample": 5.390800184057075,
+        "parameters": 121276.0,
+        "real_scalar_parameters": 121276.0,
+        "device": "cpu"
+      }
+    }
+  },
+  "aggregate": {
+    "fno": {
+      "alpha_gwrmse": {
+        "mean": 0.5018442698887416,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "gwrmse": {
+        "mean": 0.7370762326279465,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interface_alpha_rmse": {
+        "mean": 0.5735820458859814,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interface_temperature_jump_mae": {
+        "mean": 0.061301590684725314,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interface_temperature_rmse": {
+        "mean": 0.13505557027398324,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interior_edge_divergence_mae": {
+        "mean": 0.008339759380537637,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interior_edge_rmse": {
+        "mean": 0.4104830306403491,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "latency_ms_per_sample": {
+        "mean": 7.586782305781749,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "mass_conservation_mae": {
+        "mean": 0.005283994514647187,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "parameters": {
+        "mean": 5964.0,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "real_scalar_parameters": {
+        "mean": 10060.0,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "relative_l2": {
+        "mean": 0.9805370654378619,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "rmse": {
+        "mean": 0.632274442789506,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "rollout_alpha_gwrmse": {
+        "mean": 0.5018442698887416,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "rollout_relative_l2": {
+        "mean": 0.9805370678707045,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "temperature_gwrmse": {
+        "mean": 0.24581218556481965,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "throughput_fps": {
+        "mean": 131.8081842466889,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      }
+    },
+    "unet": {
+      "alpha_gwrmse": {
+        "mean": 0.5121858448398356,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "gwrmse": {
+        "mean": 0.6297601838501132,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interface_alpha_rmse": {
+        "mean": 0.5793419443831151,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interface_temperature_jump_mae": {
+        "mean": 0.06749289923784685,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interface_temperature_rmse": {
+        "mean": 0.11127810818808419,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interior_edge_divergence_mae": {
+        "mean": 0.1290341662813206,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "interior_edge_rmse": {
+        "mean": 0.39214566471625345,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "latency_ms_per_sample": {
+        "mean": 5.390800184057075,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "mass_conservation_mae": {
+        "mean": 0.09489489544411095,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "parameters": {
+        "mean": 121276.0,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "real_scalar_parameters": {
+        "mean": 121276.0,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "relative_l2": {
+        "mean": 0.8205443584189123,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "rmse": {
+        "mean": 0.5291485239048394,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "rollout_alpha_gwrmse": {
+        "mean": 0.5121858448398356,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "rollout_relative_l2": {
+        "mean": 0.8205443584189123,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "temperature_gwrmse": {
+        "mean": 0.1969067457379127,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      },
+      "throughput_fps": {
+        "mean": 185.50121797454707,
+        "std": 0.0,
+        "ci95": 0.0,
+        "n": 1.0
+      }
+    }
+  },
+  "paired_fno_minus_unet": {
+    "alpha_gwrmse": {
+      "mean_fno_minus_unet": -0.010341574951094001,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "gwrmse": {
+      "mean_fno_minus_unet": 0.1073160487778333,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "interface_alpha_rmse": {
+      "mean_fno_minus_unet": -0.005759898497133764,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "interface_temperature_jump_mae": {
+      "mean_fno_minus_unet": -0.006191308553121534,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "interface_temperature_rmse": {
+      "mean_fno_minus_unet": 0.02377746208589905,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "interior_edge_divergence_mae": {
+      "mean_fno_minus_unet": -0.12069440690078298,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "interior_edge_rmse": {
+      "mean_fno_minus_unet": 0.018337365924095628,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "mass_conservation_mae": {
+      "mean_fno_minus_unet": -0.08961090092946376,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "relative_l2": {
+      "mean_fno_minus_unet": 0.15999270701894963,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "rmse": {
+      "mean_fno_minus_unet": 0.1031259188846666,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "rollout_alpha_gwrmse": {
+      "mean_fno_minus_unet": -0.010341574951094001,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "rollout_relative_l2": {
+      "mean_fno_minus_unet": 0.15999270945179223,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    },
+    "temperature_gwrmse": {
+      "mean_fno_minus_unet": 0.048905439826906955,
+      "ci95_low": null,
+      "ci95_high": null,
+      "paired_sign_flip_p": 1.0,
+      "n_seeds": 1.0,
+      "holm_bonferroni_p": 1.0
+    }
+  },
+  "metric_definitions": {
+    "gwrmse": "Reference-gradient-weighted RMSE; lower is better.",
+    "interior_edge_rmse": "Error at the outer interior cells supplied by BubbleML, not a physical wall residual.",
+    "interface_*": "Computed around true dfun-derived vapor/liquid interfaces; lower is better.",
+    "rollout_*": "True autoregressive error against preprocessed future frames; lower is better."
+  }
+}

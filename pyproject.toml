@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=80.10.2", "wheel>=0.46.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bubbleml-physics-aware-benchmark"
+version = "1.0.0.dev0"
+description = "Physics-aware, multi-seed BubbleML operator-learning benchmark."
+readme = "README.md"
+requires-python = "==3.12.7"
+dependencies = [
+  "h5py==3.16.0",
+  "matplotlib==3.11.1",
+  "neuraloperator==2.0.0",
+  "numpy==2.5.1",
+  "opt_einsum==3.4.0",
+  "scipy==1.18.0",
+  "tensorly==0.9.0",
+  "torch==2.13.0",
+]
+
+[project.optional-dependencies]
+test = ["pytest==9.1.1"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["bubbleml_benchmark*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+

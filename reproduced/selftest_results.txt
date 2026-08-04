@@ -1,0 +1,10 @@
+Phase 1 tutorial split (T-FNO minus U-Net; lower error is better):
+  gwrmse: mean=-0.05698047, CI=[-0.12313951, +0.00946437], p=0.146484375, Holm=1.00000000
+  interface_temperature_rmse: mean=-0.50189749, CI=[-0.74065434, -0.28300856], p=0.001953125, Holm=0.03515625
+  interface_temperature_jump_mae: mean=-0.43146611, CI=[-0.53954150, -0.34029931], p=0.000976562, Holm=0.02148438
+  mass_conservation_mae: mean=+0.04493574, CI=[+0.03852948, +0.05122263], p=0.000976562, Holm=0.02148438
+Divergence hybrid (lambda_div=0.30) versus U-Net mass conservation:
+  hybrid mean=0.09373474, U-Net mean=0.16585691, difference=-0.07212217
+  archived CI=[-0.07939724, -0.06534623], exact one-sided p=0.000488281, noninferior=True
+Figure reproduced: reproduced/fig2_dry_area_trace.svg
+PASS

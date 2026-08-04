@@ -1,0 +1,49 @@
+{
+  "status": "complete",
+  "archive_sha256": "2eba140d74cbb7b01a55f0684227dea94306aea516a0f864831485d31d25f655",
+  "device": "cuda: NVIDIA Tesla T4",
+  "resolution": [96, 96],
+  "seeds": [42, 100, 1234, 2025, 9999],
+  "split": {
+    "train": [79, 85, 90, 95],
+    "validation": [81],
+    "test": [98, 110],
+    "excluded_tutorial": [100, 103, 106],
+    "windows": {"train": 644, "validation": 161, "test": 322}
+  },
+  "means": {
+    "tfno": {"gwrmse": 11.5973996866, "interface_temperature_rmse": 14.5206865674, "interface_temperature_jump_mae": 8.7655255038, "mass_conservation_mae": 0.1298886675},
+    "unet": {"gwrmse": 11.5029148722, "interface_temperature_rmse": 13.9057123129, "interface_temperature_jump_mae": 8.5756723649, "mass_conservation_mae": 0.1156013438},
+    "hybrid_tfno": {"gwrmse": 11.6322539416, "interface_temperature_rmse": 14.4567207640, "interface_temperature_jump_mae": 8.7021398188, "mass_conservation_mae": 0.1358271013},
+    "hybrid_div": {"gwrmse": 11.5859152497, "interface_temperature_rmse": 14.2120158593, "interface_temperature_jump_mae": 8.6981289409, "mass_conservation_mae": 0.0866922153}
+  },
+  "tfno_minus_unet": {
+    "gwrmse": {"mean": 0.0944848144, "ci95": [0.0436303658, 0.1453392630], "exact_p": 0.0625, "holm_p": 1.0},
+    "interface_temperature_rmse": {"mean": 0.6149742546, "ci95": [0.3190584371, 0.9094066386], "exact_p": 0.0625, "holm_p": 1.0},
+    "interface_temperature_jump_mae": {"mean": 0.1898531389, "ci95": [0.1808027765, 0.1993483378], "exact_p": 0.0625, "holm_p": 1.0},
+    "mass_conservation_mae": {"mean": 0.0142873237, "ci95": [0.0091453443, 0.0208470140], "exact_p": 0.0625, "holm_p": 1.0}
+  },
+  "hybrid_div_minus_unet": {
+    "gwrmse": {"mean": 0.0830003776, "ci95": [0.0530163415, 0.1083972157], "exact_p": 0.0625, "holm_p": 1.0},
+    "interface_temperature_rmse": {"mean": 0.3063035464, "ci95": [0.0529149653, 0.5416074288], "exact_p": 0.125, "holm_p": 1.0},
+    "interface_temperature_jump_mae": {"mean": 0.1224565760, "ci95": [0.0425733345, 0.2023398175], "exact_p": 0.0625, "holm_p": 1.0},
+    "mass_conservation_mae": {"mean": -0.0289091286, "ci95": [-0.0335947107, -0.0242235464], "exact_p": 0.0625, "holm_p": 1.0}
+  },
+  "hybrid_div_minus_zero_penalty": {
+    "gwrmse": {"mean": -0.0463386919, "ci95": [-0.1194976611, 0.0207993046], "exact_p": 0.5, "holm_p": 1.0},
+    "interface_temperature_rmse": {"mean": -0.2447049047, "ci95": [-0.5881498653, 0.0006521516], "exact_p": 0.1875, "holm_p": 1.0},
+    "interface_temperature_jump_mae": {"mean": -0.0040108779, "ci95": [-0.0405297116, 0.0350936533], "exact_p": 0.75, "holm_p": 1.0},
+    "mass_conservation_mae": {"mean": -0.0491348861, "ci95": [-0.0528299645, -0.0464626344], "exact_p": 0.0625, "holm_p": 1.0}
+  },
+  "cost": {
+    "tfno": {"parameters": 548837, "real_scalar_parameters": 1040625, "training_wall_seconds_mean": 216.0939791, "training_wall_seconds_total": 1080.4698956, "inference_latency_ms_per_window_mean": 4.4674309, "inference_throughput_windows_per_second_mean": 223.9432769},
+    "unet": {"parameters": 7770169, "real_scalar_parameters": 7770169, "training_wall_seconds_mean": 98.7240595, "training_wall_seconds_total": 493.6202975, "inference_latency_ms_per_window_mean": 2.0261805, "inference_throughput_windows_per_second_mean": 493.6258385},
+    "hybrid_tfno": {"parameters": 696549, "real_scalar_parameters": 1188337, "training_wall_seconds_mean": 293.4515904, "training_wall_seconds_total": 1467.2579521, "inference_latency_ms_per_window_mean": 5.3694091, "inference_throughput_windows_per_second_mean": 186.2532059},
+    "hybrid_div": {"parameters": 696549, "real_scalar_parameters": 1188337, "training_wall_seconds_mean": 294.4329547, "training_wall_seconds_total": 1472.1647734, "inference_latency_ms_per_window_mean": 5.3841450, "inference_throughput_windows_per_second_mean": 185.7515330}
+  },
+  "dry_area_ground_truth": {
+    "Twall-98": {"baseline": 0.3046875, "threshold": 0.4046875, "maximum": 0.375, "frames_above": 0, "longest_run": 0, "sustained_event": false},
+    "Twall-110": {"baseline": 0.2890625, "threshold": 0.3890625, "maximum": 0.40625, "frames_above": 1, "longest_run": 1, "sustained_event": false}
+  },
+  "claim": "U-Net is descriptively best on GWRMSE and interface metrics; the divergence hybrid is descriptively best on mass MAE. No primary contrast is Holm-significant at n=5."
+}

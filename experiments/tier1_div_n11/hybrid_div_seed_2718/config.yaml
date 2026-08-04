@@ -1,0 +1,97 @@
+{
+  "data_dir": "data/bubbleml/smoke_restore",
+  "experiment_dir": "experiments/tier1_div_n11",
+  "checkpoints_dir": "checkpoints/phase1_gpu_decisive",
+  "seeds": [
+    42,
+    100,
+    1234,
+    2025,
+    9999,
+    7,
+    17,
+    314,
+    2718,
+    4242,
+    7777
+  ],
+  "models": [
+    "hybrid_div"
+  ],
+  "max_epochs": 200,
+  "min_epochs": 20,
+  "batch_size": 8,
+  "num_workers": 0,
+  "history_size": 5,
+  "future_size": 5,
+  "learning_rate": 0.001,
+  "weight_decay": 0.01,
+  "warmup_fraction": 0.03,
+  "step_factor": 0.5,
+  "step_patience_epochs": 75,
+  "gradient_clip": 1.0,
+  "horizontal_reflection": true,
+  "fourier_downsample_factor": 1,
+  "requested_modes": 24,
+  "fno_width": 64,
+  "fno_layers": 4,
+  "ffno_width": 64,
+  "ffno_layers": 4,
+  "tfno_rank": 0.1,
+  "unet_features": 32,
+  "unet_depth": 4,
+  "domain_padding": 0.1,
+  "plateau_window": 5,
+  "plateau_patience_windows": 2,
+  "plateau_relative_delta": 0.001,
+  "max_minutes_per_run": 0.0,
+  "device": "mps",
+  "bound_alpha_output": false,
+  "lambda_div": 0.1,
+  "model": "hybrid_div",
+  "seed": 2718,
+  "git_commit": "9c601c1c14c75c3aa2691aa352afda40eff210ec",
+  "model_spec": {
+    "kind": "hybrid_div",
+    "in_channels": 25,
+    "out_channels": 25,
+    "requested_modes": [
+      24,
+      24
+    ],
+    "effective_modes": [
+      24,
+      24
+    ],
+    "width": 64,
+    "layers": 4,
+    "domain_padding": 0.1,
+    "tfno_rank": 0.1,
+    "unet_features": 32,
+    "unet_depth": 4,
+    "alpha_bounded": false,
+    "alpha_output_indices": [],
+    "alpha_normalized_lower": null,
+    "alpha_normalized_upper": null
+  },
+  "protocol": "custom-five-field-temporal-bundle",
+  "resolution_policy": {
+    "native": [
+      48,
+      48
+    ],
+    "training": [
+      48,
+      48
+    ],
+    "requested_modes": [
+      24,
+      24
+    ],
+    "effective_modes": [
+      24,
+      24
+    ],
+    "nyquist_note": "For N=48, a real FFT has N/2+1=25 unique bins; use 24 modes just below that ceiling."
+  }
+}
