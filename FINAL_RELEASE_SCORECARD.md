@@ -14,8 +14,8 @@
 | Security scan | PASS | High-confidence key/token/password/auth-header scan found no secrets in filtered public staging. |
 | Private-path scan | PASS | Filtered public staging had no `/Users/`, `/home/`, `/private/`, `/tmp/`, `/var/`, Windows-drive, or local-username paths after documented redaction. |
 | Checksum verification | PASS | Every file in filtered public staging passed `shasum -a 256 -c RELEASE_SHA256SUMS.txt`. |
-| Git integrity | PENDING | Final commit and v1.0.0 tag not yet created. |
-| Local fresh-clone test | PENDING | Runs after final commit/tag. |
+| Git integrity | PASS | The annotated `v1.0.0` tag resolves to the final local release commit. |
+| Local fresh-clone test | PASS | A separate clone checked out at `v1.0.0` reproduced stored results, passed 38 tests, and verified filtered-release checksums. |
 | Public GitHub clone test | N/A | No authenticated public GitHub release. |
 | GitHub publication | NOT PUBLISHED | No configured remote or verified authentication. |
 | Zenodo publication | NOT PUBLISHED | No verified creator metadata, license, authentication, or deposition. |
