@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="960" height="450" preserveAspectRatio="xMinYMin meet" viewBox="0 0 960 450" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="960" height="450"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-450)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="960" height="450" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="356.86400000000003" y="422" style="font-family: Helvetica; font-size: 16px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,844) scale(1,-1)">Trajectory-level experimental splits</text>
+			<rect x="50" y="90" width="370" height="260" style="stroke: rgb(58%,63%,72%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="199.965" y="320" style="font-family: Helvetica; font-size: 13px;fill: rgb(5%,9%,16%); stroke:none;" transform="translate(0,640) scale(1,-1)">Tutorial split</text>
+			<text x="221.06" y="298" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(27%,33%,41%); stroke:none;" transform="translate(0,596) scale(1,-1)">48 x 48</text>
+			<rect x="72" y="233" width="326" height="42" style="stroke: rgb(11%,30%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(85%,91%,99%); fill-rule: evenodd;"/>
+			<text x="88" y="250" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(11%,30%,84%); stroke:none;" transform="translate(0,500) scale(1,-1)">Train</text>
+			<text x="340.827" y="250" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(12%,16%,21%); stroke:none;" transform="translate(0,500) scale(1,-1)">Twall-103</text>
+			<rect x="72" y="176" width="326" height="42" style="stroke: rgb(70%,32%,3%); stroke-linecap: butt; stroke-width: 1; fill: rgb(99%,95%,78%); fill-rule: evenodd;"/>
+			<text x="88" y="193" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(70%,32%,3%); stroke:none;" transform="translate(0,386) scale(1,-1)">Validation</text>
+			<text x="340.827" y="193" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(12%,16%,21%); stroke:none;" transform="translate(0,386) scale(1,-1)">Twall-106</text>
+			<rect x="72" y="119" width="326" height="42" style="stroke: rgb(72%,10%,10%); stroke-linecap: butt; stroke-width: 1; fill: rgb(99%,88%,88%); fill-rule: evenodd;"/>
+			<text x="88" y="136" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(72%,10%,10%); stroke:none;" transform="translate(0,272) scale(1,-1)">Test / rollout</text>
+			<text x="340.827" y="136" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(12%,16%,21%); stroke:none;" transform="translate(0,272) scale(1,-1)">Twall-100</text>
+			<rect x="540" y="90" width="370" height="260" style="stroke: rgb(58%,63%,72%); stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="666.487" y="320" style="font-family: Helvetica; font-size: 13px;fill: rgb(5%,9%,16%); stroke:none;" transform="translate(0,640) scale(1,-1)">Cross-condition split</text>
+			<text x="660.7485" y="298" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(27%,33%,41%); stroke:none;" transform="translate(0,596) scale(1,-1)">96 x 96 (384 x 384 feasibility only)</text>
+			<rect x="562" y="233" width="326" height="42" style="stroke: rgb(11%,30%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(85%,91%,99%); fill-rule: evenodd;"/>
+			<text x="578" y="250" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(11%,30%,84%); stroke:none;" transform="translate(0,500) scale(1,-1)">Train</text>
+			<text x="788.571" y="250" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(12%,16%,21%); stroke:none;" transform="translate(0,500) scale(1,-1)">Twall-79, 85, 90, 95</text>
+			<rect x="562" y="176" width="326" height="42" style="stroke: rgb(70%,32%,3%); stroke-linecap: butt; stroke-width: 1; fill: rgb(99%,95%,78%); fill-rule: evenodd;"/>
+			<text x="578" y="193" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(70%,32%,3%); stroke:none;" transform="translate(0,386) scale(1,-1)">Validation</text>
+			<text x="836.109" y="193" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(12%,16%,21%); stroke:none;" transform="translate(0,386) scale(1,-1)">Twall-81</text>
+			<rect x="562" y="119" width="326" height="42" style="stroke: rgb(72%,10%,10%); stroke-linecap: butt; stroke-width: 1; fill: rgb(99%,88%,88%); fill-rule: evenodd;"/>
+			<text x="578" y="136" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(72%,10%,10%); stroke:none;" transform="translate(0,272) scale(1,-1)">Independent test</text>
+			<text x="814.981" y="136" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(12%,16%,21%); stroke:none;" transform="translate(0,272) scale(1,-1)">Twall-98, 110</text>
+			<text x="229.2" y="45" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(27%,33%,41%); stroke:none;" transform="translate(0,90) scale(1,-1)">Roles are frozen before model training or test inspection; tutorial and cross-condition results answer different questions.</text>
+		</g>
+	</g>
+</svg>

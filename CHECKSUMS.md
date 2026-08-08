@@ -42,10 +42,8 @@ because they are different released files/resolutions. They are not interchangea
 
 ## Other recorded artifact hashes
 
-The phase history also records `7cfd11a642168b2c845addf79cdfba2191664b1a4f5096ea07149753b7e58b43`,
-`492057863f155b49ab2d249dfdacbf6d855aa2fed8882185794cb5ce2cd8d2c6`, and
-`7c4f8e743b89543c7e8a009f01a42f88b2ece7abd981623cbed02731dd100154`
-without enough unambiguous filename context in the supplied local evidence to
-assign them safely. They are retained here as unassigned recorded hashes and must
-be mapped by the author before archival.
-
+| SHA-256 | Artifact | Provenance / verification |
+|---|---|---|
+| `7cfd11a642168b2c845addf79cdfba2191664b1a4f5096ea07149753b7e58b43` | `benchmark_results/multitraj96/report_summary.json` | Direct local SHA-256 recomputation; compact audited 96×96 cross-condition summary. |
+| `492057863f155b49ab2d249dfdacbf6d855aa2fed8882185794cb5ce2cd8d2c6` | `benchmark_results/multitraj384_micro/native384_summary.json` | Direct local SHA-256 recomputation; native-384 one-epoch feasibility summary. |
+| `7c4f8e743b89543c7e8a009f01a42f88b2ece7abd981623cbed02731dd100154` | Unassigned, provenance unrecoverable from this checkout | Phase history identifies it only as a temporary cloud upload bundle at `/private/tmp/ddpinns-future-work.tar.gz`; the bundle bytes are absent, so no local hash confirmation or archival role is claimed. |

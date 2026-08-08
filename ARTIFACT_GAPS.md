@@ -14,7 +14,9 @@ that could not be verified in the local project.
   cloud cross-condition experiment. Only the compact audited summary
   `benchmark_results/multitraj96/report_summary.json` is present.
 - Cross-condition field-snapshot arrays/checkpoints needed to regenerate the
-  ground-truth-versus-prediction snapshot figure. No substitute is fabricated.
+  ground-truth-versus-prediction snapshot figure. A repository-wide search also
+  found no compatible tutorial-split T-FNO/U-Net checkpoint pair, so the allowed
+  tutorial-split fallback cannot be generated honestly. No substitute is fabricated.
 - A source bibliography or citation-key mapping for every prose reference in the
   manuscript.
 - A public GitHub URL, archive DOI, author metadata, funding/COI confirmation,
@@ -32,4 +34,3 @@ auditability.
 The stored-result statistical self-test is complete and independently runnable.
 A full raw-data-to-checkpoint reproduction is not yet reviewer-runnable without
 the external files and links listed above.
-

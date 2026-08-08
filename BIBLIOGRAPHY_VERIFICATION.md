@@ -1,6 +1,6 @@
 # Bibliographic Verification
 
-Checked on 2026-08-04 against primary publication records. Only works identifiable
+Checked on 2026-08-08 against primary publication records. Only works identifiable
 from the manuscript text are included. A complete citation pass cannot be finished
 without the authors' intended source list for generic prose allusions.
 
@@ -34,6 +34,33 @@ without the authors' intended source list for generic prose allusions.
 7. Novak Zuber. "Hydrodynamic Aspects of Boiling Heat Transfer." AECU-4439,
    United States Atomic Energy Commission, 1959. DOI: 10.2172/4175511.
    Primary repository record: https://digital.library.unt.edu/ark:/67531/metadc872491/
+8. Christy Dunlap, Hari Pandey, Stephen Pierson, Daniel Curl, Braden Stevens,
+   Mohammad Ishraq Hossain, Annapurna Parjuli, Chinmaya Joshi, and Han Hu. "Open
+   Multimodal Datasets and Open-Source Software for Data-Driven Modeling of
+   Multiphase Transport and Thermal Systems." arXiv:2605.23037, 2026.
+   Primary record: https://arxiv.org/abs/2605.23037
+9. Madhumitha Ravichandran, Guanyu Su, Chi Wang, Jee Hyun Seong, Artyom
+   Kossolapov, Bren Phillips, Md Mahamudur Rahman, and Matteo Bucci. "Decrypting
+   the Boiling Crisis through Data-Driven Exploration of High-Resolution Infrared
+   Thermometry Measurements." *Applied Physics Letters* 118(25):253903, 2021.
+   DOI: 10.1063/5.0048391. Primary publisher record supplied with the task.
+10. Madhumitha Ravichandran, Artyom Kossolapov, Gustavo Matana Aguiar, Bren
+    Phillips, and Matteo Bucci. "Autonomous and Online Detection of Dry Areas on
+    a Boiling Surface Using Deep Learning and Infrared Thermometry."
+    *Experimental Thermal and Fluid Science* 145:110879, 2023. DOI:
+    10.1016/j.expthermflusci.2023.110879. Publisher record:
+    https://www.sciencedirect.com/science/article/pii/S0894177723000353
+11. Marimuthu Kalimuthu, David Holzmüller, and Mathias Niepert. "LOGLO-FNO:
+    Efficient Learning of Local and Global Features in Fourier Neural Operators."
+    arXiv:2504.04260, 2025. Primary record: https://arxiv.org/abs/2504.04260
+12. Jack Richter-Powell, Yaron Lipman, and Ricky T. Q. Chen. "Neural
+    Conservation Laws: A Divergence-Free Perspective." *Advances in Neural
+    Information Processing Systems* 35, 2022. Primary record:
+    https://arxiv.org/abs/2210.01741
+13. Xigui Li, Hongwei Zhang, Ruoxi Jiang, Deshu Chen, Chensen Lin, Limei Han,
+    Yuan Qi, Xin Guo, and Yuan Cheng. "Project and Generate: Divergence-Free
+    Neural Operators for Incompressible Flows." arXiv:2603.24500, 2026. Primary
+    record: https://arxiv.org/abs/2603.24500
 
 ## Corrected supplied-text discrepancy
 
@@ -44,11 +71,11 @@ unchanged; the generated bibliography uses the verified title.
 
 ## `[VERIFY]` citations not safely identifiable
 
-- The specific semi-empirical CHF correlations described after Zuber.
-- The particular high-speed infrared/optical dry-area and margin-to-CHF studies.
-- The "recent survey" of open multimodal boiling and phase-change datasets.
-- The specific local-global hybrid neural-operator papers intended by the prose.
-- The specific conservation-preserving/hard-projection neural-operator papers.
+- No unresolved generic semi-empirical CHF-correlation allusion remains: the
+  manuscript was reworded to avoid implying an uncited specific correlation.
+- The generic question of which other experimental margin-to-CHF studies the
+  authors may wish to cite remains outside the two verified infrared/dry-area
+  records above.
 
 These references must remain `[VERIFY]` until the author supplies citation keys or
 source URLs. No entries were inferred from topic similarity.

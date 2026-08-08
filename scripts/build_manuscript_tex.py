@@ -62,8 +62,12 @@ def main() -> None:
     )
     latex = latex.replace(
         three_column,
-        r"\begin{longtable}[]{@{}P{0.18\textwidth}P{0.47\textwidth}P{0.27\textwidth}@{}}",
+        r"\begin{longtable}[]{@{}P{0.25\textwidth}P{0.55\textwidth}P{0.14\textwidth}@{}}",
         1,
+    )
+    latex = latex.replace(
+        three_column,
+        r"\begin{longtable}[]{@{}P{0.25\textwidth}P{0.33\textwidth}P{0.29\textwidth}@{}}",
     )
     latex = latex.replace(
         five_column,
@@ -81,6 +85,21 @@ def main() -> None:
         latex,
     )
     latex = re.sub(r"\\(sub)*section\{", lambda match: "\\" + (match.group(1) or "") + "section*{", latex)
+    latex = re.sub(
+        r"\\includegraphics(?:\[[^\]]*\])?\{([^}]+)\}",
+        r"\\includegraphics[width=\\linewidth]{\1}",
+        latex,
+    )
+    named_citations = {
+        "Dunlap et al. (2026)": r"Dunlap et al. (2026)\cite{dunlap2026open}",
+        "Ravichandran et al. (2021)": r"Ravichandran et al. (2021)\cite{ravichandran2021decrypting}",
+        "Ravichandran et al. (2023)": r"Ravichandran et al. (2023)\cite{ravichandran2023dryareas}",
+        "Kalimuthu et al. (2025)": r"Kalimuthu et al. (2025)\cite{kalimuthu2025loglo}",
+        "Richter-Powell et al. (2022)": r"Richter-Powell et al. (2022)\cite{richterpowell2022neural}",
+        "Li et al. (2026)": r"Li et al. (2026)\cite{li2026project}",
+    }
+    for text, citation in named_citations.items():
+        latex = latex.replace(text, citation)
     destination.write_text(latex, encoding="utf-8")
     print(destination)
 

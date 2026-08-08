@@ -20,7 +20,7 @@ Do not re-host the raw BubbleML data files themselves unless the dataset's licen
 | Training scripts | Full training loop, validation-plateau stopping rule, checkpoint saving/safe-loading (`weights_only=True`) |
 | Evaluation scripts | Five-field benchmark metrics, interface/conservation metrics, autoregressive CHF-proxy rollout evaluator |
 | Statistical analysis | Paired bootstrap, exact sign-flip test, Holm-Bonferroni correction (single unchanged implementation used throughout) |
-| Plotting/figures | Loss curve, field snapshot, dry-area trace, Pareto-front, and lambda-sensitivity figure generation scripts |
+| Plotting/figures | Loss curve, dry-area trace, Pareto-front, lambda-sensitivity, benchmark-workflow, and split-diagram generation scripts; field snapshots are declared unavailable |
 | Tests | Full test suite covering architecture, serialization, and statistical protocol correctness |
 
 ## 3. Configuration and provenance (include in repository, reference in Supplementary)
@@ -31,13 +31,13 @@ For every experiment referenced in the manuscript, the repository should retain:
 - Checkpoint file with recorded SHA-256, seed, and git commit hash
 - Runtime environment record (Python/PyTorch version, CUDA/MPS availability, hardware)
 
-This already exists for every phase of this project (Phase 1 decisive run, bounded-alpha ablation, local-global hybrid, divergence hybrid at both λ values, cross-condition validation) — consolidate into a single top-level `experiments/` directory structure with one subfolder per experiment, matching what's already been used internally.
+This is available for the locally retained tutorial and intervention experiments. The compact cross-condition export lacks complete per-seed configs, histories, and checkpoints; this gap is documented in `ARTIFACT_GAPS.md` and must not be described as complete.
 
 ## 4. Figures (separate high-resolution files for journal upload)
 
 | Figure | Source |
 |---|---|
-| Ground-truth vs. prediction field snapshots (multiple horizons) | Already generated for T-FNO/U-Net comparisons |
+| Ground-truth vs. prediction field snapshots (multiple horizons) | Not included: cross-condition arrays/checkpoints and a compatible tutorial T-FNO/U-Net checkpoint pair are unavailable locally |
 | Dry-area-fraction-over-time trace | Phase 4 rollout evaluation output |
 | Pareto-front scatter (interface RMSE vs. mass MAE, all model variants, with bootstrap error bars) | Generated during manuscript polish phase |
 | Lambda-sensitivity curve | Generated during divergence-penalty sensitivity analysis |

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="1080" height="360" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1080 360" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1080" height="360"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-360)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="1080" height="360" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="380.82399999999996" y="330" style="font-family: Helvetica; font-size: 16px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,660) scale(1,-1)">Benchmark workflow and evidence boundary</text>
+			<rect x="20" y="133" width="140" height="92" style="stroke: rgb(11%,30%,84%); stroke-linecap: butt; stroke-width: 1; fill: rgb(85%,91%,99%); fill-rule: evenodd;"/>
+			<text x="71.047" y="194" style="font-family: Helvetica; font-size: 11px;fill: rgb(11%,30%,84%); stroke:none;" transform="translate(0,388) scale(1,-1)">Dataset</text>
+			<text x="55.991499999999995" y="169" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(20%,25%,33%); stroke:none;" transform="translate(0,338) scale(1,-1)">official trajectories</text>
+			<rect x="170" y="133" width="140" height="92" style="stroke: rgb(1%,41%,63%); stroke-linecap: butt; stroke-width: 1; fill: rgb(87%,94%,99%); fill-rule: evenodd;"/>
+			<text x="204.8495" y="194" style="font-family: Helvetica; font-size: 11px;fill: rgb(1%,41%,63%); stroke:none;" transform="translate(0,388) scale(1,-1)">Preprocessing</text>
+			<text x="212.71925" y="169" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(20%,25%,33%); stroke:none;" transform="translate(0,338) scale(1,-1)">schema + split</text>
+			<path d="M 160,179 L 170,179 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 170,179 L 163,183 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 170,179 L 163,175 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<rect x="320" y="133" width="140" height="92" style="stroke: rgb(42%,15%,85%); stroke-linecap: butt; stroke-width: 1; fill: rgb(92%,91%,99%); fill-rule: evenodd;"/>
+			<text x="370.134" y="194" style="font-family: Helvetica; font-size: 11px;fill: rgb(42%,15%,85%); stroke:none;" transform="translate(0,388) scale(1,-1)">Training</text>
+			<text x="365.66875" y="169" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(20%,25%,33%); stroke:none;" transform="translate(0,338) scale(1,-1)">paired seeds</text>
+			<path d="M 310,179 L 320,179 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 320,179 L 313,183 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 320,179 L 313,175 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<rect x="470" y="133" width="140" height="92" style="stroke: rgb(8%,50%,23%); stroke-linecap: butt; stroke-width: 1; fill: rgb(86%,98%,90%); fill-rule: evenodd;"/>
+			<text x="514.3205" y="194" style="font-family: Helvetica; font-size: 11px;fill: rgb(8%,50%,23%); stroke:none;" transform="translate(0,388) scale(1,-1)">Evaluation</text>
+			<text x="503.98125" y="169" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(20%,25%,33%); stroke:none;" transform="translate(0,338) scale(1,-1)">accuracy + physics</text>
+			<path d="M 460,179 L 470,179 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 470,179 L 463,183 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 470,179 L 463,175 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<rect x="620" y="133" width="140" height="92" style="stroke: rgb(70%,32%,3%); stroke-linecap: butt; stroke-width: 1; fill: rgb(99%,95%,78%); fill-rule: evenodd;"/>
+			<text x="667.9945" y="194" style="font-family: Helvetica; font-size: 11px;fill: rgb(70%,32%,3%); stroke:none;" transform="translate(0,388) scale(1,-1)">Statistics</text>
+			<text x="657.5215" y="169" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(20%,25%,33%); stroke:none;" transform="translate(0,338) scale(1,-1)">bootstrap + Holm</text>
+			<path d="M 610,179 L 620,179 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 620,179 L 613,183 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 620,179 L 613,175 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<rect x="770" y="133" width="140" height="92" style="stroke: rgb(72%,10%,10%); stroke-linecap: butt; stroke-width: 1; fill: rgb(99%,88%,88%); fill-rule: evenodd;"/>
+			<text x="801.797" y="194" style="font-family: Helvetica; font-size: 11px;fill: rgb(72%,10%,10%); stroke:none;" transform="translate(0,388) scale(1,-1)">Cross-condition</text>
+			<text x="806.4505" y="169" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(20%,25%,33%); stroke:none;" transform="translate(0,338) scale(1,-1)">independent tests</text>
+			<path d="M 760,179 L 770,179 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 770,179 L 763,183 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 770,179 L 763,175 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<rect x="920" y="133" width="140" height="92" style="stroke: rgb(29%,33%,38%); stroke-linecap: butt; stroke-width: 1; fill: rgb(95%,95%,96%); fill-rule: evenodd;"/>
+			<text x="953.3205" y="194" style="font-family: Helvetica; font-size: 11px;fill: rgb(29%,33%,38%); stroke:none;" transform="translate(0,388) scale(1,-1)">Artifact release</text>
+			<text x="949.0215000000001" y="169" style="font-family: Helvetica; font-size: 8.5px;fill: rgb(20%,25%,33%); stroke:none;" transform="translate(0,338) scale(1,-1)">checksums + self-test</text>
+			<path d="M 910,179 L 920,179 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 920,179 L 913,183 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<path d="M 920,179 L 913,175 Z" style="stroke: rgb(20%,25%,33%); stroke-linecap: butt; stroke-width: 1.5;"/>
+			<text x="308.74625" y="75" style="font-family: Helvetica; font-size: 9.5px;fill: rgb(27%,33%,41%); stroke:none;" transform="translate(0,150) scale(1,-1)">Stored-result reproducibility is verified; raw data, full checkpoints, and complete cloud exports remain external.</text>
+		</g>
+	</g>
+</svg>

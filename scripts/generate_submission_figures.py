@@ -50,6 +50,18 @@ class Figure:
     def rect(self, x, y, width, height, fill="#ffffff", stroke=None):
         self.commands.append(("rect", x, y, width, height, fill, stroke))
 
+    def arrow(self, x1, y1, x2, y2, color="#334155", width=1.5):
+        """Draw a simple directional connector without a raster-only dependency."""
+        self.line(x1, y1, x2, y2, color, width)
+        if abs(x2 - x1) >= abs(y2 - y1):
+            direction = 1 if x2 >= x1 else -1
+            self.line(x2, y2, x2 - 7 * direction, y2 - 4, color, width)
+            self.line(x2, y2, x2 - 7 * direction, y2 + 4, color, width)
+        else:
+            direction = 1 if y2 >= y1 else -1
+            self.line(x2, y2, x2 - 4, y2 - 7 * direction, color, width)
+            self.line(x2, y2, x2 + 4, y2 - 7 * direction, color, width)
+
     def save(self, base: Path) -> None:
         base.parent.mkdir(parents=True, exist_ok=True)
         drawing = Drawing(self.width, self.height)
@@ -213,9 +225,55 @@ def figure_losses(output: Path) -> None:
     fig.save(output/"fig4_loss_curves")
 
 
+def figure_workflow(output: Path) -> None:
+    """Draw the evidence workflow; it is a protocol diagram, not new data."""
+    fig = Figure(1080, 360)
+    fig.rect(0, 0, 1080, 360)
+    fig.text(540, 30, "Benchmark workflow and evidence boundary", 16, "middle")
+    boxes = (
+        (20, "Dataset", "official trajectories", "#dbeafe", "#1d4ed8"),
+        (170, "Preprocessing", "schema + split", "#e0f2fe", "#0369a1"),
+        (320, "Training", "paired seeds", "#ede9fe", "#6d28d9"),
+        (470, "Evaluation", "accuracy + physics", "#dcfce7", "#15803d"),
+        (620, "Statistics", "bootstrap + Holm", "#fef3c7", "#b45309"),
+        (770, "Cross-condition", "independent tests", "#fee2e2", "#b91c1c"),
+        (920, "Artifact release", "checksums + self-test", "#f3f4f6", "#4b5563"),
+    )
+    for index, (x, title, detail, fill, stroke) in enumerate(boxes):
+        fig.rect(x, 135, 140, 92, fill, stroke)
+        fig.text(x + 70, 166, title, 11, "middle", stroke)
+        fig.text(x + 70, 191, detail, 8.5, "middle", "#334155")
+        if index:
+            fig.arrow(x - 10, 181, x, 181)
+    fig.text(540, 285, "Stored-result reproducibility is verified; raw data, full checkpoints, and complete cloud exports remain external.", 9.5, "middle", "#475569")
+    fig.save(output / "fig5_benchmark_workflow")
+
+
+def figure_splits(output: Path) -> None:
+    """Make the two experimental designs visually distinct for readers."""
+    fig = Figure(960, 450)
+    fig.rect(0, 0, 960, 450)
+    fig.text(480, 28, "Trajectory-level experimental splits", 16, "middle")
+    panels = (
+        (50, 100, 370, "Tutorial split", "48 x 48", (("Train", "Twall-103", "#dbeafe", "#1d4ed8"), ("Validation", "Twall-106", "#fef3c7", "#b45309"), ("Test / rollout", "Twall-100", "#fee2e2", "#b91c1c"))),
+        (540, 100, 370, "Cross-condition split", "96 x 96 (384 x 384 feasibility only)", (("Train", "Twall-79, 85, 90, 95", "#dbeafe", "#1d4ed8"), ("Validation", "Twall-81", "#fef3c7", "#b45309"), ("Independent test", "Twall-98, 110", "#fee2e2", "#b91c1c"))),
+    )
+    for x, y, width, title, subtitle, rows in panels:
+        fig.rect(x, y, width, 260, "#ffffff", "#94a3b8")
+        fig.text(x + width / 2, y + 30, title, 13, "middle", "#0f172a")
+        fig.text(x + width / 2, y + 52, subtitle, 8.5, "middle", "#475569")
+        for index, (role, conditions, fill, stroke) in enumerate(rows):
+            top = y + 75 + index * 57
+            fig.rect(x + 22, top, width - 44, 42, fill, stroke)
+            fig.text(x + 38, top + 25, role, 9.5, "start", stroke)
+            fig.text(x + width - 38, top + 25, conditions, 9.5, "end", "#1f2937")
+    fig.text(480, 405, "Roles are frozen before model training or test inspection; tutorial and cross-condition results answer different questions.", 9.5, "middle", "#475569")
+    fig.save(output / "fig6_split_design")
+
+
 def main() -> None:
     parser=argparse.ArgumentParser(description=__doc__); parser.add_argument("--output-dir",type=Path,default=Path("submission/figures")); args=parser.parse_args(); output=args.output_dir if args.output_dir.is_absolute() else ROOT/args.output_dir
-    figure_pareto(output); figure_dry(output); figure_lambda(output); figure_losses(output); print(f"Generated four PDF/SVG/600-DPI PNG figure families in {output}")
+    figure_pareto(output); figure_dry(output); figure_lambda(output); figure_losses(output); figure_workflow(output); figure_splits(output); print(f"Generated six PDF/SVG/600-DPI PNG figure families in {output}")
 
 
 if __name__ == "__main__": main()

@@ -32,6 +32,6 @@ rm -f "$ARCHIVE"
   submission \
   output/pdf \
   reproduced \
-  -x '*/__pycache__/*' '*.pyc' 'tmp/*'
+  -x '*/__pycache__/*' '*.pyc' 'tmp/*' 'manuscript/output/*' '*.DS_Store'
 
 echo "$ARCHIVE"
