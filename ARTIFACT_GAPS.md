@@ -22,8 +22,8 @@ that could not be verified in the local project.
 - A verified public GitHub repository/release and archive DOI. The author has
   supplied the intended GitHub URL and selected MIT, but the URL was not publicly
   reachable during this audit and the supplied `LICENSE` file is absent here.
-- Funding confirmation and a final journal decision beyond the current
-  International Journal of Heat and Mass Transfer preprint header.
+- The supplied MIT `LICENSE` file is absent from this checkout; the author has
+  selected MIT, but the exact license text has not been added here.
 
 ## Conflicting historical records
 

@@ -1,6 +1,17 @@
 # Reproducibility Self-Test
 
-Test date: 2026-08-04. Result: **PASS**.
+Initial test date: 2026-08-04. Result: **PASS**.
+
+## Final-audit rerun (2026-08-08)
+
+From the current repository source, the documented command
+`python scripts/reproduce_reported_results.py --output-dir reproduced` completed
+with `PASS`. It recomputed the retained tutorial paired statistics and the
+lambda=.30 non-inferiority check. The full test command `python -m pytest -q`
+executed 38 tests with **38 passed** and no skips or expected failures reported.
+
+This rerun remains a stored-result test, not an assertion of raw-data training
+reproducibility.
 
 ## Reviewer simulation
 

@@ -81,12 +81,16 @@ neural operator \sep Fourier neural operator \sep pool boiling \sep phase-resolv
 
 \end{frontmatter}
 
-\emph{Release manuscript source. The bibliography entries in the
-generated manuscript were checked against the primary records documented
-in \texttt{BIBLIOGRAPHY\_VERIFICATION.md}. This public artifact has no
-repository URL or DOI because neither has been verified; author
-metadata, if required for journal submission, must be supplied and
-approved by the authors.}
+\emph{S. B. Mahafuj Bondhon, Department of Mechanical Engineering,
+Bangladesh University of Engineering and Technology (BUET), Ramna,
+Dhaka-1000, Bangladesh. Corresponding author:
+\href{mailto:2210062@me.buet.ac.bd}{\nolinkurl{2210062@me.buet.ac.bd}}.
+ORCID: 0009-0009-6695-365X. The bibliography entries in the generated
+manuscript were checked against the primary records documented in
+\texttt{BIBLIOGRAPHY\_VERIFICATION.md}. The author-designated repository
+URL is \url{https://github.com/RealmeBTI/bubbleml-submission}; no public
+release URL or DOI is asserted because neither has been independently
+verified.}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -94,19 +98,23 @@ approved by the authors.}
 
 \section*{1. Introduction}\label{1-introduction}
 
-Pool boiling is one of the most effective heat transfer mechanisms
-available to engineers, and it is the mechanism of last resort for the
-industries that most need it: high-power electronics cooling,
-data-center thermal management, and nuclear thermal-hydraulics all rely
-on boiling to move heat fluxes that single-phase convection cannot
-handle. The mechanism\textquotesingle s effectiveness is bounded by the
-critical heat flux (CHF) --- the point at which a growing vapor film
-insulates the heated surface from the liquid coolant, causing a runaway
-temperature excursion that can destroy the hardware it was meant to
-protect. Classical correlations for CHF (e.g., Zuber\textquotesingle s
-hydrodynamic instability model) provide efficient aggregate estimates
-but do not resolve the transient, spatially local bubble dynamics that
-precede an actual event on a specific surface.
+Pool boiling is central to high-power electronics cooling, data-center
+thermal management, and nuclear thermal-hydraulics, where heat fluxes
+exceed single-phase capabilities. The mechanism\textquotesingle s
+effectiveness is bounded by the critical heat flux (CHF)---the point at
+which a growing vapor film insulates the heated surface, triggering
+runaway temperature excursions. Classical correlations (e.g.,
+Zuber\textquotesingle s hydrodynamic model) estimate aggregate CHF
+thresholds but do not resolve transient local bubble dynamics. While
+deployment-grade CHF forecasting requires synchronized wall-heat-flux
+measurements and verified boiling-crisis transitions---neither of which
+is present in available open simulation benchmarks---resolving
+localized, heater-adjacent dry-area dynamics serves as a diagnostic for
+phase-interface integrity. In this work, we evaluate a heater-adjacent
+dry-area fraction proxy across stable boiling trajectories strictly as
+an autoregressive physical-stability test for neural operator rollouts,
+explicitly distinguishing phase-validity stress-testing from validated
+CHF event detection.
 
 High-fidelity interface-tracking computational fluid dynamics (CFD) can
 resolve bubble nucleation, growth, coalescence, and departure, but its
@@ -162,13 +170,12 @@ This paper makes five contributions:
 \item
   \textbf{A cross-condition replication check}, in which a statistically
   confirmed architecture trade-off (T-FNO favors interface fidelity,
-  U-Net favors mass conservation) on one trajectory split is directly
-  re-tested on two independently held-out physical conditions from the
-  same source dataset --- and does not reproduce. We present this not as
-  a disappointing result but as the paper\textquotesingle s central
-  empirical and methodological contribution: direct, controlled evidence
-  that single-condition benchmarking in this domain can report an
-  artifact of the test trajectory.
+  U-Net favors mass conservation) on one trajectory split is re-tested
+  under an independent protocol on two held-out conditions from the same
+  source dataset --- and does not reproduce. The protocol also differs
+  in spatial resolution, so this is evidence against generalizing the
+  tutorial ranking, not evidence that wall temperature alone caused the
+  ranking change.
 \item
   A predeclared, mechanistically motivated conservation intervention (a
   spectral velocity-divergence penalty) that restores mass-conservation
@@ -180,13 +187,14 @@ This paper makes five contributions:
 \end{enumerate}
 
 Consistent with contribution 4, our central finding is not a single
-winning architecture. It is that \textbf{architecture rankings for
-phase-resolved boiling forecasting are condition-dependent}, and that
-reporting a ranking from a single trajectory --- however statistically
-rigorous the seed-level inference --- is not sufficient evidence of a
-generalizable architectural property. We view this as a methodological
-finding of independent value to the broader neural-operator-for-science
-community, beyond its specific application to boiling.
+winning architecture. The tutorial ranking did not replicate under an
+independent cross-condition protocol that also differed in spatial
+resolution. Reporting a ranking from a single trajectory---however
+statistically rigorous the seed-level inference---is therefore not
+sufficient evidence of a generalizable architectural property. This is a
+methodological finding of independent value to the broader
+neural-operator-for-science community, beyond its specific application
+to boiling.
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -369,9 +377,11 @@ and memory feasibility only (not convergence or ranking).
 \pandocbounded{\includegraphics[width=\linewidth]{../submission/figures/fig6_split_design.pdf}}
 
 \textbf{Figure 2.} The tutorial split evaluates a fixed three-trajectory
-comparison; the independent cross-condition split directly tests
-transfer of that comparison to two held-out conditions. The roles were
-frozen before training or test inspection.
+comparison; the independent cross-condition protocol tests whether that
+comparison persists on two held-out conditions. The protocols also
+differ in spatial resolution (48×48 versus 96×96), so the comparison
+does not isolate a wall-temperature effect. Roles were frozen before
+training or test inspection.
 
 \subsection*{3.2 Model architectures and training
 protocol}\label{32-model-architectures-and-training-protocol}
@@ -682,20 +692,17 @@ accuracy/conservation trade-offs above.
 limitation to route
 around}\label{51-condition-dependence-is-the-central-finding-not-a-limitation-to-route-around}
 
-The tutorial-split result (Section 4.1) is real and statistically
-confirmed under a rigorous multi-seed protocol. It is also, on its own,
-an incomplete and potentially misleading basis for an architecture
-recommendation --- a fact this paper\textquotesingle s own
-cross-condition check (Section 4.4) demonstrates directly. This matters
-beyond the specific T-FNO/U-Net comparison: it is evidence that
-\textbf{a statistically well-powered single-trajectory comparison,
-however rigorously analyzed at the seed level, does not by itself
-establish a generalizable architectural property} in this domain. We
-consider this the paper\textquotesingle s most transferable
-contribution, of direct relevance to any future benchmark work in
-phase-resolved multiphysics operator learning: seed-level rigor and
-condition-level rigor are separate axes of evidence, and a benchmark
-claim needs both.
+The tutorial-split result (Section 4.1) is statistically confirmed under
+a rigorous multi-seed protocol. It is also, on its own, an incomplete
+basis for an architecture recommendation: the ranking did not replicate
+under this paper\textquotesingle s independent cross-condition protocol
+(Section 4.4), which also differs in spatial resolution. Thus the result
+does not isolate wall temperature or any other individual physical
+factor as the cause of the change. It does show that \textbf{a
+statistically well-powered single-trajectory comparison, however
+rigorously analyzed at the seed level, does not by itself establish a
+generalizable architectural property} in this domain. Seed-level rigor
+and condition-level rigor are separate axes of evidence.
 
 A plausible, though unproven, contributing mechanism is that spectral
 truncation\textquotesingle s smoothing behavior and a local receptive
