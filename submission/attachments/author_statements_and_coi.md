@@ -6,25 +6,27 @@
 
 *The CRediT (Contributor Roles Taxonomy) framework is used by most Elsevier and many other journals. List every author and mark which roles they performed. Adjust to reflect actual contributions — do not leave roles unassigned or assign roles to someone who didn't perform them; this is checked and taken seriously by editors.*
 
-| Role | [Author 1] | [Author 2 / Advisor, if applicable] |
-|---|---|---|
-| Conceptualization | ✓ | |
-| Methodology | ✓ | |
-| Software | ✓ | |
-| Validation | ✓ | |
-| Formal analysis | ✓ | |
-| Investigation | ✓ | |
-| Data curation | ✓ | |
-| Writing – original draft | ✓ | |
-| Writing – review & editing | | ✓ |
-| Visualization | ✓ | |
-| Supervision | | ✓ |
-| Project administration | ✓ | |
-| Funding acquisition | | |
+*The author identity below is final. The role assignments remain an author-confirmation draft and must be reviewed before submission.*
+
+| Role | S. B. Mahafuj Bondhon |
+|---|---|
+| Conceptualization | ✓ |
+| Methodology | ✓ |
+| Software | ✓ |
+| Validation | ✓ |
+| Formal analysis | ✓ |
+| Investigation | ✓ |
+| Data curation | ✓ |
+| Writing – original draft | ✓ |
+| Writing – review & editing |  |
+| Visualization | ✓ |
+| Supervision |  |
+| Project administration | ✓ |
+| Funding acquisition |  |
 
 ## Conflict of Interest Statement
 
-The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+The author declares that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 
 *[Update this if any author has a relevant affiliation, funding relationship, or personal connection that a reader would reasonably want disclosed — e.g., if any dataset creator, cited author, or reviewer suggestion has a prior collaboration with the authors.]*
 
@@ -34,14 +36,14 @@ The authors declare that they have no known competing financial interests or per
 
 ## Data Availability Statement
 
-The primary dataset used in this study is the publicly available BubbleML Pool-Boiling Subcooled FC-72 dataset (Hassan et al., BubbleML: A Comprehensive Multi-Physics Dataset and Benchmarks for Machine Learning, NeurIPS 2023 Datasets and Benchmarks Track), available at the official HPCForge/BubbleML repository and its associated data hosting locations, used here under its stated public license terms [confirm and cite the exact license before submission — e.g., MIT, CC-BY, or as specified by the dataset's own documentation].
+The primary dataset used in this study is the publicly available BubbleML Pool-Boiling Subcooled FC-72 dataset (Hassan et al., *BubbleML: A Multiphase Multiphysics Dataset and Benchmarks for Machine Learning*, NeurIPS 2023 Datasets and Benchmarks Track), available at the official HPCForge/BubbleML repository and its associated data hosting locations. The exact source release and checksums used by this study are documented in `CHECKSUMS.md`; this repository does not redistribute the raw data.
 
-All code used for data preprocessing, model training, evaluation, and statistical analysis in this study, along with model configuration files, training logs, and the trained model checkpoints necessary to reproduce every reported result, are made publicly available at:
+Code, retained machine-readable result artifacts, configurations, and statistical-analysis scripts for this study are designated for release at:
 
-- GitHub repository: [insert public repository URL]
-- Permanently archived release with DOI: [insert Zenodo DOI, generated at time of submission]
+- GitHub repository: https://github.com/RealmeBTI/bubbleml-submission
+- Permanently archived release with DOI: [Zenodo DOI to be assigned upon initial GitHub release archival]
 
-The repository includes a README with environment setup instructions, pinned dependency versions, and step-by-step instructions to reproduce each table and figure in this manuscript from the provided checkpoints and/or from raw training.
+The repository includes a README with environment setup instructions, pinned dependency versions, and stored-result reproduction instructions. Raw data, complete checkpoints, and complete cross-condition exports remain external or unavailable as documented in `ARTIFACT_GAPS.md`; this statement does not claim a full retraining release.
 
 ## Ethics Statement
 

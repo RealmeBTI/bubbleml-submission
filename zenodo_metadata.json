@@ -1,21 +1,25 @@
 {
-  "status": "HUMAN INPUT REQUIRED",
+  "status": "PREPARED; PUBLICATION AUTHENTICATION REQUIRED",
   "purpose": "Local Zenodo metadata preparation record; not a Zenodo deposition payload.",
   "verified_metadata": {
     "title": "BubbleML Physics-Aware Benchmark",
     "version": "1.0.0",
     "publication_date": "2026-08-08",
-    "upload_type": "software"
+    "upload_type": "software",
+    "creators": [
+      {
+        "name": "Bondhon, S. B. Mahafuj",
+        "affiliation": "Department of Mechanical Engineering, Bangladesh University of Engineering and Technology (BUET)",
+        "orcid": "0009-0009-6695-365X"
+      }
+    ],
+    "license": "MIT",
+    "repository_url": "https://github.com/RealmeBTI/bubbleml-submission"
   },
-  "missing_required_metadata": [
-    "creators",
-    "license"
-  ],
   "unavailable_until_publication": [
-    "GitHub URL",
     "GitHub release URL",
     "Zenodo record URL",
     "DOI"
   ],
-  "notes": "Do not submit this file as a Zenodo deposition payload until an authorized owner supplies verified creators, approves a license, and verifies the intended GitHub release."
+  "notes": "The repository URL and MIT license were supplied by the author. Public GitHub verification, a GitHub release, Zenodo authentication, and the DOI remain pending."
 }

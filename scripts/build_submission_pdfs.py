@@ -25,14 +25,14 @@ pdfmetrics.registerFont(TTFont("SubmissionSans", FONT))
 pdfmetrics.registerFont(TTFont("SubmissionSans-Bold", FONT_BOLD))
 
 
-def styles():
+def styles(*, compact: bool = False):
     base = getSampleStyleSheet()
     return {
-        "title": ParagraphStyle("Title", parent=base["Title"], fontName="SubmissionSans-Bold", fontSize=17, leading=21, spaceAfter=18, textColor=colors.HexColor("#14213d")),
+        "title": ParagraphStyle("Title", parent=base["Title"], fontName="SubmissionSans-Bold", fontSize=16 if compact else 17, leading=19 if compact else 21, spaceAfter=13 if compact else 18, textColor=colors.HexColor("#14213d")),
         "h1": ParagraphStyle("H1", parent=base["Heading1"], fontName="SubmissionSans-Bold", fontSize=15, leading=18, spaceBefore=12, spaceAfter=8, textColor=colors.HexColor("#14213d")),
         "h2": ParagraphStyle("H2", parent=base["Heading2"], fontName="SubmissionSans-Bold", fontSize=12, leading=15, spaceBefore=10, spaceAfter=6, textColor=colors.HexColor("#1f4e79")),
         "h3": ParagraphStyle("H3", parent=base["Heading3"], fontName="SubmissionSans-Bold", fontSize=10.5, leading=13, spaceBefore=8, spaceAfter=5),
-        "body": ParagraphStyle("Body", parent=base["BodyText"], fontName="SubmissionSans", fontSize=9.4, leading=13, spaceAfter=7, alignment=TA_LEFT),
+        "body": ParagraphStyle("Body", parent=base["BodyText"], fontName="SubmissionSans", fontSize=8.9 if compact else 9.4, leading=11.6 if compact else 13, spaceAfter=5.5 if compact else 7, alignment=TA_LEFT),
         "note": ParagraphStyle("Note", parent=base["BodyText"], fontName="SubmissionSans", fontSize=8.4, leading=11.5, spaceAfter=7, textColor=colors.HexColor("#555555")),
         "bullet": ParagraphStyle("Bullet", parent=base["BodyText"], fontName="SubmissionSans", fontSize=9.2, leading=12.5, leftIndent=10),
         "table": ParagraphStyle("Table", parent=base["BodyText"], fontName="SubmissionSans", fontSize=7.4, leading=9.5),
@@ -42,14 +42,15 @@ def styles():
 
 def inline(text: str) -> str:
     value = html.escape(text, quote=False)
+    value = value.replace("__HARD_BREAK__", "<br/>")
     value = re.sub(r"`([^`]+)`", r"<font name='Courier'>\1</font>", value)
     value = re.sub(r"\*\*([^*]+)\*\*", r"<b>\1</b>", value)
     value = re.sub(r"\*([^*]+)\*", r"<i>\1</i>", value)
     return value
 
 
-def markdown_flowables(text: str, *, first_title: bool = True):
-    style = styles()
+def markdown_flowables(text: str, *, first_title: bool = True, compact: bool = False):
+    style = styles(compact=compact)
     lines = text.splitlines()
     story = []
     index = 0
@@ -101,13 +102,17 @@ def markdown_flowables(text: str, *, first_title: bool = True):
             story.append(ListFlowable(items, bulletType="bullet", start="circle", leftIndent=18, bulletFontName="SubmissionSans"))
             story.append(Spacer(1, 6))
             continue
-        paragraph = [stripped]
+        paragraph = [stripped[:-1].rstrip() if stripped.endswith("\\") else stripped]
+        if stripped.endswith("\\"):
+            paragraph.append("__HARD_BREAK__")
         index += 1
         while index < len(lines):
             candidate = lines[index].strip()
             if not candidate or candidate == "---" or candidate.startswith("#") or candidate.startswith("|") or re.match(r"^[-*]\s+", candidate):
                 break
-            paragraph.append(candidate)
+            paragraph.append(candidate[:-1].rstrip() if candidate.endswith("\\") else candidate)
+            if candidate.endswith("\\"):
+                paragraph.append("__HARD_BREAK__")
             index += 1
         joined = " ".join(paragraph)
         note = joined.startswith("*") and joined.endswith("*")
@@ -126,14 +131,14 @@ def footer(canvas, document):
 
 def build(markdowns: list[Path], destination: Path, *, page_breaks: bool = False) -> None:
     destination.parent.mkdir(parents=True, exist_ok=True)
-    document = BaseDocTemplate(str(destination), pagesize=letter, leftMargin=0.72*inch, rightMargin=0.72*inch, topMargin=0.68*inch, bottomMargin=0.72*inch, title=markdowns[0].stem.replace("_", " ").title(), author="[Author information required]")
+    document = BaseDocTemplate(str(destination), pagesize=letter, leftMargin=0.72*inch, rightMargin=0.72*inch, topMargin=0.68*inch, bottomMargin=0.72*inch, title=markdowns[0].stem.replace("_", " ").title(), author="S. B. Mahafuj Bondhon")
     frame = Frame(document.leftMargin, document.bottomMargin, document.width, document.height, id="normal")
     document.addPageTemplates([PageTemplate(id="submission", frames=[frame], onPage=footer)])
     story = []
     for index, path in enumerate(markdowns):
         if index and page_breaks:
             story.append(PageBreak())
-        story.extend(markdown_flowables(path.read_text(encoding="utf-8")))
+        story.extend(markdown_flowables(path.read_text(encoding="utf-8"), compact=path.stem == "cover_letter"))
     document.build(story)
 
 

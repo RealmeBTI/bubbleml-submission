@@ -5,5 +5,11 @@ version: "1.0.0"
 date-released: 2026-08-08
 type: software
 abstract: "Physics-aware, multi-seed BubbleML operator-learning benchmark with audited stored-result artifacts."
-# Creators and DOI are intentionally omitted: no author metadata or Zenodo record
-# was verified in the supplied project materials.
+authors:
+  - family-names: "Bondhon"
+    given-names: "S. B. Mahafuj"
+    affiliation: "Department of Mechanical Engineering, Bangladesh University of Engineering and Technology (BUET)"
+    orcid: "https://orcid.org/0009-0009-6695-365X"
+repository-code: "https://github.com/RealmeBTI/bubbleml-submission"
+license: "MIT"
+# No DOI is listed because a Zenodo record has not been issued.

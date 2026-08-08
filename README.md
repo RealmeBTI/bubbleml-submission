@@ -21,9 +21,11 @@ only on the tutorial split.
   available locally when this package was assembled.
 - The compact cross-condition export does not contain the full per-seed training
   histories or checkpoints. This gap is declared in `ARTIFACT_GAPS.md`.
-- The code license, public repository URL, Zenodo DOI, author identity,
-  affiliations, funding, conflicts, and final journal are not known from the
-  supplied materials and are not inferred.
+- The author-designated repository is
+  `https://github.com/RealmeBTI/bubbleml-submission`. Its public availability
+  and Zenodo archival DOI have not yet been verified from this environment.
+- The author supplied MIT as the intended code license, but the corresponding
+  `LICENSE` file is not present in this checkout.
 
 ## Recorded environment
 
@@ -147,18 +149,30 @@ listed in `BIBLIOGRAPHY_VERIFICATION.md` and `manuscript/references.bib`. The co
 license was not supplied; no license is asserted. A human repository owner must
 choose and add one before public release.
 
-`CITATION.cff` records only the verified project title and release version. It
-intentionally omits creators and a DOI: neither author metadata nor a Zenodo
-record was available during the local release audit.
+`CITATION.cff` records the supplied single-author metadata, author-designated
+repository URL, and MIT license selection. It intentionally omits a DOI because
+no Zenodo record has been issued.
+
+## Author and contact
+
+S. B. Mahafuj Bondhon (corresponding author)\
+Department of Mechanical Engineering\
+Bangladesh University of Engineering and Technology (BUET)\
+Ramna, Dhaka-1000, Bangladesh\
+ORCID: 0009-0009-6695-365X\
+Email: 2210062@me.buet.ac.bd\
+Secondary email: sbmahafujbondhon@gmail.com\
+Phone: +880 1865375578
 
 ## Release status and limitations
 
 This checkout is a locally verified `v1.0.0` release candidate, not a published
 GitHub or Zenodo release. `RELEASE_FINAL_REPORT.md` and
 `FINAL_RELEASE_SCORECARD.md` identify the exact release gates that remain open.
-In particular, a repository owner must supply approved author/creator metadata,
-choose a license, make any external data/checkpoints accessible as appropriate,
-and authenticate to GitHub and Zenodo before a public release or DOI can exist.
+In particular, the supplied MIT `LICENSE` file must be placed in this checkout,
+the author-designated GitHub repository must be publicly verified, external
+data/checkpoints must be made accessible as appropriate, and GitHub/Zenodo
+authentication is required before a public release or DOI can exist.
 
 `REPRODUCIBILITY_STATUS.md` classifies the supported levels precisely: stored
 analysis and the checked figures can be reproduced from the committed artifacts;

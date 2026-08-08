@@ -1,10 +1,10 @@
 Path,GitHub,Zenodo,Scientific role,License,Provenance,Verification,Notes
-public_release/,NOT PUBLISHED,NOT PUBLISHED,filtered candidate release,HUMAN INPUT REQUIRED,generated allowlist,local checksum pending final verification,not a public repository or archive
-source code and tests,NOT PUBLISHED,NOT PUBLISHED,reproduction software,HUMAN INPUT REQUIRED,tracked project source,pytest passed locally,will be included through public_release/
-stored benchmark results,NOT PUBLISHED,NOT PUBLISHED,analysis evidence,HUMAN INPUT REQUIRED,tracked derived artifacts,self-test passed locally,raw source data remains external
-manuscript source and bibliography,NOT PUBLISHED,NOT PUBLISHED,scientific manuscript,HUMAN INPUT REQUIRED,tracked authored/generated source,LaTeX rebuild blocked by unavailable TeX engine,existing PDF is not used as a new build claim
-submission figures,NOT PUBLISHED,NOT PUBLISHED,scientific visual evidence,HUMAN INPUT REQUIRED,generated from tracked records,visual PNG QA passed,vector forms present
-raw data and complete checkpoints,NEITHER,NEITHER,external prerequisites,HUMAN INPUT REQUIRED,not present,unavailable,do not represent as released
-journal-only submission attachments,NEITHER,NEITHER,submission administration,HUMAN INPUT REQUIRED,local materials,excluded,not in public staging
-GitHub release,N/A,N/A,public dissemination,HUMAN INPUT REQUIRED,no remote or authenticated account,not published,actual URL unavailable
-Zenodo deposition,N/A,N/A,archival dissemination,HUMAN INPUT REQUIRED,no creators/license/authorization/record,not published,DOI unavailable
+public_release/,NOT PUBLISHED,NOT PUBLISHED,filtered candidate release,MIT selected; LICENSE file absent,generated allowlist,local checksum verified,not a public repository or archive
+source code and tests,NOT PUBLISHED,NOT PUBLISHED,reproduction software,MIT selected; LICENSE file absent,tracked project source,pytest passed locally,will be included through public_release/
+stored benchmark results,NOT PUBLISHED,NOT PUBLISHED,analysis evidence,MIT selected; LICENSE file absent,tracked derived artifacts,self-test passed locally,raw source data remains external
+manuscript source and bibliography,NOT PUBLISHED,NOT PUBLISHED,scientific manuscript,MIT selected; LICENSE file absent,tracked authored/generated source,LaTeX rebuild blocked by unavailable TeX engine,existing PDF is not used as a new build claim
+submission figures,NOT PUBLISHED,NOT PUBLISHED,scientific visual evidence,MIT selected; LICENSE file absent,generated from tracked records,visual PNG QA passed,vector forms present
+raw data and complete checkpoints,NEITHER,NEITHER,external prerequisites,external license applies,not present,unavailable,do not represent as released
+journal-only submission attachments,NEITHER,NEITHER,submission administration,MIT not applicable,local materials,excluded,not in public staging
+GitHub release,N/A,N/A,public dissemination,MIT selected; LICENSE file absent,author-designated URL,not published; public URL returned not found,https://github.com/RealmeBTI/bubbleml-submission
+Zenodo deposition,N/A,N/A,archival dissemination,MIT selected; LICENSE file absent,author-supplied creator metadata,not published; authenticated upload required,DOI unavailable

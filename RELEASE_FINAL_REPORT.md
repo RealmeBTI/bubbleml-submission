@@ -36,7 +36,7 @@ release finalization sequence.
 
 ## GitHub and Zenodo
 
-- GitHub repository: NONE (no configured remote or verified authenticated account).
+- GitHub repository: author-designated `https://github.com/RealmeBTI/bubbleml-submission`; public verification was not available during this audit.
 - GitHub release: NONE.
 - Zenodo record: NONE.
 - DOI: NONE.
@@ -54,8 +54,8 @@ redacts incidental local absolute paths in public text copies.
 
 ## Human actions
 
-1. Supply approved authors/creators and a code license.
+1. Add the supplied MIT `LICENSE` file to this checkout.
 2. Provide an `elsarticle`-capable TeX engine and rerun the manuscript build gate.
 3. Make any intended external data/checkpoints available with authorized URLs.
-4. Authenticate and authorize GitHub publication, then create/verify the public release.
+4. Authenticate and authorize GitHub publication, then create/verify the author-designated repository and release.
 5. Authenticate and authorize Zenodo deposition, then verify the resulting record and DOI.

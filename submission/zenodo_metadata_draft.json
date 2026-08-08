@@ -4,7 +4,9 @@
   "description": "Code and audited result artifacts for a physics-aware, multi-seed BubbleML benchmark of condition-dependent neural-operator architecture trade-offs.",
   "creators": [
     {
-      "name": "[Author information required]"
+      "name": "Bondhon, S. B. Mahafuj",
+      "affiliation": "Department of Mechanical Engineering, Bangladesh University of Engineering and Technology (BUET)",
+      "orcid": "0009-0009-6695-365X"
     }
   ],
   "keywords": [
@@ -16,7 +18,6 @@
     "conservation laws",
     "BubbleML"
   ],
-  "license": "[Human choice required: repository code license was not supplied]",
-  "notes": "Draft only. Replace bracketed fields after author and license confirmation. Add the release DOI only after GitHub-Zenodo linking."
+  "license": "MIT",
+  "notes": "Draft only. Creator metadata and license are author-supplied. Add the release DOI only after GitHub-Zenodo linking and verified archival."
 }
-

@@ -19,8 +19,11 @@ that could not be verified in the local project.
   tutorial-split fallback cannot be generated honestly. No substitute is fabricated.
 - A source bibliography or citation-key mapping for every prose reference in the
   manuscript.
-- A public GitHub URL, archive DOI, author metadata, funding/COI confirmation,
-  target journal, and code-license choice.
+- A verified public GitHub repository/release and archive DOI. The author has
+  supplied the intended GitHub URL and selected MIT, but the URL was not publicly
+  reachable during this audit and the supplied `LICENSE` file is absent here.
+- Funding confirmation and a final journal decision beyond the current
+  International Journal of Heat and Mass Transfer preprint header.
 
 ## Conflicting historical records
 
