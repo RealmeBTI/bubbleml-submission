@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bubbleml-physics-aware-benchmark"
-version = "1.0.0.dev0"
+version = "1.0.0"
 description = "Physics-aware, multi-seed BubbleML operator-learning benchmark."
 readme = "README.md"
 requires-python = "==3.12.7"
@@ -33,4 +33,3 @@ addopts = "-ra"
 [tool.ruff]
 line-length = 120
 target-version = "py312"
-

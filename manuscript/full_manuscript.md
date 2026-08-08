@@ -1,6 +1,6 @@
 # A Physics-Aware Benchmark for Phase-Resolved Neural Operator Learning in Boiling Flows: Statistically Rigorous Evidence for Condition-Dependent Architecture Trade-offs
 
-*Full manuscript draft. Bibliographic details (exact author lists, years, venues, DOIs) must be verified against original publisher records before submission — citations below reflect research conducted during this project's development, not a formatted reference manager output. All local file paths referenced are internal reproducibility pointers for the authors and should be replaced with a public repository link before submission.*
+*Release manuscript source. The bibliography entries in the generated manuscript were checked against the primary records documented in `BIBLIOGRAPHY_VERIFICATION.md`. This public artifact has no repository URL or DOI because neither has been verified; author metadata, if required for journal submission, must be supplied and approved by the authors.*
 
 ---
 
@@ -251,4 +251,4 @@ A concrete, ready-to-execute prompt for the first two items (the highest-leverag
 
 ## 7. Reproducibility and Artifact Manifest
 
-All data sources are checksummed (Section 3.1), and the locally retained tutorial and intervention experiments include their configurations, seeds, and training histories. The cross-condition experiment is represented locally by its compact audited summary rather than complete cloud-side per-seed histories and checkpoints; this boundary is documented in the artifact manifest. All statistical comparisons use a single, unchanged, audited implementation (Section 3.6) across every reported result. The release package includes per-seed JSON results where retained, benchmark outputs, training curves, and acquisition/preprocessing scripts for both data formats; it should be released as a public repository prior to submission, replacing internal development paths.
+All data sources are checksummed (Section 3.1), and the locally retained tutorial and intervention experiments include their configurations, seeds, and training histories. The cross-condition experiment is represented locally by its compact audited summary rather than complete cloud-side per-seed histories and checkpoints; this boundary is documented in the artifact manifest. All statistical comparisons use a single, unchanged, audited implementation (Section 3.6) across every reported result. The release package includes per-seed JSON results where retained, benchmark outputs, training curves, and acquisition/preprocessing scripts for both data formats. This package is structured for public repository release; public hosting must be performed by an authorized repository owner after the outstanding author-metadata, license, and external-artifact decisions are resolved.

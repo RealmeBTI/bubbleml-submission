@@ -73,13 +73,12 @@ neural operator \sep Fourier neural operator \sep pool boiling \sep phase-resolv
 
 \end{frontmatter}
 
-\emph{Full manuscript draft. Bibliographic details (exact author lists,
-years, venues, DOIs) must be verified against original publisher records
-before submission --- citations below reflect research conducted during
-this project\textquotesingle s development, not a formatted reference
-manager output. All local file paths referenced are internal
-reproducibility pointers for the authors and should be replaced with a
-public repository link before submission.}
+\emph{Release manuscript source. The bibliography entries in the
+generated manuscript were checked against the primary records documented
+in \texttt{BIBLIOGRAPHY\_VERIFICATION.md}. This public artifact has no
+repository URL or DOI because neither has been verified; author
+metadata, if required for journal submission, must be supplied and
+approved by the authors.}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -190,7 +189,7 @@ simulation}\label{21-classical-chf-prediction-and-boiling-simulation}
 
 Critical heat flux has been studied mechanistically since the
 mid-twentieth century, most influentially through
-Zuber\textquotesingle s hydrodynamic instability model. Engineering
+Zuber\textquotesingle s hydrodynamic instability model\cite{zuber1959hydrodynamic}. Engineering
 practice also uses application-specific correlations for CHF estimation.
 These are computationally simple aggregate predictors, but they do not
 resolve transient local bubble dynamics on a specific surface and offer
@@ -198,7 +197,7 @@ no natural mechanism for real-time, sensor-driven early warning.
 
 Direct numerical resolution of boiling requires interface-tracking
 methods --- volume-of-fluid, level-set, or phase-field formulations
-coupled to the Navier-Stokes and energy equations. The BubbleML dataset,
+coupled to the Navier-Stokes and energy equations. The BubbleML dataset\cite{hassan2023bubbleml},
 which underlies the present work\textquotesingle s data, was generated
 with the Flash-X interface-tracking solver and spans multiple fluids,
 heater geometries, and boiling regimes. Its accompanying benchmark paper
@@ -210,28 +209,28 @@ empirical starting point for the present investigation.
 \subsection*{2.2 Operator learning and convolutional
 surrogates}\label{22-operator-learning-and-convolutional-surrogates}
 
-The Fourier Neural Operator performs global convolution via pointwise
+The Fourier Neural Operator\cite{li2021fno} performs global convolution via pointwise
 multiplication in a truncated Fourier domain, and has demonstrated
 strong performance on smooth, largely periodic PDE systems.
-Convolutional U-Net architectures instead rely on local receptive fields
+Convolutional U-Net architectures\cite{ronneberger2015unet} instead rely on local receptive fields
 and multi-scale skip connections, and serve as a strong general-purpose
 baseline for dense spatial prediction, including PDE surrogate modeling.
 
 Several parameter-efficient FNO variants address the capacity and
 generalization trade-offs of the original architecture.
 Tensor-factorized (Tucker) FNO represents the spectral weight tensor in
-a low-rank Tucker decomposition; axis-factorized FNO (F-FNO) factorizes
+a low-rank Tucker decomposition; axis-factorized FNO (F-FNO)\cite{tran2023ffno} factorizes
 the spectral convolution along each spatial axis independently. The
 BubbleML benchmark\textquotesingle s own results indicate both variants
 outperform vanilla FNO on boiling forecasting despite having
 substantially fewer parameters, attributed to reduced overfitting to
 excess spectral capacity rather than a fix to the underlying periodicity
-or discontinuity issue. U-shaped FNO (UNO) grafts U-Net-style
+or discontinuity issue. U-shaped FNO (UNO)\cite{rahman2022uno} grafts U-Net-style
 multi-scale structure onto Fourier blocks; the LOGLO-FNO family of
 Kalimuthu et al. (2025)\cite{kalimuthu2025loglo} explicitly combines local and global spectral
 branches to improve local, high-frequency representation.
 Transformer-based operators, including a recent boiling-specific
-transformer forecaster (Bubbleformer) benchmarked on the extended
+transformer forecaster (Bubbleformer\cite{hassan2025bubbleformer}) benchmarked on the extended
 BubbleML 2.0 release, represent a further active direction ---
 indicating this remains a contested design space rather than a settled
 one. None of these architecture families, to our knowledge, has been
@@ -370,7 +369,7 @@ frozen before training or test inspection.
 protocol}\label{32-model-architectures-and-training-protocol}
 
 Four base models are compared: vanilla FNO, Tucker-factorized FNO
-(T-FNO, rank 0.1), axis-factorized FNO (F-FNO), and a
+(T-FNO, rank 0.1), axis-factorized FNO (F-FNO)\cite{tran2023ffno}, and a
 parameter-comparable U-Net. Each uses five history and five forecast
 frames (25 input/output channels), AdamW (lr 1e-3, weight decay 0.01),
 batch size 8, horizontal reflection augmentation, global gradient-norm
@@ -883,15 +882,16 @@ documented in the artifact manifest. All statistical comparisons use a
 single, unchanged, audited implementation (Section 3.6) across every
 reported result. The release package includes per-seed JSON results
 where retained, benchmark outputs, training curves, and
-acquisition/preprocessing scripts for both data formats; it should be
-released as a public repository prior to submission, replacing internal
-development paths.
+acquisition/preprocessing scripts for both data formats. This package is
+structured for public repository release; public hosting must be
+performed by an authorized repository owner after the outstanding
+author-metadata, license, and external-artifact decisions are resolved.
 
 \section*{Bibliographic verification status}
 Thirteen identifiable works were independently checked against primary publication
-records and are listed below. Any remaining prose allusions not tied to a named
-record remain \textbf{[VERIFY]}; see
-\texttt{BIBLIOGRAPHY\_VERIFICATION.md}. No bibliographic details were inferred.
+records and are listed below. Additional author-intended references cannot be
+added without their source records; no bibliographic details were inferred. See
+\texttt{BIBLIOGRAPHY\_VERIFICATION.md} for the evidence boundary.
 
 \nocite{hassan2023bubbleml,li2021fno,ronneberger2015unet,tran2023ffno,rahman2022uno,hassan2025bubbleformer,zuber1959hydrodynamic,dunlap2026open,ravichandran2021decrypting,ravichandran2023dryareas,kalimuthu2025loglo,richterpowell2022neural,li2026project}
 \bibliographystyle{elsarticle-num}

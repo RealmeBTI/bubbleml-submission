@@ -1,0 +1,29 @@
+path,GitHub,Zenodo,scientific_role,reason,license_status,provenance_status
+README.md,BOTH,BOTH,project entry point,documents scope installation and limitations,HUMAN INPUT REQUIRED,local authored record
+CHANGELOG.md,BOTH,BOTH,release history,records v1.0.0 local release preparation,HUMAN INPUT REQUIRED,local authored record
+CITATION.cff,BOTH,BOTH,citation metadata,contains only verified title/version no creators or DOI,HUMAN INPUT REQUIRED,local authored record
+DATASET.md,BOTH,BOTH,data boundary,documents external source-data requirements,HUMAN INPUT REQUIRED,hashes recorded source unavailable
+CHECKPOINT_MANIFEST.md,BOTH,BOTH,checkpoint boundary,declares external/unavailable binaries,HUMAN INPUT REQUIRED,hashes recorded source unavailable
+CHECKSUMS.md,BOTH,BOTH,hash provenance,records source and retained-artifact SHA-256 values,HUMAN INPUT REQUIRED,direct matches and declared external records
+BIBLIOGRAPHY_VERIFICATION.md,BOTH,BOTH,citation provenance,records verified primary metadata,HUMAN INPUT REQUIRED,primary records checked
+ARTIFACT_GAPS.md,BOTH,BOTH,reproducibility boundary,declares missing source/checkpoint/export artifacts,HUMAN INPUT REQUIRED,local audit
+REPRODUCIBILITY_SELFTEST.md,BOTH,BOTH,analysis reproduction,documents stored-result self-test,HUMAN INPUT REQUIRED,local audit
+REPRODUCIBILITY_STATUS.md,BOTH,BOTH,reproducibility classification,states supported and unsupported levels,HUMAN INPUT REQUIRED,local audit
+PUBLIC_RELEASE_TRANSFORM.md,BOTH,BOTH,staging provenance,documents allowlist and private-path redaction,HUMAN INPUT REQUIRED,local authored record
+RELEASE_SHA256SUMS.txt,BOTH,BOTH,release integrity,checksums filtered staging artifacts,HUMAN INPUT REQUIRED,generated deterministically
+bubbleml_benchmark/,BOTH,BOTH,software source,preprocessing training evaluation and analysis code,HUMAN INPUT REQUIRED,tracked project source
+scripts/,BOTH,BOTH,reproduction tooling,stored-result and figure/release scripts,HUMAN INPUT REQUIRED,tracked project source
+tests/,BOTH,BOTH,software validation,unit and integration tests,HUMAN INPUT REQUIRED,tracked project source
+experiments/,BOTH,BOTH,experiment records,configs and retained histories with staged private-path redaction,HUMAN INPUT REQUIRED,tracked derived artifacts
+benchmark_results/,BOTH,BOTH,results evidence,machine-readable benchmark outputs and figures,HUMAN INPUT REQUIRED,tracked derived artifacts
+reproduced/,BOTH,BOTH,self-test output,deterministic stored-result reproduction output,HUMAN INPUT REQUIRED,generated and verified
+manuscript/full_manuscript.md,BOTH,BOTH,manuscript source,scientific manuscript source,HUMAN INPUT REQUIRED,tracked authored source
+manuscript/manuscript_elsarticle.tex,BOTH,BOTH,manuscript source,generated LaTeX source,HUMAN INPUT REQUIRED,generated from tracked source
+manuscript/references.bib,BOTH,BOTH,bibliography source,verified bibliography entries,HUMAN INPUT REQUIRED,tracked bibliography
+submission/figures/,BOTH,BOTH,scientific figures,vector and raster benchmark figures,HUMAN INPUT REQUIRED,generated from tracked evidence
+submission/supplementary/,BOTH,BOTH,supplementary methods,statistical and runtime documentation,HUMAN INPUT REQUIRED,tracked documentation
+submission/attachments/,NEITHER,NEITHER,journal-facing documents,excluded from public staging as non-scientific submission materials,HUMAN INPUT REQUIRED,local submission materials
+output/,NEITHER,NEITHER,submission build products,excluded from public staging to avoid journal-facing PDFs and local package archive,HUMAN INPUT REQUIRED,local build products
+phase_history/,NEITHER,NEITHER,historical audit record,retained locally but excluded because it contains superseded notes and local paths,HUMAN INPUT REQUIRED,local historical record
+legacy/,NEITHER,NEITHER,historical scripts,retained locally outside current public release scope,HUMAN INPUT REQUIRED,local historical record
+zenodo_metadata.json,GITHUB_ONLY,NEITHER,Zenodo preparation,status record is not a valid deposition payload,HUMAN INPUT REQUIRED,local authored record

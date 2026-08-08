@@ -146,3 +146,22 @@ The verified BubbleML bibliographic record and other identifiable references are
 listed in `BIBLIOGRAPHY_VERIFICATION.md` and `manuscript/references.bib`. The code
 license was not supplied; no license is asserted. A human repository owner must
 choose and add one before public release.
+
+`CITATION.cff` records only the verified project title and release version. It
+intentionally omits creators and a DOI: neither author metadata nor a Zenodo
+record was available during the local release audit.
+
+## Release status and limitations
+
+This checkout is a locally verified `v1.0.0` release candidate, not a published
+GitHub or Zenodo release. `RELEASE_FINAL_REPORT.md` and
+`FINAL_RELEASE_SCORECARD.md` identify the exact release gates that remain open.
+In particular, a repository owner must supply approved author/creator metadata,
+choose a license, make any external data/checkpoints accessible as appropriate,
+and authenticate to GitHub and Zenodo before a public release or DOI can exist.
+
+`REPRODUCIBILITY_STATUS.md` classifies the supported levels precisely: stored
+analysis and the checked figures can be reproduced from the committed artifacts;
+full training and end-to-end reproduction cannot be performed from this checkout
+alone. `DATASET.md` and `CHECKPOINT_MANIFEST.md` distinguish external source
+artifacts from committed evidence.

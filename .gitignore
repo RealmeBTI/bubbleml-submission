@@ -4,6 +4,13 @@ __pycache__/
 .ruff_cache/
 .venv/
 tmp/
+build/
+dist/
+*.egg-info/
+.DS_Store
+manuscript/output/
+output/bubbleml_submission_package/
+public_release/
 *.aux
 *.bbl
 *.bcf
@@ -18,4 +25,3 @@ tmp/
 # Source data and checkpoints are intentionally external.
 data/
 checkpoints/
-

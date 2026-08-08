@@ -91,6 +91,13 @@ def main() -> None:
         latex,
     )
     named_citations = {
+        r"Zuber\textquotesingle s hydrodynamic instability model": r"Zuber\textquotesingle s hydrodynamic instability model\cite{zuber1959hydrodynamic}",
+        "The BubbleML dataset,": r"The BubbleML dataset\cite{hassan2023bubbleml},",
+        "The Fourier Neural Operator performs": r"The Fourier Neural Operator\cite{li2021fno} performs",
+        "Convolutional U-Net architectures": r"Convolutional U-Net architectures\cite{ronneberger2015unet}",
+        "axis-factorized FNO (F-FNO)": r"axis-factorized FNO (F-FNO)\cite{tran2023ffno}",
+        "U-shaped FNO (UNO)": r"U-shaped FNO (UNO)\cite{rahman2022uno}",
+        "Bubbleformer) benchmarked": r"Bubbleformer\cite{hassan2025bubbleformer}) benchmarked",
         "Dunlap et al. (2026)": r"Dunlap et al. (2026)\cite{dunlap2026open}",
         "Ravichandran et al. (2021)": r"Ravichandran et al. (2021)\cite{ravichandran2021decrypting}",
         "Ravichandran et al. (2023)": r"Ravichandran et al. (2023)\cite{ravichandran2023dryareas}",
