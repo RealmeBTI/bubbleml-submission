@@ -1,6 +1,7 @@
 {
   "title": "A Physics-Aware Benchmark for Phase-Resolved Neural Operator Learning in Boiling Flows: Statistically Rigorous Evidence for Condition-Dependent Architecture Trade-offs",
   "upload_type": "software",
+  "version": "1.0.3",
   "description": "Code and audited result artifacts for a physics-aware, multi-seed BubbleML benchmark of condition-dependent neural-operator architecture trade-offs.",
   "creators": [
     {

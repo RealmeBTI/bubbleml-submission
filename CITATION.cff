@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this release, please cite the project title and version shown below."
 title: "BubbleML Physics-Aware Benchmark"
-version: "1.0.0"
+version: "1.0.3"
 date-released: 2026-08-08
 type: software
 abstract: "Physics-aware, multi-seed BubbleML operator-learning benchmark with audited stored-result artifacts."

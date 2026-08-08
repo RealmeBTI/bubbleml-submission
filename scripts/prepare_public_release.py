@@ -18,6 +18,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_FILES = (
     "README.md",
+    "LICENSE",
     "CHANGELOG.md",
     "CITATION.cff",
     "DATASET.md",
@@ -30,6 +31,9 @@ ROOT_FILES = (
     "PUBLICATION_FILE_MATRIX.csv",
     "FINAL_PUBLICATION_MATRIX.csv",
     "FINAL_RELEASE_SCORECARD.md",
+    "FINAL_IJHMT_PUBLICATION_STATUS.md",
+    "FINAL_IJHMT_PUBLICATION_SCORECARD.md",
+    "FINAL_PUBLICATION_REPORT.md",
     "RELEASE_FINAL_REPORT.md",
     "PUBLIC_RELEASE_TRANSFORM.md",
     "requirements.txt",

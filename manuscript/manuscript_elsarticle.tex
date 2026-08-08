@@ -290,7 +290,7 @@ careful, statistically disciplined integration and, specifically, the
 demonstration that even a well-powered single-condition comparison among
 them is not sufficient evidence of a generalizable ranking.
 
-{\def\LTcaptype{none} % do not increment counter
+{
 \begin{longtable}[]{@{}P{0.22\textwidth}P{0.58\textwidth}P{0.14\textwidth}@{}}
 \toprule\noalign{}
 Feature & BubbleML (original) & This work \\
@@ -326,14 +326,14 @@ benchmark; it does not establish absence.}
 splits}\label{31-data-preprocessing-and-splits}
 
 \textbf{Tutorial-scale split.} The primary comparison uses three
-official downsampled Pool-Boiling Subcooled FC-72 examples at 48×48
+official downsampled Pool-Boiling Subcooled FC-72 examples at 48\ensuremath{\times}48
 resolution, preprocessed into PyTorch tensors with no synthetic
 fallback. The trajectory-level split prevents temporal leakage:
 Twall-103 is train, Twall-106 is validation, and Twall-100 is test. Each
 source has 169 released-grid frames, yielding 160 valid
 five-history/five-future temporal windows per split.
 
-{\def\LTcaptype{none} % do not increment counter
+{
 \begin{longtable}[]{@{}P{0.25\textwidth}P{0.55\textwidth}P{0.14\textwidth}@{}}
 \toprule\noalign{}
 Source & SHA-256 & Role \\
@@ -353,12 +353,12 @@ Source & SHA-256 & Role \\
 \end{longtable}
 }
 
-The released fields are time×y×x grids; row 0 is immediately above the
+The released fields are time\ensuremath{\times}y\ensuremath{\times}x grids; row 0 is immediately above the
 heater; physical boundary cells are omitted. Reported outer-grid
 quantities are therefore interior-edge proxies, not wall residuals.
 
 \textbf{Independent multi-trajectory split.} The cross-condition
-replication check uses the official ten-trajectory, native 384×384
+replication check uses the official ten-trajectory, native 384\ensuremath{\times}384
 Pool-Boiling Subcooled legacy archive (SHA-256
 \texttt{\seqsplit{2eba140d74cbb7b01a55f0684227dea94306aea516a0f864831485d31d25f655}};
 201 frames/trajectory; Twall 79, 81, 85, 90, 95, 98, 100, 103, 106,
@@ -366,12 +366,12 @@ Pool-Boiling Subcooled legacy archive (SHA-256
 inspection: train on Twall 79, 85, 90, 95; validate on Twall 81; test
 independently on Twall 98 and Twall 110. Twall 100, 103, and 106 were
 excluded, since they form the tutorial split. Continuous fields were
-bilinearly downsampled to 96×96; the binary phase mask used
+bilinearly downsampled to 96\ensuremath{\times}96; the binary phase mask used
 nearest-neighbor downsampling; physical grid spacings were rescaled
 consistently. After discarding source frames 0--29, each trajectory
 contributes 170 frame records, yielding 644/161/322 valid windows for
 train/validation/test. A separate one-epoch, batch-size-one feasibility
-check was also run at native 384×384 resolution to test direct execution
+check was also run at native 384\ensuremath{\times}384 resolution to test direct execution
 and memory feasibility only (not convergence or ranking).
 
 \pandocbounded{\includegraphics[width=\linewidth]{../submission/figures/fig6_split_design.pdf}}
@@ -379,7 +379,7 @@ and memory feasibility only (not convergence or ranking).
 \textbf{Figure 2.} The tutorial split evaluates a fixed three-trajectory
 comparison; the independent cross-condition protocol tests whether that
 comparison persists on two held-out conditions. The protocols also
-differ in spatial resolution (48×48 versus 96×96), so the comparison
+differ in spatial resolution (48\ensuremath{\times}48 versus 96\ensuremath{\times}96), so the comparison
 does not isolate a wall-temperature effect. Roles were frozen before
 training or test inspection.
 
@@ -393,8 +393,8 @@ frames (25 input/output channels), AdamW (lr 1e-3, weight decay 0.01),
 batch size 8, horizontal reflection augmentation, global gradient-norm
 clipping at 1.0, and training to a predeclared two-window
 validation-plateau stopping rule (200-epoch ceiling). Fourier-family
-models train at full 48×48 (tutorial) or 96×96 (cross-condition)
-resolution with 24×24 real-FFT modes --- the maximum representable given
+models train at full 48\ensuremath{\times}48 (tutorial) or 96\ensuremath{\times}96 (cross-condition)
+resolution with 24\ensuremath{\times}24 real-FFT modes --- the maximum representable given
 the Nyquist limit at these resolutions (max unique modes = N/2 + 1),
 correcting an earlier invalid 64-mode configuration that would have
 silently collapsed under half-resolution training.
@@ -439,7 +439,7 @@ z^{(\ell+1)} = \phi\!\left(\mathcal{K}^{(\ell)}_{\text{Tucker}}z^{(\ell)} + \mat
 \]
 
 where \(\mathcal{K}_{\text{Tucker}}\) is the truncated Tucker-factorized
-spectral convolution, \(\mathcal{C}_{3\times3}\) is a learned 3×3 local
+spectral convolution, \(\mathcal{C}_{3\times3}\) is a learned 3\ensuremath{\times}3 local
 convolution, \(W\) is the pointwise residual map, and \(\phi\) is the
 layer nonlinearity. This architecture was motivated specifically by the
 confirmed tutorial-split Phase 1 Pareto trade-off (Section 4.1) --- a
@@ -526,10 +526,10 @@ confirmed Pareto
 trade-off}\label{41-tutorial-split-t-fno-and-u-net-form-a-statistically-confirmed-pareto-trade-off}
 
 Across 11 paired seeds, no overall GWRMSE winner was established (T-FNO
-− U-Net: −0.05698, 95\% paired bootstrap CI {[}−0.12314, +0.00946{]},
+- U-Net: -0.05698, 95\% paired bootstrap CI {[}-0.12314, +0.00946{]},
 sign-flip p=.1469, Holm p=1.0). T-FNO was significantly better on
-interface-temperature RMSE (−0.50190, Holm p=.0352) and
-interface-temperature-jump MAE (−0.43147, Holm p=.0215), but
+interface-temperature RMSE (-0.50190, Holm p=.0352) and
+interface-temperature-jump MAE (-0.43147, Holm p=.0215), but
 significantly worse on mass-conservation MAE (+0.04494, Holm p=.0215).
 
 \subsection*{4.2 Physical validity is an evaluation requirement,
@@ -537,13 +537,13 @@ independent of architecture
 ranking}\label{42-physical-validity-is-an-evaluation-requirement-independent-of-architecture-ranking}
 
 Unbounded models produced physically invalid alpha values under rollout
-({[}−0.157, 1.408{]} for T-FNO, {[}−0.108, 1.417{]} for U-Net over 164
+({[}-0.157, 1.408{]} for T-FNO, {[}-0.108, 1.417{]} for U-Net over 164
 steps). The output-head fix (Eq. 1) constrained both to {[}0,1{]} by
 construction. An initial single-seed comparison after this fix showed a
 large reversal in cumulative dry-area tracking error (bounded T-FNO
 0.12167 vs. bounded U-Net 0.05275); a predeclared 11-seed confirmation,
 however, found this did not replicate as a significant effect (paired
-difference +0.00775, 95\% CI {[}−0.00393, +0.01829{]}, Holm p=1.0 across
+difference +0.00775, 95\% CI {[}-0.00393, +0.01829{]}, Holm p=1.0 across
 all 21 tested rollout metrics, smallest adjusted p=0.3997). We report
 this explicitly as a methodological finding: physical-validity
 correction and architecture superiority are distinct questions, and
@@ -569,8 +569,8 @@ An initial divergence-penalty pilot (2 seeds,
 data-fit guard) selected \(\lambda_{\text{div}}=.10\); an 11-seed
 confirmation passed the single predeclared mass-conservation
 non-inferiority criterion (mean mass MAE 0.14499 vs.
-U-Net\textquotesingle s 0.16586; paired difference −0.02086, 95\% CI
-{[}−0.02845, −0.01331{]}; p=.000488), without an established interface
+U-Net\textquotesingle s 0.16586; paired difference -0.02086, 95\% CI
+{[}-0.02845, -0.01331{]}; p=.000488), without an established interface
 regression relative to the zero-penalty hybrid.
 
 An expanded, more rigorous sensitivity sweep (3 seeds,
@@ -584,7 +584,7 @@ behavior beyond 0.30 remains untested} (see Section 6, future work). A
 fresh 11-seed confirmation at \(\lambda_{\text{div}}=.30\) passed the
 same predeclared criterion with a substantially larger margin: mean mass
 MAE 0.09373 vs. U-Net\textquotesingle s 0.16586 (paired difference
-−0.07212, 95\% CI {[}−0.07940, −0.06535{]}, p=.000488), with no
+-0.07212, 95\% CI {[}-0.07940, -0.06535{]}, p=.000488), with no
 established interface regression relative to the zero-penalty hybrid. We
 adopt \(\lambda_{\text{div}}=.30\) as the primary divergence-hybrid
 configuration for the remainder of this paper.
@@ -597,7 +597,7 @@ On two independently held-out physical conditions (Twall 98, Twall 110;
 n=5 paired seeds), the descriptive ranking changed substantially from
 the tutorial split:
 
-{\def\LTcaptype{none} % do not increment counter
+{
 \begin{longtable}[]{@{}P{0.20\textwidth}P{0.13\textwidth}P{0.18\textwidth}P{0.19\textwidth}P{0.16\textwidth}@{}}
 \toprule\noalign{}
 Model & GWRMSE & Interface-temperature RMSE & Interface-temperature-jump
@@ -631,7 +631,7 @@ ranking.
 
 The divergence hybrid\textquotesingle s conservation advantage
 transferred directionally: mass MAE 0.08669 vs. U-Net\textquotesingle s
-0.11560 (paired difference −0.02891, 95\% CI {[}−0.03359, −0.02422{]}
+0.11560 (paired difference -0.02891, 95\% CI {[}-0.03359, -0.02422{]}
 relative to U-Net --- descriptive, as this specific superiority contrast
 was not the split\textquotesingle s predeclared target), while remaining
 descriptively worse than U-Net on GWRMSE, interface-temperature RMSE,
@@ -657,13 +657,13 @@ general.
 \subsection*{4.6 Native-resolution feasibility and computational
 cost}\label{46-native-resolution-feasibility-and-computational-cost}
 
-One-epoch, batch-size-one runs at native 384×384 completed successfully
+One-epoch, batch-size-one runs at native 384\ensuremath{\times}384 completed successfully
 for all four models on the Tesla T4 (5.91--6.99s/epoch for the
 Fourier-family models, 2.77s for U-Net), confirming direct execution
 feasibility without establishing convergence or ranking. At the
-converged 96×96 cross-condition scale:
+converged 96\ensuremath{\times}96 cross-condition scale:
 
-{\def\LTcaptype{none} % do not increment counter
+{
 \begin{longtable}[]{@{}P{0.18\textwidth}P{0.21\textwidth}P{0.15\textwidth}P{0.17\textwidth}P{0.16\textwidth}@{}}
 \toprule\noalign{}
 Model & Parameters (stored / real-scalar) & Mean training time/seed (s)
@@ -680,7 +680,7 @@ Divergence hybrid & 696,549 / 1,188,337 & 294.43 & 5.384 & 185.75 \\
 }
 
 U-Net is the fastest model to train and the lowest-latency at inference,
-despite having roughly 6--14× more parameters than the FNO-family
+despite having roughly 6--14\ensuremath{\times} more parameters than the FNO-family
 variants --- a practical consideration alongside the
 accuracy/conservation trade-offs above.
 
@@ -768,7 +768,7 @@ independent of the model\textquotesingle s own output.
 
 \subsection*{5.5 Limitations}\label{55-limitations}
 
-{\def\LTcaptype{none} % do not increment counter
+{
 \begin{longtable}[]{@{}P{0.25\textwidth}P{0.33\textwidth}P{0.29\textwidth}@{}}
 \toprule\noalign{}
 Dimension & Limitation & Status in this work \\
@@ -783,7 +783,7 @@ as unconfirmed \\
 Physical-condition sampling & 2 held-out conditions cannot characterize
 population-level regime variation & Explicitly scoped; not generalized
 beyond these conditions \\
-Resolution & 96×96 cross-condition training is converged; 384×384 is
+Resolution & 96\ensuremath{\times}96 cross-condition training is converged; 384\ensuremath{\times}384 is
 feasibility-only (1 epoch) & Native-resolution convergence is future
 work \\
 Phase representation & Binary \texttt{dfun\textgreater{}0} mask, not
@@ -856,7 +856,7 @@ made above, each of which is scoped and evidenced independently of them:
   powered, Holm-corrected cross-condition significance test.
 \item
   Training the cross-condition comparison to full convergence at native
-  384×384 resolution, beyond the current one-epoch feasibility check.
+  384\ensuremath{\times}384 resolution, beyond the current one-epoch feasibility check.
 \item
   A dedicated mechanism study correlating per-trajectory physical
   statistics (interface curvature, vapor coverage, thermal gradient

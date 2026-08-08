@@ -7,11 +7,11 @@
 | Science and claim boundary | PASS within retained artifacts |
 | Statistics | PASS within retained artifacts |
 | Manuscript metadata and highlights | PASS |
-| Current manuscript LaTeX PDF build | NOT ESTABLISHED: no elsarticle-capable TeX engine available |
+| Current manuscript LaTeX PDF build | PASS WITH LIMITATION: isolated 22-page elsarticle/PDF build completed; non-fatal layout/metadata warnings remain |
 | Stored-result reproduction | PASS |
 | Full retraining reproduction | NOT SUPPORTED from this checkout |
 | Security/public-stage scan | PASS |
-| License | PENDING: author-selected MIT file is absent |
+| License | PASS: author-supplied root MIT `LICENSE` is present |
 | GitHub | NOT PUBLISHED: owner authentication/authorization required |
 | Zenodo | NOT PUBLISHED: requires verified GitHub release and Zenodo authentication |
 | DOI | NOT VERIFIED / NOT YET AVAILABLE |
@@ -27,17 +27,17 @@
 - The author-designated repository is
   `https://github.com/RealmeBTI/bubbleml-submission`. It is not claimed as
   publicly verified by this report.
-- The existing immutable `v1.0.0` tag remains untouched. A new release tag is
-  required for the corrections recorded after it.
+- The existing immutable `v1.0.0`, `v1.0.1`, and `v1.0.2` tags remain
+  untouched. The post-`v1.0.2` corrections are released only under a new
+  `v1.0.3` tag.
 
 ## Remaining human actions
 
-1. Add the separately supplied MIT `LICENSE` file.
-2. Provide an elsarticle-capable TeX installation and rerun/inspect the current
+1. Provide an elsarticle-capable TeX installation and rerun/inspect the current
    manuscript compilation gate.
-3. Publish and independently verify the GitHub repository/release under the
+2. Publish and independently verify the GitHub repository/release under the
    owner’s authenticated account.
-4. Create and verify the Zenodo archive, then insert the real DOI in a new,
+3. Create and verify the Zenodo archive, then insert the real DOI in a new,
    versioned release rather than altering an archived one.
-5. Make any intended raw-data/checkpoint artifacts available with authorized
+4. Make any intended raw-data/checkpoint artifacts available with authorized
    source URLs and licenses if full training reproducibility is desired.

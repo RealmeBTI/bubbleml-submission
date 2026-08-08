@@ -24,8 +24,9 @@ only on the tutorial split.
 - The author-designated repository is
   `https://github.com/RealmeBTI/bubbleml-submission`. Its public availability
   and Zenodo archival DOI have not yet been verified from this environment.
-- The author supplied MIT as the intended code license, but the corresponding
-  `LICENSE` file is not present in this checkout.
+- The author-supplied root [`LICENSE`](LICENSE) is the MIT license for this
+  repository's code. It does not relicense BubbleML data, checkpoints, or
+  third-party dependencies.
 
 ## Recorded environment
 
@@ -66,9 +67,12 @@ python -m pip install -r requirements-submission.txt
 python scripts/build_submission_pdfs.py --output-dir output/pdf
 ```
 
-Rebuilding the Elsevier manuscript source also requires Pandoc; compiling it
-requires an `elsarticle`-capable TeX engine. The checked PDF was compiled with
-Pandoc 3.8.3 and Tectonic 0.16.9.
+Rebuilding the Elsevier manuscript source requires Pandoc; compiling it
+requires an `elsarticle`-capable TeX engine. The generated source includes a
+repair for Pandoc's incompatible captionless-longtable marker. A candidate
+local PDF is not accepted as release evidence: its log contains a LaTeX error
+and unresolved citations, and this checkout currently has no usable TeX engine
+to rerun a clean multi-pass build.
 
 ## Fast evidence self-test
 
@@ -145,9 +149,8 @@ test executed during package assembly.
 ## Citation and license status
 
 The verified BubbleML bibliographic record and other identifiable references are
-listed in `BIBLIOGRAPHY_VERIFICATION.md` and `manuscript/references.bib`. The code
-license was not supplied; no license is asserted. A human repository owner must
-choose and add one before public release.
+listed in `BIBLIOGRAPHY_VERIFICATION.md` and `manuscript/references.bib`. The
+project code is licensed under the author-supplied MIT [`LICENSE`](LICENSE).
 
 `CITATION.cff` records the supplied single-author metadata, author-designated
 repository URL, and MIT license selection. It intentionally omits a DOI because
@@ -166,13 +169,13 @@ Phone: +880 1865375578
 
 ## Release status and limitations
 
-This checkout is a locally verified `v1.0.0` release candidate, not a published
-GitHub or Zenodo release. `RELEASE_FINAL_REPORT.md` and
-`FINAL_RELEASE_SCORECARD.md` identify the exact release gates that remain open.
-In particular, the supplied MIT `LICENSE` file must be placed in this checkout,
-the author-designated GitHub repository must be publicly verified, external
-data/checkpoints must be made accessible as appropriate, and GitHub/Zenodo
-authentication is required before a public release or DOI can exist.
+This checkout supersedes the locally audited `v1.0.2` gate tag with the planned
+local `v1.0.3` corrective release; neither is a published GitHub or Zenodo
+release. `FINAL_IJHMT_PUBLICATION_STATUS.md` identifies the current release
+gates. Existing tags remain immutable. The author-designated GitHub repository
+must be publicly verified, external data/checkpoints must be made accessible as
+appropriate, and GitHub/Zenodo authentication is required before a public
+release or DOI can exist.
 
 `REPRODUCIBILITY_STATUS.md` classifies the supported levels precisely: stored
 analysis and the checked figures can be reproduced from the committed artifacts;

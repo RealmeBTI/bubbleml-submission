@@ -90,6 +90,15 @@ def main() -> None:
         r"\\includegraphics[width=\\linewidth]{\1}",
         latex,
     )
+    # Pandoc marks captionless longtables with LTcaptype=none. The longtable
+    # package requires a real counter name there, so the generated elsarticle
+    # source aborts at the first Markdown table unless this invalid override is
+    # removed. The surrounding group remains harmless.
+    latex = latex.replace(r"{\def\LTcaptype{none} % do not increment counter", "{")
+    # pdflatex does not define the Unicode minus and multiplication characters
+    # emitted by Pandoc in ordinary prose.  The LaTeX forms below are valid in
+    # both text and math contexts (including dimensions in table cells).
+    latex = latex.replace("−", "-").replace("×", r"\ensuremath{\times}")
     named_citations = {
         r"Zuber\textquotesingle s hydrodynamic instability model": r"Zuber\textquotesingle s hydrodynamic instability model\cite{zuber1959hydrodynamic}",
         "The BubbleML dataset,": r"The BubbleML dataset\cite{hassan2023bubbleml},",

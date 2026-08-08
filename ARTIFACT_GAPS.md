@@ -20,10 +20,8 @@ that could not be verified in the local project.
 - A source bibliography or citation-key mapping for every prose reference in the
   manuscript.
 - A verified public GitHub repository/release and archive DOI. The author has
-  supplied the intended GitHub URL and selected MIT, but the URL was not publicly
-  reachable during this audit and the supplied `LICENSE` file is absent here.
-- The supplied MIT `LICENSE` file is absent from this checkout; the author has
-  selected MIT, but the exact license text has not been added here.
+  supplied the intended GitHub URL and root MIT `LICENSE`, but the URL was not
+  publicly verified during this audit and no archive DOI has been issued.
 
 ## Conflicting historical records
 

@@ -3,7 +3,7 @@
   "purpose": "Local Zenodo metadata preparation record; not a Zenodo deposition payload.",
   "verified_metadata": {
     "title": "BubbleML Physics-Aware Benchmark",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "publication_date": "2026-08-08",
     "upload_type": "software",
     "creators": [
