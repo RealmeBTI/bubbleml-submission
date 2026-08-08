@@ -1,0 +1,19 @@
+Final IJHMT publication-gate pre-run state
+Recorded: 2026-08-08 (Asia/Dhaka)
+
+Branch: main
+HEAD: 1764f8676dbf033084f4e91d60e7c99f940482ca
+HEAD subject: release: record final fresh-clone verification
+Current annotated release tag: v1.0.1
+v1.0.1 resolves to: 1764f8676dbf033084f4e91d60e7c99f940482ca
+Other tags: phase2-baseline-db21b94, v1.0-submission-draft, v1.0.0
+Remote origin (fetch/push): https://github.com/RealmeBTI/bubbleml-submission.git
+
+Working tree before gate:
+ M REMAINING_HUMAN_ACTIONS.md
+
+Disposition of working-tree state:
+The file is an intentional, previously uncommitted human-action list. This gate
+explicitly requires that list to be replaced with a precise, author-only blocker
+list, so it is in scope for repair. No other pre-existing modification is
+present. The immutable v1.0.0 tag is not modified.
