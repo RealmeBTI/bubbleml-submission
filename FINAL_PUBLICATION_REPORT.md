@@ -19,7 +19,8 @@
 ## Evidence
 
 - The current stored-result reproduction completed with PASS; `pytest -q`
-  executed 38 tests with 38 passed.
+  executed 38 tests with 38 passed. A fresh clone of the audited source/package
+  commit repeated both checks and verified 550/550 public-stage manifest entries.
 - `audit/` contains the claim, red-team, split, resolution-confound, hash,
   reproducibility, license/provenance, bibliography, security, and IJHMT
   requirement records.
