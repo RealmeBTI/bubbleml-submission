@@ -21,9 +21,14 @@ only on the tutorial split.
   available locally when this package was assembled.
 - The compact cross-condition export does not contain the full per-seed training
   histories or checkpoints. This gap is declared in `ARTIFACT_GAPS.md`.
-- The author-designated repository is
-  `https://github.com/RealmeBTI/bubbleml-submission`. Its public availability
-  and Zenodo archival DOI have not yet been verified from this environment.
+- The public repository is
+  `https://github.com/RealmeBTI/bubbleml-submission`. The preceding immutable
+  `v1.0.4` release is publicly available at
+  `https://github.com/RealmeBTI/bubbleml-submission/releases/tag/v1.0.4` and
+  has the verified Zenodo version DOI
+  `https://doi.org/10.5281/zenodo.21858198`. This DOI identifies that exact
+  archived version only; it does not make unavailable raw data, checkpoints,
+  or cross-condition provenance available.
 - The author-supplied root [`LICENSE`](LICENSE) is the MIT license for this
   repository's code. It does not relicense BubbleML data, checkpoints, or
   third-party dependencies.
@@ -69,10 +74,10 @@ python scripts/build_submission_pdfs.py --output-dir output/pdf
 
 Rebuilding the Elsevier manuscript source requires Pandoc; compiling it
 requires an `elsarticle`-capable TeX engine. The generated source includes a
-repair for Pandoc's incompatible captionless-longtable marker. A candidate
-local PDF is not accepted as release evidence: its log contains a LaTeX error
-and unresolved citations, and this checkout currently has no usable TeX engine
-to rerun a clean multi-pass build.
+repair for Pandoc's incompatible captionless-longtable marker. The final
+pre-submission check compiled the source with TeX Live 2026, completed all
+LaTeX/BibTeX passes without unresolved references or citations, and directly
+inspected the resulting PDF; see `PRESUBMISSION_FINAL_CHECK.md`.
 
 ## Fast evidence self-test
 
@@ -152,9 +157,10 @@ The verified BubbleML bibliographic record and other identifiable references are
 listed in `BIBLIOGRAPHY_VERIFICATION.md` and `manuscript/references.bib`. The
 project code is licensed under the author-supplied MIT [`LICENSE`](LICENSE).
 
-`CITATION.cff` records the supplied single-author metadata, author-designated
-repository URL, and MIT license selection. It intentionally omits a DOI because
-no Zenodo record has been issued.
+`CITATION.cff` records the supplied single-author metadata, repository URL, and
+MIT license selection. Its next-version citation metadata deliberately does not
+reuse the DOI of the preceding `v1.0.4` archive; that DOI is version-specific
+and is recorded above and in `PRESUBMISSION_FINAL_CHECK.md`.
 
 ## Author and contact
 
@@ -169,13 +175,11 @@ Phone: +880 1865375578
 
 ## Release status and limitations
 
-This checkout supersedes the locally audited `v1.0.2` gate tag with the planned
-local `v1.0.3` corrective release; neither is a published GitHub or Zenodo
-release. `FINAL_IJHMT_PUBLICATION_STATUS.md` identifies the current release
-gates. Existing tags remain immutable. The author-designated GitHub repository
-must be publicly verified, external data/checkpoints must be made accessible as
-appropriate, and GitHub/Zenodo authentication is required before a public
-release or DOI can exist.
+The immutable `v1.0.4` release and corresponding Zenodo archive are verified
+above. Existing tags remain immutable. This working version contains
+post-`v1.0.4` manuscript and metadata corrections, so it requires its own
+release/archive before it can inherit a version-specific DOI. Historical audit
+files retain their original status and are not silently rewritten.
 
 `REPRODUCIBILITY_STATUS.md` classifies the supported levels precisely: stored
 analysis and the checked figures can be reproduced from the committed artifacts;

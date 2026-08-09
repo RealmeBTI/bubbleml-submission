@@ -35,6 +35,7 @@ ROOT_FILES = (
     "FINAL_IJHMT_PUBLICATION_SCORECARD.md",
     "FINAL_PUBLICATION_REPORT.md",
     "RELEASE_FINAL_REPORT.md",
+    "PRESUBMISSION_FINAL_CHECK.md",
     "PUBLIC_RELEASE_TRANSFORM.md",
     "requirements.txt",
     "environment.yml",
@@ -52,6 +53,7 @@ TREE_DIRS = (
 MANUSCRIPT_FILES = (
     "full_manuscript.md",
     "manuscript_elsarticle.tex",
+    "manuscript_elsarticle.pdf",
     "elsarticle_template.tex",
     "references.bib",
 )

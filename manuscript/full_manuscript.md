@@ -1,6 +1,6 @@
 # A Physics-Aware Benchmark for Phase-Resolved Neural Operator Learning in Boiling Flows: Statistically Rigorous Evidence for Condition-Dependent Architecture Trade-offs
 
-*S. B. Mahafuj Bondhon, Department of Mechanical Engineering, Bangladesh University of Engineering and Technology (BUET), Ramna, Dhaka-1000, Bangladesh. Corresponding author: 2210062@me.buet.ac.bd. ORCID: 0009-0009-6695-365X. The bibliography entries in the generated manuscript were checked against the primary records documented in `BIBLIOGRAPHY_VERIFICATION.md`. The author-designated repository URL is https://github.com/RealmeBTI/bubbleml-submission; no public release URL or DOI is asserted because neither has been independently verified.*
+*S. B. Mahafuj Bondhon, Department of Mechanical Engineering, Bangladesh University of Engineering and Technology (BUET), Ramna, Dhaka-1000, Bangladesh. Corresponding author: 2210062@me.buet.ac.bd. ORCID: 0009-0009-6695-365X. The bibliography entries in the generated manuscript were checked against the primary records documented in `BIBLIOGRAPHY_VERIFICATION.md`. The prior public repository release is https://github.com/RealmeBTI/bubbleml-submission/releases/tag/v1.0.4; its matching Zenodo version archive is https://doi.org/10.5281/zenodo.21858198. The archive/version scope and the retained-artifact limitations are recorded in `PRESUBMISSION_FINAL_CHECK.md`.*
 
 ---
 
@@ -52,6 +52,10 @@ Independent of the simulation-data operator-learning literature, Ravichandran et
 
 Open boiling datasets are fragmented across repositories, fields, grids, regimes, and evaluation conventions, a fragmentation documented by Dunlap et al. (2026) in their survey of open multimodal thermal-fluid datasets and software. This work's explicit, checksum-verified data and evaluation pipeline is designed to partially mitigate this within its own declared artifact boundary. Combined with the cross-condition replication check described above, we position this work primarily as a benchmark and evaluation-methodology contribution — a genuinely rigorous protocol for making and testing architecture claims on chaotic, multiphysics surrogate tasks — rather than as a claim of a novel architecture. The individual architectural components used here (Tucker/factorized FNO, local-global hybridization, spectral divergence penalties, bounded output heads) are each drawn from or closely related to existing techniques; the contribution is their careful, statistically disciplined integration and, specifically, the demonstration that even a well-powered single-condition comparison among them is not sufficient evidence of a generalizable ranking.
 
+![Figure 1. Tutorial-split interface-fidelity and mass-conservation trade-off.](../submission/figures/fig1_pareto_front.pdf)
+
+**Figure 1.** The retained tutorial-split results place T-FNO and U-Net on opposing sides of the interface-fidelity/mass-conservation trade-off; the local-global variants are shown for the intervention context. This figure summarizes the fixed-split result only and does not establish a cross-condition ranking.
+
 | Feature | BubbleML (original) | This work |
 |---|---|---|
 | Multiple trajectories | Yes (79 simulated conditions) | Yes |
@@ -80,7 +84,7 @@ Open boiling datasets are fragmented across repositories, fields, grids, regimes
 
 The released fields are time×y×x grids; row 0 is immediately above the heater; physical boundary cells are omitted. Reported outer-grid quantities are therefore interior-edge proxies, not wall residuals.
 
-**Independent multi-trajectory split.** The cross-condition replication check uses the official ten-trajectory, native 384×384 Pool-Boiling Subcooled legacy archive (SHA-256 `2eba140d74cbb7b01a55f0684227dea94306aea516a0f864831485d31d25f655`; 201 frames/trajectory; Twall 79, 81, 85, 90, 95, 98, 100, 103, 106, 110). Trajectory roles were frozen before any model training or test inspection: train on Twall 79, 85, 90, 95; validate on Twall 81; test independently on Twall 98 and Twall 110. Twall 100, 103, and 106 were excluded, since they form the tutorial split. Continuous fields were bilinearly downsampled to 96×96; the binary phase mask used nearest-neighbor downsampling; physical grid spacings were rescaled consistently. After discarding source frames 0–29, each trajectory contributes 170 frame records, yielding 644/161/322 valid windows for train/validation/test. A separate one-epoch, batch-size-one feasibility check was also run at native 384×384 resolution to test direct execution and memory feasibility only (not convergence or ranking).
+**Independent multi-trajectory split.** The cross-condition replication check uses the official ten-trajectory, native 384×384 Pool-Boiling Subcooled legacy archive (SHA-256 `2eba140d74cbb7b01a55f0684227dea94306aea516a0f864831485d31d25f655`; 201 frames/trajectory; Twall 79, 81, 85, 90, 95, 98, 100, 103, 106, 110). Trajectory roles were frozen before any model training or test inspection: train on Twall 79, 85, 90, 95; validate on Twall 81; test independently on Twall 98 and Twall 110. Twall 100, 103, and 106 were excluded, since they form the tutorial split. Continuous fields were bilinearly downsampled to 96×96; the binary phase mask used nearest-neighbor downsampling; physical grid spacings were rescaled consistently. After discarding source frames 0–29, each trajectory contributes 170 frame records, yielding 644/161/322 valid windows for train/validation/test. The distinct tutorial and cross-condition protocols are visualized in Figure 2. A separate one-epoch, batch-size-one feasibility check was also run at native 384×384 resolution to test direct execution and memory feasibility only (not convergence or ranking).
 
 ![Figure 2. The tutorial and cross-condition designs are distinct trajectory-level splits.](../submission/figures/fig6_split_design.pdf)
 
@@ -130,7 +134,7 @@ Architectural interventions are evaluated under **predeclared decision gates**: 
 
 ### 3.7 CHF-motivated autoregressive proxy evaluation
 
-A fully autoregressive evaluator feeds each model's own five-frame predictions back as input for the next step (no ground-truth injection), producing long rollouts from a short seed history. The CHF-motivated proxy signal is the fraction of heater-adjacent cells (rows 0:4) with predicted alpha > 0.5. The event threshold is $\max(0.10, \text{median of first 20 ground-truth forecast frames} + 0.10)$, requiring three consecutive frames at or above threshold to count as a sustained precursor. This is an illustrative phase-based proxy, not a calibrated CHF label: none of the available trajectories has a synchronized wall-heat-flux series or an independently verified stable-to-CHF transition.
+A fully autoregressive evaluator feeds each model's own five-frame predictions back as input for the next step (no ground-truth injection), producing long rollouts from a short seed history. The CHF-motivated proxy signal is the fraction of heater-adjacent cells (rows 0:4) with predicted alpha > 0.5. The event threshold is $\max(0.10, \text{median of first 20 ground-truth forecast frames} + 0.10)$, requiring three consecutive frames at or above threshold to count as a sustained precursor. This is an illustrative phase-based proxy, not a calibrated CHF label: none of the available trajectories has a synchronized wall-heat-flux series or an independently verified stable-to-CHF transition. Figure 3 locates this evaluation within the retained-artifact workflow.
 
 ![Figure 3. Benchmark workflow from official trajectories to the stored-result release.](../submission/figures/fig5_benchmark_workflow.pdf)
 
@@ -142,7 +146,7 @@ A fully autoregressive evaluator feeds each model's own five-frame predictions b
 
 ### 4.1 Tutorial split: T-FNO and U-Net form a statistically confirmed Pareto trade-off
 
-Across 11 paired seeds, no overall GWRMSE winner was established (T-FNO − U-Net: −0.05698, 95% paired bootstrap CI [−0.12314, +0.00946], sign-flip p=.1469, Holm p=1.0). T-FNO was significantly better on interface-temperature RMSE (−0.50190, Holm p=.0352) and interface-temperature-jump MAE (−0.43147, Holm p=.0215), but significantly worse on mass-conservation MAE (+0.04494, Holm p=.0215).
+Across 11 paired seeds, no overall GWRMSE winner was established (T-FNO − U-Net: −0.05698, 95% paired bootstrap CI [−0.12314, +0.00946], sign-flip p=.1469, Holm p=1.0). T-FNO was significantly better on interface-temperature RMSE (−0.50190, Holm p=.0352) and interface-temperature-jump MAE (−0.43147, Holm p=.0215), but significantly worse on mass-conservation MAE (+0.04494, Holm p=.0215). The fixed-split trade-off is shown in Figure 1.
 
 ### 4.2 Physical validity is an evaluation requirement, independent of architecture ranking
 
@@ -154,7 +158,11 @@ The zero-penalty local-global hybrid (Eq. 2) was tested under three predeclared 
 
 An initial divergence-penalty pilot (2 seeds, $\lambda_{\text{div}} \in \{.01, .03, .10\}$, all eligible under a 5% data-fit guard) selected $\lambda_{\text{div}}=.10$; an 11-seed confirmation passed the single predeclared mass-conservation non-inferiority criterion (mean mass MAE 0.14499 vs. U-Net's 0.16586; paired difference −0.02086, 95% CI [−0.02845, −0.01331]; p=.000488), without an established interface regression relative to the zero-penalty hybrid.
 
-An expanded, more rigorous sensitivity sweep (3 seeds, $\lambda_{\text{div}} \in \{.01, .03, .10, .20, .30\}$, both a data-fit and an interface-RMSE guard) found validation divergence decreasing monotonically through the full tested range, with 0.30 — the upper tested boundary — selected as the eligible candidate with lowest divergence. **This selection identifies a value that works within the tested range; it does not identify an interior optimum, and behavior beyond 0.30 remains untested** (see Section 6, future work). A fresh 11-seed confirmation at $\lambda_{\text{div}}=.30$ passed the same predeclared criterion with a substantially larger margin: mean mass MAE 0.09373 vs. U-Net's 0.16586 (paired difference −0.07212, 95% CI [−0.07940, −0.06535], p=.000488), with no established interface regression relative to the zero-penalty hybrid. We adopt $\lambda_{\text{div}}=.30$ as the primary divergence-hybrid configuration for the remainder of this paper.
+An expanded, more rigorous sensitivity sweep (3 seeds, $\lambda_{\text{div}} \in \{.01, .03, .10, .20, .30\}$, both a data-fit and an interface-RMSE guard) found validation divergence decreasing monotonically through the full tested range, with 0.30 — the upper tested boundary — selected as the eligible candidate with lowest divergence. Figure 4 shows the retained sweep: the selected value lies at the tested upper boundary. **This selection identifies a value that works within the tested range; it does not identify an interior optimum, and behavior beyond 0.30 remains untested** (see Section 6, future work). A fresh 11-seed confirmation at $\lambda_{\text{div}}=.30$ passed the same predeclared criterion with a substantially larger margin: mean mass MAE 0.09373 vs. U-Net's 0.16586 (paired difference −0.07212, 95% CI [−0.07940, −0.06535], p=.000488), with no established interface regression relative to the zero-penalty hybrid. We adopt $\lambda_{\text{div}}=.30$ as the primary divergence-hybrid configuration for the remainder of this paper.
+
+![Figure 4. Three-seed divergence-penalty sensitivity sweep.](../submission/figures/fig3_lambda_sensitivity.pdf)
+
+**Figure 4.** The expanded sensitivity sweep reports validation MSE, spectral divergence MAE, and interface-temperature RMSE for each tested divergence-penalty weight. The red line marks the selected upper-bound value, $\lambda_{\text{div}}=.30$; the sweep does not establish behavior beyond that range.
 
 ### 4.4 Cross-condition replication: the tutorial-split trade-off does not reproduce (central finding)
 
@@ -173,7 +181,11 @@ The divergence hybrid's conservation advantage transferred directionally: mass M
 
 ### 4.5 CHF-motivated proxy: no sustained event in any available trajectory
 
-The dry-area proxy (Section 3.7) was evaluated on Twall-100 (tutorial test) and, newly, on the independent Twall-98 and Twall-110 trajectories. None showed a sustained crossing: Twall-100 had 3/164 above-threshold frames (longest run 2), Twall-98 had 0/170, and Twall-110 had 1/170 (longest run 1). No trajectory in the currently available data supports a lead-time, sensitivity, or missed-event-rate evaluation. This is a negative feasibility result for CHF-proxy event evaluation with current data, not evidence about CHF predictability in general.
+The dry-area proxy (Section 3.7) was evaluated on Twall-100 (tutorial test) and, newly, on the independent Twall-98 and Twall-110 trajectories. None showed a sustained crossing: Twall-100 had 3/164 above-threshold frames (longest run 2), Twall-98 had 0/170, and Twall-110 had 1/170 (longest run 1). Figure 5 shows the retained rollout traces and thresholds. No trajectory in the currently available data supports a lead-time, sensitivity, or missed-event-rate evaluation. This is a negative feasibility result for CHF-proxy event evaluation with current data, not evidence about CHF predictability in general.
+
+![Figure 5. Retained autoregressive dry-area proxy traces.](../submission/figures/fig2_dry_area_trace.pdf)
+
+**Figure 5.** Heater-adjacent dry-area proxy traces for the available tutorial and held-out trajectories. The plotted thresholds are not crossed for three consecutive frames, so none of these trajectories supports a sustained-event evaluation.
 
 ### 4.6 Native-resolution feasibility and computational cost
 
@@ -187,6 +199,12 @@ One-epoch, batch-size-one runs at native 384×384 completed successfully for all
 | Divergence hybrid | 696,549 / 1,188,337 | 294.43 | 5.384 | 185.75 |
 
 U-Net is the fastest model to train and the lowest-latency at inference, despite having roughly 6–14× more parameters than the FNO-family variants — a practical consideration alongside the accuracy/conservation trade-offs above.
+
+The retained tutorial validation histories are shown in Figure 6. They document the available tutorial training runs but do not establish cross-condition convergence, because the complete cross-condition per-seed histories are not retained locally.
+
+![Figure 6. Retained Phase 1 tutorial validation histories.](../submission/figures/fig4_loss_curves.pdf)
+
+**Figure 6.** Per-seed validation histories for the retained Phase 1 tutorial-split runs. These curves provide training-trace context for the stored tutorial results only; they are not a substitute for unavailable cross-condition training histories.
 
 ---
 
@@ -223,7 +241,7 @@ Across every trajectory available to this study, no sustained ground-truth dry-a
 | Conservation scope | Only velocity divergence is penalized; energy/momentum conservation are not explicitly constrained | Noted as an open direction |
 | Architecture coverage | No comparison to transformer-based operators (e.g., Bubbleformer) or hard-constrained conservation layers | Explicitly out of scope this cycle; noted as related work |
 | Hardware | Tutorial-split results use Apple M2/MPS; cross-condition results use NVIDIA T4/CUDA | Both reported explicitly per experiment; not cross-validated on identical hardware |
-| Reproducibility | All data checksummed, all seeds/configs logged, decision gates predeclared | Full artifact manifest in Section 7 |
+| Reproducibility | Retained tutorial and intervention data/result artifacts are checksummed; complete cross-condition per-seed histories and checkpoints are unavailable | Stored-result self-test is reproducible; full raw-data-to-checkpoint reproduction remains unavailable |
 
 ### 5.6 Practical and methodological implications
 
@@ -251,4 +269,4 @@ A concrete, ready-to-execute prompt for the first two items (the highest-leverag
 
 ## 7. Reproducibility and Artifact Manifest
 
-All data sources are checksummed (Section 3.1), and the locally retained tutorial and intervention experiments include their configurations, seeds, and training histories. The cross-condition experiment is represented locally by its compact audited summary rather than complete cloud-side per-seed histories and checkpoints; this boundary is documented in the artifact manifest. All statistical comparisons use a single, unchanged, audited implementation (Section 3.6) across every reported result. The release package includes per-seed JSON results where retained, benchmark outputs, training curves, and acquisition/preprocessing scripts for both data formats. This package is structured for public repository release; public hosting must be performed by an authorized repository owner after the outstanding author-metadata, license, and external-artifact decisions are resolved.
+All data sources are checksummed (Section 3.1), and the locally retained tutorial and intervention experiments include their configurations, seeds, and training histories. The cross-condition experiment is represented locally by its compact audited summary rather than complete cloud-side per-seed histories and checkpoints; this boundary is documented in the artifact manifest. All statistical comparisons use a single, unchanged, audited implementation (Section 3.6) across every reported result. The release package includes per-seed JSON results where retained, benchmark outputs, training curves, and acquisition/preprocessing scripts for both data formats. The prior public `v1.0.4` repository release is archived at Zenodo, DOI https://doi.org/10.5281/zenodo.21858198. That archive is a version-specific snapshot and does not remove the stated raw-data, checkpoint, cross-condition-provenance, or field-snapshot limitations.

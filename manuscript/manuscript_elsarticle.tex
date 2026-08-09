@@ -87,10 +87,13 @@ Dhaka-1000, Bangladesh. Corresponding author:
 \href{mailto:2210062@me.buet.ac.bd}{\nolinkurl{2210062@me.buet.ac.bd}}.
 ORCID: 0009-0009-6695-365X. The bibliography entries in the generated
 manuscript were checked against the primary records documented in
-\texttt{BIBLIOGRAPHY\_VERIFICATION.md}. The author-designated repository
-URL is \url{https://github.com/RealmeBTI/bubbleml-submission}; no public
-release URL or DOI is asserted because neither has been independently
-verified.}
+\texttt{BIBLIOGRAPHY\_VERIFICATION.md}. The prior public repository
+release is
+\url{https://github.com/RealmeBTI/bubbleml-submission/releases/tag/v1.0.4};
+its matching Zenodo version archive is
+\url{https://doi.org/10.5281/zenodo.21858198}. The archive/version scope
+and the retained-artifact limitations are recorded in
+\texttt{PRESUBMISSION\_FINAL\_CHECK.md}.}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -290,6 +293,17 @@ careful, statistically disciplined integration and, specifically, the
 demonstration that even a well-powered single-condition comparison among
 them is not sufficient evidence of a generalizable ranking.
 
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{../submission/figures/fig1_pareto_front.pdf}
+\caption{The retained tutorial-split results place T-FNO and
+U-Net on opposing sides of the interface-fidelity/mass-conservation
+trade-off; the local-global variants are shown for the intervention
+context. This figure summarizes the fixed-split result only and does not
+establish a cross-condition ranking.}
+\label{fig:pareto-tradeoff}
+\end{figure}
+
 {
 \begin{longtable}[]{@{}P{0.22\textwidth}P{0.58\textwidth}P{0.14\textwidth}@{}}
 \toprule\noalign{}
@@ -370,18 +384,23 @@ bilinearly downsampled to 96\ensuremath{\times}96; the binary phase mask used
 nearest-neighbor downsampling; physical grid spacings were rescaled
 consistently. After discarding source frames 0--29, each trajectory
 contributes 170 frame records, yielding 644/161/322 valid windows for
-train/validation/test. A separate one-epoch, batch-size-one feasibility
-check was also run at native 384\ensuremath{\times}384 resolution to test direct execution
-and memory feasibility only (not convergence or ranking).
+train/validation/test. The distinct tutorial and cross-condition
+protocols are visualized in Figure~\ref{fig:split-design}. A separate one-epoch,
+batch-size-one feasibility check was also run at native 384\ensuremath{\times}384
+resolution to test direct execution and memory feasibility only (not
+convergence or ranking).
 
-\pandocbounded{\includegraphics[width=\linewidth]{../submission/figures/fig6_split_design.pdf}}
-
-\textbf{Figure 2.} The tutorial split evaluates a fixed three-trajectory
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{../submission/figures/fig6_split_design.pdf}
+\caption{The tutorial split evaluates a fixed three-trajectory
 comparison; the independent cross-condition protocol tests whether that
 comparison persists on two held-out conditions. The protocols also
 differ in spatial resolution (48\ensuremath{\times}48 versus 96\ensuremath{\times}96), so the comparison
 does not isolate a wall-temperature effect. Roles were frozen before
-training or test inspection.
+training or test inspection.}
+\label{fig:split-design}
+\end{figure}
 
 \subsection*{3.2 Model architectures and training
 protocol}\label{32-model-architectures-and-training-protocol}
@@ -508,14 +527,18 @@ requiring three consecutive frames at or above threshold to count as a
 sustained precursor. This is an illustrative phase-based proxy, not a
 calibrated CHF label: none of the available trajectories has a
 synchronized wall-heat-flux series or an independently verified
-stable-to-CHF transition.
+stable-to-CHF transition. Figure~\ref{fig:benchmark-workflow} locates this evaluation within the
+retained-artifact workflow.
 
-\pandocbounded{\includegraphics[width=\linewidth]{../submission/figures/fig5_benchmark_workflow.pdf}}
-
-\textbf{Figure 3.} Benchmark workflow. The last transition makes the
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{../submission/figures/fig5_benchmark_workflow.pdf}
+\caption{Benchmark workflow. The last transition makes the
 artifact boundary explicit: the stored-result statistical self-test is
 reviewer-runnable, while raw data, full checkpoints, and complete
-cloud-side cross-condition exports remain external.
+cloud-side cross-condition exports remain external.}
+\label{fig:benchmark-workflow}
+\end{figure}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -531,6 +554,7 @@ sign-flip p=.1469, Holm p=1.0). T-FNO was significantly better on
 interface-temperature RMSE (-0.50190, Holm p=.0352) and
 interface-temperature-jump MAE (-0.43147, Holm p=.0215), but
 significantly worse on mass-conservation MAE (+0.04494, Holm p=.0215).
+The fixed-split trade-off is shown in Figure~\ref{fig:pareto-tradeoff}.
 
 \subsection*{4.2 Physical validity is an evaluation requirement,
 independent of architecture
@@ -578,16 +602,29 @@ An expanded, more rigorous sensitivity sweep (3 seeds,
 data-fit and an interface-RMSE guard) found validation divergence
 decreasing monotonically through the full tested range, with 0.30 ---
 the upper tested boundary --- selected as the eligible candidate with
-lowest divergence. \textbf{This selection identifies a value that works
-within the tested range; it does not identify an interior optimum, and
-behavior beyond 0.30 remains untested} (see Section 6, future work). A
-fresh 11-seed confirmation at \(\lambda_{\text{div}}=.30\) passed the
-same predeclared criterion with a substantially larger margin: mean mass
-MAE 0.09373 vs. U-Net\textquotesingle s 0.16586 (paired difference
--0.07212, 95\% CI {[}-0.07940, -0.06535{]}, p=.000488), with no
-established interface regression relative to the zero-penalty hybrid. We
-adopt \(\lambda_{\text{div}}=.30\) as the primary divergence-hybrid
+lowest divergence. Figure~\ref{fig:lambda-sensitivity} shows the retained sweep: the selected value
+lies at the tested upper boundary. \textbf{This selection identifies a
+value that works within the tested range; it does not identify an
+interior optimum, and behavior beyond 0.30 remains untested} (see
+Section 6, future work). A fresh 11-seed confirmation at
+\(\lambda_{\text{div}}=.30\) passed the same predeclared criterion with
+a substantially larger margin: mean mass MAE 0.09373 vs.
+U-Net\textquotesingle s 0.16586 (paired difference -0.07212, 95\% CI
+{[}-0.07940, -0.06535{]}, p=.000488), with no established interface
+regression relative to the zero-penalty hybrid. We adopt
+\(\lambda_{\text{div}}=.30\) as the primary divergence-hybrid
 configuration for the remainder of this paper.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{../submission/figures/fig3_lambda_sensitivity.pdf}
+\caption{The expanded sensitivity sweep reports validation
+MSE, spectral divergence MAE, and interface-temperature RMSE for each
+tested divergence-penalty weight. The red line marks the selected
+upper-bound value, \(\lambda_{\text{div}}=.30\); the sweep does not
+establish behavior beyond that range.}
+\label{fig:lambda-sensitivity}
+\end{figure}
 
 \subsection*{4.4 Cross-condition replication: the tutorial-split
 trade-off does not reproduce (central
@@ -648,11 +685,21 @@ The dry-area proxy (Section 3.7) was evaluated on Twall-100 (tutorial
 test) and, newly, on the independent Twall-98 and Twall-110
 trajectories. None showed a sustained crossing: Twall-100 had 3/164
 above-threshold frames (longest run 2), Twall-98 had 0/170, and
-Twall-110 had 1/170 (longest run 1). No trajectory in the currently
-available data supports a lead-time, sensitivity, or missed-event-rate
-evaluation. This is a negative feasibility result for CHF-proxy event
-evaluation with current data, not evidence about CHF predictability in
-general.
+Twall-110 had 1/170 (longest run 1). Figure~\ref{fig:dry-area-traces} shows the retained rollout
+traces and thresholds. No trajectory in the currently available data
+supports a lead-time, sensitivity, or missed-event-rate evaluation. This
+is a negative feasibility result for CHF-proxy event evaluation with
+current data, not evidence about CHF predictability in general.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{../submission/figures/fig2_dry_area_trace.pdf}
+\caption{Heater-adjacent dry-area proxy traces for the
+available tutorial and held-out trajectories. The plotted thresholds are
+not crossed for three consecutive frames, so none of these trajectories
+supports a sustained-event evaluation.}
+\label{fig:dry-area-traces}
+\end{figure}
 
 \subsection*{4.6 Native-resolution feasibility and computational
 cost}\label{46-native-resolution-feasibility-and-computational-cost}
@@ -683,6 +730,21 @@ U-Net is the fastest model to train and the lowest-latency at inference,
 despite having roughly 6--14\ensuremath{\times} more parameters than the FNO-family
 variants --- a practical consideration alongside the
 accuracy/conservation trade-offs above.
+
+The retained tutorial validation histories are shown in Figure~\ref{fig:training-histories}. They
+document the available tutorial training runs but do not establish
+cross-condition convergence, because the complete cross-condition
+per-seed histories are not retained locally.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{../submission/figures/fig4_loss_curves.pdf}
+\caption{Per-seed validation histories for the retained Phase
+1 tutorial-split runs. These curves provide training-trace context for
+the stored tutorial results only; they are not a substitute for
+unavailable cross-condition training histories.}
+\label{fig:training-histories}
+\end{figure}
 
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
@@ -804,8 +866,11 @@ Explicitly out of scope this cycle; noted as related work \\
 Hardware & Tutorial-split results use Apple M2/MPS; cross-condition
 results use NVIDIA T4/CUDA & Both reported explicitly per experiment;
 not cross-validated on identical hardware \\
-Reproducibility & All data checksummed, all seeds/configs logged,
-decision gates predeclared & Full artifact manifest in Section 7 \\
+Reproducibility & Retained tutorial and intervention data/result
+artifacts are checksummed; complete cross-condition per-seed histories
+and checkpoints are unavailable & Stored-result self-test is
+reproducible; full raw-data-to-checkpoint reproduction remains
+unavailable \\
 \end{longtable}
 }
 
@@ -897,10 +962,11 @@ documented in the artifact manifest. All statistical comparisons use a
 single, unchanged, audited implementation (Section 3.6) across every
 reported result. The release package includes per-seed JSON results
 where retained, benchmark outputs, training curves, and
-acquisition/preprocessing scripts for both data formats. This package is
-structured for public repository release; public hosting must be
-performed by an authorized repository owner after the outstanding
-author-metadata, license, and external-artifact decisions are resolved.
+acquisition/preprocessing scripts for both data formats. The prior
+public \texttt{v1.0.4} repository release is archived at Zenodo, DOI
+\url{https://doi.org/10.5281/zenodo.21858198}. That archive is a
+version-specific snapshot and does not remove the stated raw-data,
+checkpoint, cross-condition-provenance, or field-snapshot limitations.
 
 \section*{Bibliographic verification status}
 Thirteen identifiable works were independently checked against primary publication

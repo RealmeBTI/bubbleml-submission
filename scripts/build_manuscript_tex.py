@@ -90,6 +90,39 @@ def main() -> None:
         r"\\includegraphics[width=\\linewidth]{\1}",
         latex,
     )
+    # Convert the six audited Markdown image-plus-caption blocks into real
+    # LaTeX figures so every substantive manuscript reference resolves through
+    # an explicit label.  This avoids relying on manually typed figure numbers.
+    figures = {
+        "fig1_pareto_front.pdf": (1, "fig:pareto-tradeoff"),
+        "fig6_split_design.pdf": (2, "fig:split-design"),
+        "fig5_benchmark_workflow.pdf": (3, "fig:benchmark-workflow"),
+        "fig3_lambda_sensitivity.pdf": (4, "fig:lambda-sensitivity"),
+        "fig2_dry_area_trace.pdf": (5, "fig:dry-area-traces"),
+        "fig4_loss_curves.pdf": (6, "fig:training-histories"),
+    }
+    for filename, (number, label) in figures.items():
+        pattern = re.compile(
+            rf"\\pandocbounded\{{(?P<image>\\includegraphics\[width=\\linewidth\]\{{(?P<path>[^}}]*{re.escape(filename)})\}})\}}"
+            rf"\n\n\\textbf\{{Figure {number}\.\}} (?P<caption>.*?)(?=\n\n)",
+            flags=re.DOTALL,
+        )
+
+        def figure_replacement(match: re.Match[str]) -> str:
+            return (
+                "\\begin{figure}[htbp]\n"
+                "\\centering\n"
+                f"{match.group('image')}\n"
+                f"\\caption{{{match.group('caption')}}}\n"
+                f"\\label{{{label}}}\n"
+                "\\end{figure}"
+            )
+
+        latex, replacements = pattern.subn(figure_replacement, latex)
+        if replacements != 1:
+            raise RuntimeError(f"Expected one Figure {number} block for {filename}; found {replacements}.")
+    for filename, (number, label) in figures.items():
+        latex = latex.replace(f"Figure {number}", rf"Figure~\ref{{{label}}}")
     # Pandoc marks captionless longtables with LTcaptype=none. The longtable
     # package requires a real counter name there, so the generated elsarticle
     # source aborts at the first Markdown table unless this invalid override is
