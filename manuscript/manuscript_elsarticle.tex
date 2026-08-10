@@ -540,6 +540,31 @@ cloud-side cross-condition exports remain external.}
 \label{fig:benchmark-workflow}
 \end{figure}
 
+\subsection*{3.8 Exploratory same-trajectory resolution
+comparison}\label{38-exploratory-same-trajectory-resolution-comparison}
+
+As a post-hoc exploratory observation, T-FNO and U-Net were also trained
+and evaluated on the same three tutorial trajectories (Twall-103/106/100)
+at 96\ensuremath{\times}96 resolution using identical random seeds (n=11 paired seeds:
+7, 17, 42, 100, 314, 1234, 2025, 2718, 4242, 7777, 9999) and the same
+model configurations and evaluation metrics as the 48\ensuremath{\times}48 tutorial
+split. This configuration is archived on the
+\texttt{experiment/resolution-control-n11} branch.
+
+This comparison is \textbf{not} a controlled resolution experiment.
+Multiple factors differ between the 48\ensuremath{\times}48 and 96\ensuremath{\times}96 configurations
+beyond spatial resolution: the temporal frame ranges differ (169 frames,
+timesteps 30--198, at 48\ensuremath{\times}48 versus 166 frames, timesteps 30--195, at
+96\ensuremath{\times}96), the hardware environments differ (Apple M2/MPS at 48\ensuremath{\times}48
+versus NVIDIA Tesla T4/CUDA at 96\ensuremath{\times}96), source code revisions differ,
+and 48\ensuremath{\times}48 model checkpoints are retained whereas the 96\ensuremath{\times}96
+checkpoints are not available in the authorized artifact set. The result
+should be interpreted as a descriptive observation across two stored
+pipeline configurations that differ in resolution among other factors,
+not as evidence that spatial resolution alone caused any observed
+difference. A full control-matrix documenting all factor differences is
+retained in \texttt{audit\_n11/control\_matrix.md}.
+
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \section*{4. Results}\label{4-results}
@@ -746,6 +771,45 @@ unavailable cross-condition training histories.}
 \label{fig:training-histories}
 \end{figure}
 
+\subsection*{4.7 Exploratory cross-resolution comparison on tutorial
+trajectories (not a controlled resolution
+experiment)}\label{47-exploratory-cross-resolution-comparison}
+
+For the same tutorial trajectories (Twall-103/106/100) trained at
+96\ensuremath{\times}96 resolution (Section 3.8), the stored n=11 paired T-FNO minus
+U-Net differences are:
+
+\begin{itemize}
+\tightlist
+\item GWRMSE: $+0.10868$ (Holm p\,=\,0.00391; favors U-Net)
+\item Interface-temperature RMSE: $+0.46219$ (Holm p\,=\,0.00977; favors U-Net)
+\item Interface-temperature-jump MAE: $+0.21433$ (Holm p\,=\,0.00391; favors U-Net)
+\item Mass-conservation MAE: $+0.04906$ (Holm p\,=\,0.00391; favors U-Net)
+\end{itemize}
+
+All four metrics favor U-Net in the 96\ensuremath{\times}96 stored configuration, with
+Holm-adjusted p-values well below 0.05 --- a marked contrast to the
+48\ensuremath{\times}48 tutorial split, where T-FNO was significantly better on
+interface-temperature metrics (Section 4.1). For mass conservation, both
+resolutions return a positive difference (T-FNO worse than U-Net), so
+the direction holds across configurations for that metric; only the
+magnitude differs ($+0.04494$ at 48\ensuremath{\times}48 versus $+0.04906$ at
+96\ensuremath{\times}96).
+
+These differences are stored-pipeline observations that reflect the
+combined effect of resolution and the other pipeline factors documented
+in Section 3.8 and \texttt{audit\_n11/control\_matrix.md}. They cannot
+be attributed to spatial resolution as an isolated cause. We report them
+explicitly as exploratory because the statistical power (n=11) is
+sufficient to detect the signed direction reliably, but the absence of
+experimental controls prevents any causal interpretation. The correct
+scientific reading is: \textit{the relative T-FNO/U-Net paired
+differences observed in the 96\ensuremath{\times}96 stored pipeline configuration are
+consistently opposite in sign to the 48\ensuremath{\times}48 interface-fidelity
+results, and this observation motivates a future dedicated study that
+would need to control the confounding pipeline factors before attribution
+is possible.}
+
 \begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
 
 \section*{5. Discussion}\label{5-discussion}
@@ -778,6 +842,18 @@ correlating per-trajectory physical statistics (interface curvature,
 vapor coverage fraction, thermal gradient magnitude) with per-trajectory
 architecture ranking, which the current two-condition independent test
 cannot support.
+
+The exploratory same-trajectory 96\ensuremath{\times}96 comparison (Section 4.7)
+produces directionally consistent results with the multi-trajectory
+cross-condition test (Section 4.4): both stored 96\ensuremath{\times}96 configurations
+show positive T-FNO $-$ U-Net paired differences on interface-temperature
+metrics, opposite to the tutorial-split 48\ensuremath{\times}48 result. We treat this
+consistency as hypothesis-generating rather than confirmatory, because
+the 96\ensuremath{\times}96 stored pipeline configurations differ from the 48\ensuremath{\times}48
+configuration in multiple factors beyond resolution (Section 3.8); no
+factorial design isolating resolution has been executed. The observation
+nevertheless strengthens the motivation for a future controlled study
+(Section 6).
 
 \subsection*{5.2 The divergence penalty is the more robust of the two
 interventions
@@ -871,6 +947,12 @@ artifacts are checksummed; complete cross-condition per-seed histories
 and checkpoints are unavailable & Stored-result self-test is
 reproducible; full raw-data-to-checkpoint reproduction remains
 unavailable \\
+Exploratory resolution comparison & The 48\ensuremath{\times}48 and
+96\ensuremath{\times}96 stored configurations differ in temporal frame
+range, hardware, source revision, and checkpoint availability in
+addition to spatial resolution; no factorial resolution-only control
+has been executed & Reported as descriptive only; a fully controlled
+resolution experiment is identified as future work (Section 6) \\
 \end{longtable}
 }
 
@@ -941,6 +1023,14 @@ made above, each of which is scoped and evidenced independently of them:
   with a verified stable-to-CHF transition and synchronized heat-flux
   labeling, to move the CHF-motivated proxy toward an actual validated
   detection evaluation.
+\item
+  A factorial resolution experiment --- training the same model
+  configurations on the same trajectories with matched temporal windows,
+  matched hardware, matched checkpointing, and a predeclared
+  architecture\ensuremath{\times}resolution statistical interaction test --- to determine
+  whether the directional differences observed in Section 4.7 are
+  attributable to spatial resolution specifically, or to the other
+  pipeline factors that currently co-vary with it.
 \end{itemize}
 
 A concrete, ready-to-execute prompt for the first two items (the
@@ -967,6 +1057,21 @@ public \texttt{v1.0.4} repository release is archived at Zenodo, DOI
 \url{https://doi.org/10.5281/zenodo.21858198}. That archive is a
 version-specific snapshot and does not remove the stated raw-data,
 checkpoint, cross-condition-provenance, or field-snapshot limitations.
+
+The exploratory same-trajectory 96\ensuremath{\times}96 comparison (Section 4.7) is
+archived on the \texttt{experiment/resolution-control-n11} branch at
+commit \texttt{eb7884e}. This archive includes per-seed
+\texttt{config.yaml}, \texttt{results.json}, and training curve
+files for all 11 T-FNO and 11 U-Net seeds, the merged
+\texttt{benchmark\_results.json} and \texttt{benchmark\_summary.csv},
+and the \texttt{resolution\_control\_analysis.json} containing the
+computed paired differences and Holm-adjusted p-values. The 96\ensuremath{\times}96
+model checkpoints are not committed (Kaggle-resident only). The control
+matrix documenting all pipeline differences is retained in
+\texttt{audit\_n11/control\_matrix.md}. These stored artifacts are
+reproducible at the analysis and summary level from the committed JSON
+files; full end-to-end reproducibility from raw data requires
+externally hosted data, checkpoints, and the Kaggle GPU environment.
 
 \section*{Bibliographic verification status}
 Thirteen identifiable works were independently checked against primary publication
