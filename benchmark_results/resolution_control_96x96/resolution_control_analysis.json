@@ -1,0 +1,47 @@
+{
+  "analysis_timestamp_utc": "2026-08-10T15:29:24.870361Z",
+  "comparison": "tfno_minus_unet",
+  "description": "Resolution-control: 48x48 (n=11) vs 96x96 (n=7), same tutorial-split conditions (Twall-103/106/100). Assesses whether T-FNO/U-Net ranking holds, reverses, or is inconclusive when resolution is the sole factor.",
+  "per_metric": {
+    "gwrmse": {
+      "mean_48x48": -0.056980467330325885,
+      "n_48x48": 11,
+      "p_48x48_exact_sign_flip": 0.146484375,
+      "mean_96x96": 0.12422554959374413,
+      "n_96x96": 7,
+      "p_96x96_exact_sign_flip": 0.015625,
+      "holm_bonferroni_96x96": 0.0625,
+      "verdict": "REVERSES"
+    },
+    "interface_temperature_rmse": {
+      "mean_48x48": -0.5018974921378221,
+      "n_48x48": 11,
+      "p_48x48_exact_sign_flip": 0.001953125,
+      "mean_96x96": 0.6194808528681476,
+      "n_96x96": 7,
+      "p_96x96_exact_sign_flip": 0.03125,
+      "holm_bonferroni_96x96": 0.0625,
+      "verdict": "REVERSES"
+    },
+    "interface_temperature_jump_mae": {
+      "mean_48x48": -0.4314661138707942,
+      "n_48x48": 11,
+      "p_48x48_exact_sign_flip": 0.0009765625,
+      "mean_96x96": 0.23295936050796864,
+      "n_96x96": 7,
+      "p_96x96_exact_sign_flip": 0.015625,
+      "holm_bonferroni_96x96": 0.0625,
+      "verdict": "REVERSES"
+    },
+    "mass_conservation_mae": {
+      "mean_48x48": 0.044935740104622465,
+      "n_48x48": 11,
+      "p_48x48_exact_sign_flip": 0.0009765625,
+      "mean_96x96": 0.05005950806247201,
+      "n_96x96": 7,
+      "p_96x96_exact_sign_flip": 0.015625,
+      "holm_bonferroni_96x96": 0.0625,
+      "verdict": "HOLDS"
+    }
+  }
+}
