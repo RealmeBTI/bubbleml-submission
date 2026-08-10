@@ -1,0 +1,12 @@
+{
+  "timestamp_utc": "2026-08-10T07:54:45.769843Z",
+  "python": "3.12.13",
+  "torch": "2.10.0+cu128",
+  "cuda_available": true,
+  "cuda_device_count": 2,
+  "gpu_names": [
+    "Tesla T4",
+    "Tesla T4"
+  ],
+  "platform": "Linux-6.12.90+-x86_64-with-glibc2.35"
+}
