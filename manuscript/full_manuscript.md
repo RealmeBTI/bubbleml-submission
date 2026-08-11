@@ -144,9 +144,9 @@ A fully autoregressive evaluator feeds each model's own five-frame predictions b
 
 ## 4. Results
 
-### 4.1 Tutorial split: T-FNO and U-Net form a statistically confirmed Pareto trade-off
+### 4.1 Tutorial split: T-FNO and U-Net performance analysis
 
-Across 11 paired seeds, no overall GWRMSE winner was established (T-FNO − U-Net: −0.05698, 95% paired bootstrap CI [−0.12314, +0.00946], sign-flip p=.1469, Holm p=1.0). T-FNO was significantly better on interface-temperature RMSE (−0.50190, Holm p=.0352) and interface-temperature-jump MAE (−0.43147, Holm p=.0215), but significantly worse on mass-conservation MAE (+0.04494, Holm p=.0215). The fixed-split trade-off is shown in Figure 1.
+Across 11 paired seeds, no overall GWRMSE winner was established (T-FNO − U-Net: +0.00460, 95% paired bootstrap CI [−0.06506, +0.07425], sign-flip p=.8906, Holm p=1.0). T-FNO showed no statistically significant advantage on interface-temperature RMSE (−0.18853, unadjusted p=.234, Holm p=1.0) and interface-temperature-jump MAE (−0.09277, unadjusted p=.196, Holm p=1.0), but remained significantly worse on mass-conservation MAE (+0.04917, unadjusted p=.00097, Holm p=.0039). The fixed-split trade-off initially hypothesized is thus not statistically supported at this resolution.
 
 ### 4.2 Physical validity is an evaluation requirement, independent of architecture ranking
 
