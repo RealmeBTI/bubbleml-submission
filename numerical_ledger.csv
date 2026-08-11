@@ -1,0 +1,21 @@
+MANUSCRIPT NUMBER,TABLE/FIGURE/SECTION,SOURCE ARTIFACT,SOURCE FILE,SEED(S),COMPUTATION,STATISTICAL TEST
+10.3756,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,TFNO Mean GWRMSE,N/A
+10.3710,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,UNET Mean GWRMSE,N/A
+0.004597,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,Paired Diff GWRMSE,Exact Sign-Flip
+[-0.05759; 0.05894],Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,95% CI GWRMSE,Exact Sign-Flip Inversion
+0.890625,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,p-value GWRMSE,Exact Sign-Flip
+14.0556,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,TFNO Mean Interface RMSE,N/A
+14.2441,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,UNET Mean Interface RMSE,N/A
+-0.18853,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,Paired Diff Interface RMSE,Exact Sign-Flip
+[-0.4749; 0.0673],Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,95% CI Interface RMSE,Exact Sign-Flip Inversion
+0.234375,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,p-value Interface RMSE,Exact Sign-Flip
+11.1125,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,TFNO Mean Interface Jump MAE,N/A
+11.2053,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,UNET Mean Interface Jump MAE,N/A
+-0.09277,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,Paired Diff Interface Jump MAE,Exact Sign-Flip
+[-0.2203; 0.0254],Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,95% CI Interface Jump MAE,Exact Sign-Flip Inversion
+0.196289,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,p-value Interface Jump MAE,Exact Sign-Flip
+0.21479,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,TFNO Mean Mass Cons MAE,N/A
+0.16562,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,UNET Mean Mass Cons MAE,N/A
+0.04917,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,Paired Diff Mass Cons MAE,Exact Sign-Flip
+[0.0444; 0.0538],Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,95% CI Mass Cons MAE,Exact Sign-Flip Inversion
+0.000976,Table 1 / Section 4.1,48x48 n=11,benchmark_results.json,All 11,p-value Mass Cons MAE,Exact Sign-Flip
