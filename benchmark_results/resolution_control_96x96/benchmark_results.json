@@ -1201,7 +1201,184 @@
     }
   },
   "pairwise_model_minus_hybrid_tfno": {},
-  "paired_fno_minus_unet": {},
+  "paired_fno_minus_unet": {
+    "alpha_gwrmse": {
+      "mean_fno_minus_unet": 0.006246360277052751,
+      "ci95_low": 0.0025912628151135452,
+      "ci95_high": 0.010199032967352558,
+      "paired_sign_flip_p": 0.01171875,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.078125
+    },
+    "gwrmse": {
+      "mean_fno_minus_unet": 0.10868116278281144,
+      "ci95_low": 0.06212499945303132,
+      "ci95_high": 0.1577993726371405,
+      "paired_sign_flip_p": 0.0009765625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.021484375
+    },
+    "interface_alpha_rmse": {
+      "mean_fno_minus_unet": 0.007978517503909594,
+      "ci95_low": 0.002879374385415032,
+      "ci95_high": 0.013298270813495227,
+      "paired_sign_flip_p": 0.0166015625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.078125
+    },
+    "interface_temperature_jump_mae": {
+      "mean_fno_minus_unet": 0.21432542013997766,
+      "ci95_low": 0.16071734869003815,
+      "ci95_high": 0.2655621878128901,
+      "paired_sign_flip_p": 0.0009765625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.021484375
+    },
+    "interface_temperature_rmse": {
+      "mean_fno_minus_unet": 0.46219041081060264,
+      "ci95_low": 0.19118059131818987,
+      "ci95_high": 0.7644013773338879,
+      "paired_sign_flip_p": 0.009765625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.078125
+    },
+    "interior_edge_divergence_mae": {
+      "mean_fno_minus_unet": -0.1329020682275813,
+      "ci95_low": -0.15263827909347152,
+      "ci95_high": -0.1132880542655953,
+      "paired_sign_flip_p": 0.0009765625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.021484375
+    },
+    "interior_edge_rmse": {
+      "mean_fno_minus_unet": 0.14891338422937653,
+      "ci95_low": 0.07904278202559434,
+      "ci95_high": 0.22508349256910373,
+      "paired_sign_flip_p": 0.00390625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.0390625
+    },
+    "mass_conservation_mae": {
+      "mean_fno_minus_unet": 0.04906474360166151,
+      "ci95_low": 0.04419553918573094,
+      "ci95_high": 0.05443823541701702,
+      "paired_sign_flip_p": 0.0009765625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.021484375
+    },
+    "relative_l2": {
+      "mean_fno_minus_unet": 0.02140829022660998,
+      "ci95_low": 0.014256179198562318,
+      "ci95_high": 0.02808976105832267,
+      "paired_sign_flip_p": 0.001953125,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.0234375
+    },
+    "rmse": {
+      "mean_fno_minus_unet": 0.05786521731599188,
+      "ci95_low": 0.019099769733099948,
+      "ci95_high": 0.09782883140484416,
+      "paired_sign_flip_p": 0.03125,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.078125
+    },
+    "rollout_alpha_gwrmse": {
+      "mean_fno_minus_unet": 0.006246360176963884,
+      "ci95_low": 0.00259126255557276,
+      "ci95_high": 0.010199032820196043,
+      "paired_sign_flip_p": 0.01171875,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.078125
+    },
+    "rollout_gwrmse": {
+      "mean_fno_minus_unet": 0.10868116278281144,
+      "ci95_low": 0.06212499945303132,
+      "ci95_high": 0.1577993726371405,
+      "paired_sign_flip_p": 0.0009765625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.021484375
+    },
+    "rollout_interface_alpha_rmse": {
+      "mean_fno_minus_unet": 0.007978517503909594,
+      "ci95_low": 0.002879374385415032,
+      "ci95_high": 0.013298270813495227,
+      "paired_sign_flip_p": 0.0166015625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.078125
+    },
+    "rollout_interface_temperature_jump_mae": {
+      "mean_fno_minus_unet": 0.21432542013997766,
+      "ci95_low": 0.16071734869003815,
+      "ci95_high": 0.2655621878128901,
+      "paired_sign_flip_p": 0.0009765625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.021484375
+    },
+    "rollout_interface_temperature_rmse": {
+      "mean_fno_minus_unet": 0.46219041081060264,
+      "ci95_low": 0.19118059131818987,
+      "ci95_high": 0.7644013773338879,
+      "paired_sign_flip_p": 0.009765625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.078125
+    },
+    "rollout_interior_edge_divergence_mae": {
+      "mean_fno_minus_unet": -0.1329020682275813,
+      "ci95_low": -0.15263827909347152,
+      "ci95_high": -0.1132880542655953,
+      "paired_sign_flip_p": 0.0009765625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.021484375
+    },
+    "rollout_interior_edge_rmse": {
+      "mean_fno_minus_unet": 0.14891338422937653,
+      "ci95_low": 0.07904278202559434,
+      "ci95_high": 0.22508349256910373,
+      "paired_sign_flip_p": 0.00390625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.0390625
+    },
+    "rollout_mass_conservation_mae": {
+      "mean_fno_minus_unet": 0.04906474360166151,
+      "ci95_low": 0.04419553918573094,
+      "ci95_high": 0.05443823541701702,
+      "paired_sign_flip_p": 0.0009765625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.021484375
+    },
+    "rollout_relative_l2": {
+      "mean_fno_minus_unet": 0.02140829022660998,
+      "ci95_low": 0.014256179198562318,
+      "ci95_high": 0.02808976105832267,
+      "paired_sign_flip_p": 0.001953125,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.0234375
+    },
+    "rollout_rmse": {
+      "mean_fno_minus_unet": 0.05786521731599188,
+      "ci95_low": 0.019099769733099948,
+      "ci95_high": 0.09782883140484416,
+      "paired_sign_flip_p": 0.03125,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.078125
+    },
+    "rollout_temperature_gwrmse": {
+      "mean_fno_minus_unet": 0.4400098346738924,
+      "ci95_low": 0.3105783991407788,
+      "ci95_high": 0.5857098584266229,
+      "paired_sign_flip_p": 0.0009765625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.021484375
+    },
+    "temperature_gwrmse": {
+      "mean_fno_minus_unet": 0.4400098346738924,
+      "ci95_low": 0.3105783991407788,
+      "ci95_high": 0.5857098584266229,
+      "paired_sign_flip_p": 0.0009765625,
+      "n_seeds": 11.0,
+      "holm_bonferroni_p": 0.021484375
+    }
+  },
   "metric_definitions": {
     "one_step": "Mean over all five frames in the first predicted future bundle.",
     "rollout_*": "Mean over every requested autoregressive five-frame bundle.",
