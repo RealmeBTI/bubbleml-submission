@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="720" height="480" preserveAspectRatio="xMinYMin meet" viewBox="0 0 720 480" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="720" height="480"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-480)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="720" height="480" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(100%,100%,100%); fill-rule: evenodd;"/>
+			<text x="209.9525" y="455" style="font-family: Helvetica; font-size: 15px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,910) scale(1,-1)">Canonical tutorial-split conservation-error comparison</text>
+			<text x="288.478" y="26" style="font-family: Helvetica; font-size: 11px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,52) scale(1,-1)">Mass-conservation MAE (lower is better)</text>
+			<text x="85" y="436" style="font-family: Helvetica; font-size: 9px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,872) scale(1,-1)">Interface-temperature RMSE</text>
+			<path d="M 85,70 L 690,70 Z" style="stroke: rgb(6%,9%,15%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<path d="M 85,425 L 85,70 Z" style="stroke: rgb(6%,9%,15%); stroke-linecap: butt; stroke-width: 1.2;"/>
+			<path d="M 85,425 L 690,425 Z" style="stroke: rgb(81%,83%,85%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="61.432" y="421.0" style="font-family: Helvetica; font-size: 8px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,842) scale(1,-1)">15.2</text>
+			<path d="M 85,354 L 690,354 Z" style="stroke: rgb(81%,83%,85%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="61.432" y="350.0" style="font-family: Helvetica; font-size: 8px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,700) scale(1,-1)">14.9</text>
+			<path d="M 85,283 L 690,283 Z" style="stroke: rgb(81%,83%,85%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="61.432" y="279.0" style="font-family: Helvetica; font-size: 8px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,558) scale(1,-1)">14.6</text>
+			<path d="M 85,212 L 690,212 Z" style="stroke: rgb(81%,83%,85%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="61.432" y="208.0" style="font-family: Helvetica; font-size: 8px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,416) scale(1,-1)">14.2</text>
+			<path d="M 85,141 L 690,141 Z" style="stroke: rgb(81%,83%,85%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="61.432" y="137.0" style="font-family: Helvetica; font-size: 8px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,274) scale(1,-1)">13.9</text>
+			<path d="M 85,70 L 690,70 Z" style="stroke: rgb(81%,83%,85%); stroke-linecap: butt; stroke-width: 0.6;"/>
+			<text x="61.432" y="66.0" style="font-family: Helvetica; font-size: 8px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,132) scale(1,-1)">13.6</text>
+			<text x="77.216" y="53" style="font-family: Helvetica; font-size: 8px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,106) scale(1,-1)">0.12</text>
+			<text x="195.992" y="53" style="font-family: Helvetica; font-size: 8px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,106) scale(1,-1)">0.146</text>
+			<text x="316.992" y="53" style="font-family: Helvetica; font-size: 8px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,106) scale(1,-1)">0.172</text>
+			<text x="437.992" y="53" style="font-family: Helvetica; font-size: 8px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,106) scale(1,-1)">0.198</text>
+			<text x="558.992" y="53" style="font-family: Helvetica; font-size: 8px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,106) scale(1,-1)">0.224</text>
+			<text x="682.216" y="53" style="font-family: Helvetica; font-size: 8px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,106) scale(1,-1)">0.25</text>
+			<path d="M 510.275431,171.083671 L 544.083224,171.083671 Z" style="stroke: rgb(14%,38%,92%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<path d="M 526.149646,141.020509 L 526.149646,204.975893 Z" style="stroke: rgb(14%,38%,92%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<circle cx="526.149645670847" cy="171.08367070236466" r="4.5" style="stroke: rgb(14%,38%,92%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,38%,92%); fill-rule: evenodd;"/>
+			<path d="M 470,410 L 494,410 Z" style="stroke: rgb(14%,38%,92%); stroke-linecap: butt; stroke-width: 2;"/>
+			<circle cx="482" cy="410" r="3" style="stroke: rgb(14%,38%,92%); stroke-linecap: butt; stroke-width: 1; fill: rgb(14%,38%,92%); fill-rule: evenodd;"/>
+			<text x="502" y="406" style="font-family: Helvetica; font-size: 9px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,812) scale(1,-1)">T-FNO</text>
+			<path d="M 282.214874,212.914047 L 313.225626,212.914047 Z" style="stroke: rgb(86%,14%,14%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<path d="M 297.308879,170.327432 L 297.308879,258.845645 Z" style="stroke: rgb(86%,14%,14%); stroke-linecap: butt; stroke-width: 1.4;"/>
+			<circle cx="297.3088786824406" cy="212.91404667398353" r="4.5" style="stroke: rgb(86%,14%,14%); stroke-linecap: butt; stroke-width: 1; fill: rgb(86%,14%,14%); fill-rule: evenodd;"/>
+			<path d="M 470,390 L 494,390 Z" style="stroke: rgb(86%,14%,14%); stroke-linecap: butt; stroke-width: 2;"/>
+			<circle cx="482" cy="390" r="3" style="stroke: rgb(86%,14%,14%); stroke-linecap: butt; stroke-width: 1; fill: rgb(86%,14%,14%); fill-rule: evenodd;"/>
+			<text x="502" y="386" style="font-family: Helvetica; font-size: 9px;fill: rgb(6%,9%,15%); stroke:none;" transform="translate(0,772) scale(1,-1)">U-Net</text>
+		</g>
+	</g>
+</svg>

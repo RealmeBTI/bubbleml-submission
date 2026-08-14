@@ -156,11 +156,12 @@ def axes(fig: Figure, title: str, xlabel: str, ylabel: str, bounds: tuple[float,
     return project
 
 
-def figure_pareto(output: Path) -> None:
-    phase1 = load("benchmark_results/phase1_gpu_decisive_tfno_unet_n11/benchmark_results.json")
-    hybrid = load("benchmark_results/tier1_hybrid_n11/benchmark_results.json")
-    divergence = load("benchmark_results/lambda_sensitivity_030_n11/benchmark_results.json")
-    specs = [("T-FNO",phase1,"tfno","#2563eb"),("U-Net",phase1,"unet","#dc2626"),("Hybrid (lambda=0)",hybrid,"hybrid_tfno","#7c3aed"),("Hybrid (lambda=0.30)",divergence,"hybrid_div","#059669")]
+def figure_conservation_error_comparison(output: Path) -> None:
+    # Only the audited CUDA resolution-control result is eligible for the
+    # tutorial figure.  The retired MPS Phase-1 campaign is historical
+    # provenance, not evidence for a current figure or claim.
+    tutorial = load("benchmark_results/resolution_control_48x48/benchmark_results.json")
+    specs = [("T-FNO",tutorial,"tfno","#2563eb"),("U-Net",tutorial,"unet","#dc2626")]
     rows=[]
     for index,(label,payload,model,color) in enumerate(specs):
         raw=payload["raw_seed_metrics"][model]
@@ -168,12 +169,12 @@ def figure_pareto(output: Path) -> None:
         ys=[float(raw[s]["interface_temperature_rmse"]) for s in sorted(raw,key=int)]
         rows.append((label,fmean(xs),fmean(ys),bootstrap(xs,100+index),bootstrap(ys,200+index),color))
     fig=Figure(); fig.rect(0,0,WIDTH,HEIGHT)
-    project=axes(fig,"Tutorial-split interface/conservation trade-off","Mass-conservation MAE (lower is better)","Interface-temperature RMSE",(0.075,0.225,14.65,15.75))
+    project=axes(fig,"Canonical tutorial-split conservation-error comparison","Mass-conservation MAE (lower is better)","Interface-temperature RMSE",(0.12,0.25,13.6,15.2))
     for index,(label,x,y,(xl,xh),(yl,yh),color) in enumerate(rows):
         px,py=project(x,y); p1,_=project(xl,y); p2,_=project(xh,y); _,q1=project(x,yl); _,q2=project(x,yh)
         fig.line(p1,py,p2,py,color,width=1.4); fig.line(px,q1,px,q2,color,width=1.4); fig.circle(px,py,4.5,color,color)
         lx=470; ly=70+20*index; fig.line(lx,ly,lx+24,ly,color,width=2); fig.circle(lx+12,ly,3,color,color); fig.text(lx+32,ly+4,label,9)
-    fig.save(output/"fig1_pareto_front")
+    fig.save(output/"fig1_conservation_error_comparison")
 
 
 def figure_dry(output: Path) -> None:
@@ -273,7 +274,7 @@ def figure_splits(output: Path) -> None:
 
 def main() -> None:
     parser=argparse.ArgumentParser(description=__doc__); parser.add_argument("--output-dir",type=Path,default=Path("submission/figures")); args=parser.parse_args(); output=args.output_dir if args.output_dir.is_absolute() else ROOT/args.output_dir
-    figure_pareto(output); figure_dry(output); figure_lambda(output); figure_losses(output); figure_workflow(output); figure_splits(output); print(f"Generated six PDF/SVG/600-DPI PNG figure families in {output}")
+    figure_conservation_error_comparison(output); figure_dry(output); figure_lambda(output); figure_workflow(output); figure_splits(output); print(f"Generated five PDF/SVG/600-DPI PNG figure families in {output}")
 
 
 if __name__ == "__main__": main()

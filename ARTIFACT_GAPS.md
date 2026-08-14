@@ -7,21 +7,22 @@ that could not be verified in the local project.
 
 - Raw BubbleML HDF5 files and the 10.35 GiB legacy archive. These are intentionally
   external, but a final official download URL must be added by the author.
-- The complete model checkpoint set. Four representative checkpoint hashes were
-  verified; checkpoints remain external because the local set is approximately
-  1.8 GiB.
+- The complete 96 x 96 cross-condition checkpoint set remains unavailable.
+  For the canonical 48 x 48 tutorial split, all 22 baseline checkpoints and all
+  22 newly rerun intervention checkpoints are retained in checksum-verified
+  reviewer bundles.
 - Complete per-seed configs, histories, and checkpoint provenance for the 96 x 96
   cloud cross-condition experiment. Only the compact audited summary
   `benchmark_results/multitraj96/report_summary.json` is present.
-- Cross-condition field-snapshot arrays/checkpoints needed to regenerate the
-  ground-truth-versus-prediction snapshot figure. A repository-wide search also
-  found no compatible tutorial-split T-FNO/U-Net checkpoint pair, so the allowed
-  tutorial-split fallback cannot be generated honestly. No substitute is fabricated.
+- Cross-condition field-snapshot arrays/checkpoints needed to regenerate a
+  cross-condition ground-truth-versus-prediction snapshot figure. Compatible
+  tutorial-split tensors and checkpoints are now locally retained, but no new
+  snapshot figure is claimed until it is generated directly from those artifacts.
 - A source bibliography or citation-key mapping for every prose reference in the
   manuscript.
-- A verified public GitHub repository/release and archive DOI. The author has
-  supplied the intended GitHub URL and root MIT `LICENSE`, but the URL was not
-  publicly verified during this audit and no archive DOI has been issued.
+- A public immutable archive containing the newly recovered CUDA intervention
+  bundle. This pass intentionally does not push, tag, alter an existing release,
+  or create a Zenodo version; release approval remains separate.
 
 ## Conflicting historical records
 
@@ -32,6 +33,7 @@ auditability.
 
 ## Consequence
 
-The stored-result statistical self-test is complete and independently runnable.
-A full raw-data-to-checkpoint reproduction is not yet reviewer-runnable without
-the external files and links listed above.
+The canonical tutorial and CUDA intervention stored-result self-tests are complete
+and independently runnable from locally retained artifacts. A full raw-HDF5-to-
+checkpoint reproduction and the cross-condition checkpoint-level reproduction
+still require the external files listed above.
