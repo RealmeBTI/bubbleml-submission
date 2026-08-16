@@ -290,7 +290,7 @@ A concrete, ready-to-execute prompt for the first two items (the highest-leverag
 
 ## 7. Reproducibility and Artifact Manifest
 
-The canonical tutorial analysis is generated from `benchmark_results/resolution_control_48x48/benchmark_results.json` by `scripts/generate_canonical_statistics.py`, which records its bootstrap seed and validates the stored paired statistics before manuscript conversion. The same generator validates the checkpoint-retaining CUDA intervention rerun against the canonical T-FNO/U-Net baseline metrics before inserting Section 4.2. The cross-condition experiment is represented locally by its compact audited summary rather than complete cloud-side per-seed histories and checkpoints; this boundary is documented in the artifact manifest. The earlier `phase1_gpu_decisive_tfno_unet_n11` MPS result and all intervention outputs derived from that retired pipeline are retained only as historical provenance and excluded from current numerical claims. The root-cause audit documents this retirement. The prior public `v1.0.4` repository release is archived at Zenodo, DOI https://doi.org/10.5281/zenodo.21858198; it is a version-specific historical snapshot and does not remove the stated limitations.
+The canonical tutorial analysis is generated from `benchmark_results/resolution_control_48x48/benchmark_results.json` by `scripts/generate_canonical_statistics.py`, which records its bootstrap seed and validates the stored paired statistics before manuscript conversion. The same generator validates the checkpoint-retaining CUDA intervention rerun against the canonical T-FNO/U-Net baseline metrics before inserting Section 4.2. The cross-condition experiment is represented locally by its compact audited summary rather than complete cloud-side per-seed histories and checkpoints; this boundary is documented in the artifact manifest. The earlier `phase1_gpu_decisive_tfno_unet_n11` MPS result and all intervention outputs derived from that retired pipeline are retained only as historical provenance and excluded from current numerical claims. The root-cause audit documents this retirement. The prior public `v1.0.4` repository release is archived at Zenodo, DOI https://doi.org/10.5281/zenodo.21967986; it is a version-specific historical snapshot and does not remove the stated limitations.
 
 ---
 
@@ -299,7 +299,7 @@ The canonical tutorial analysis is generated from `benchmark_results/resolution_
 The primary data are the publicly available BubbleML Pool-Boiling Subcooled FC-72 dataset; the exact source release and checksums are documented in `CHECKSUMS.md`. The repository does not redistribute the raw data. Code, retained stored-result artifacts, configurations, statistical-analysis scripts, and the verified checkpoint-retaining CUDA intervention reviewer bundle (`hybrid_cuda_rerun_48x48_n11_reviewer_bundle.zip`, SHA-256 `1a73240957cc1a3375a1e146c76772b5551080e232926df9b4abefa33fa0a349`) supporting Section 4.2 are publicly available in the verified `v1.1.0` release:
 
 - GitHub release: https://github.com/RealmeBTI/bubbleml-submission/releases/tag/v1.1.0
-- Version archive DOI: https://doi.org/10.5281/zenodo.21858198
+- Version archive DOI: https://doi.org/10.5281/zenodo.21967986
 
 Raw data, complete cross-condition exports, and other unavailable artifacts remain bounded as documented in `ARTIFACT_GAPS.md`.
 

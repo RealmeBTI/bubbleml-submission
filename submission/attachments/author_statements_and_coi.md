@@ -63,6 +63,6 @@ The primary dataset used in this study is the publicly available BubbleML Pool-B
 Code, retained machine-readable result artifacts, configurations, statistical-analysis scripts, and the verified checkpoint-retaining CUDA intervention reviewer bundle (`hybrid_cuda_rerun_48x48_n11_reviewer_bundle.zip`, SHA-256 `1a73240957cc1a3375a1e146c76772b5551080e232926df9b4abefa33fa0a349`) supporting Section 4.2 are publicly available in the verified `v1.1.0` release:
 
 - GitHub release: https://github.com/RealmeBTI/bubbleml-submission/releases/tag/v1.1.0
-- Version archive DOI: https://doi.org/10.5281/zenodo.21858198
+- Version archive DOI: https://doi.org/10.5281/zenodo.21967986
 
 The repository includes documentation with environment setup instructions, pinned dependency versions, and stored-result reproduction instructions. Raw data, complete raw checkpoints, and complete cross-condition exports remain external or unavailable as documented in `ARTIFACT_GAPS.md`.

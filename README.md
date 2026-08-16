@@ -22,13 +22,13 @@ only on the tutorial split.
 - The compact cross-condition export does not contain the full per-seed training
   histories or checkpoints. This gap is declared in `ARTIFACT_GAPS.md`.
 - The public repository is
-  `https://github.com/RealmeBTI/bubbleml-submission`. The preceding immutable
-  `v1.0.4` release is publicly available at
-  `https://github.com/RealmeBTI/bubbleml-submission/releases/tag/v1.0.4` and
+  `https://github.com/RealmeBTI/bubbleml-submission`. The current immutable
+  `v1.1.0` release is publicly available at
+  `https://github.com/RealmeBTI/bubbleml-submission/releases/tag/v1.1.0` and
   has the verified Zenodo version DOI
-  `https://doi.org/10.5281/zenodo.21858198`. This DOI identifies that exact
-  archived version only; it does not make unavailable raw data, checkpoints,
-  or cross-condition provenance available.
+  `https://doi.org/10.5281/zenodo.21967986`. This DOI identifies that exact
+  archived version, which includes the verified CUDA intervention reviewer bundle;
+  it does not make unavailable raw data or cross-condition provenance available.
 - The author-supplied root [`LICENSE`](LICENSE) is the MIT license for this
   repository's code. It does not relicense BubbleML data, checkpoints, or
   third-party dependencies.

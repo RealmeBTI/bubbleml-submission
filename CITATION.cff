@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this release, please cite the project title and version shown below."
 title: "BubbleML Physics-Aware Benchmark"
-version: "1.0.5"
-date-released: 2026-08-09
+version: "1.1.0"
+date-released: 2026-08-16
 type: software
 abstract: "Physics-aware, multi-seed BubbleML operator-learning benchmark with audited stored-result artifacts."
 authors:
@@ -12,5 +12,5 @@ authors:
     orcid: "https://orcid.org/0009-0009-6695-365X"
 repository-code: "https://github.com/RealmeBTI/bubbleml-submission"
 license: "MIT"
-# The verified DOI 10.5281/zenodo.21858198 identifies immutable v1.0.4 only.
+# The verified DOI 10.5281/zenodo.21967986 identifies immutable v1.0.4 only.
 # Do not reuse it for this post-v1.0.4 version before its own archive exists.
