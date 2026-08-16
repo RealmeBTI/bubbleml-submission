@@ -1,3 +1,8 @@
-*.pdf binary
-*.png binary
-*.zip binary
+# Preserve the original CRLF-delimited CUDA export byte-for-byte.  It is a
+# retained experimental artifact, not authored source formatting.
+audit/kaggle_hybrid_cuda_rerun_2026-08-14/hybrid_cuda_rerun/benchmark_results/benchmark_summary.csv -whitespace
+
+# Compiled submission deliverables are binary artifacts; do not subject their
+# byte streams to source-code whitespace diagnostics.
+*.pdf -text -whitespace
+*.png -text -whitespace

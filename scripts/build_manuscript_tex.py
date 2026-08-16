@@ -9,9 +9,11 @@ import subprocess
 import tempfile
 from pathlib import Path
 
+from generate_canonical_statistics import build_ledger, manuscript_fragments
+
 
 ROOT = Path(__file__).resolve().parents[1]
-TITLE = "A Physics-Aware Benchmark for Phase-Resolved Neural Operator Learning in Boiling Flows: Statistically Rigorous Evidence for Condition-Dependent Architecture Trade-offs"
+TITLE = "Phase-Resolved Neural Operator Learning for Boiling Flows: An Auditable Benchmark of Conservation Error"
 
 
 def main() -> None:
@@ -22,6 +24,17 @@ def main() -> None:
     template = ROOT / "manuscript/elsarticle_template.tex"
     destination = ROOT / "manuscript/manuscript_elsarticle.tex"
     text = source.read_text(encoding="utf-8")
+    fragments = manuscript_fragments(build_ledger())
+    replacements = {
+        "{{CANONICAL_TUTORIAL_RESULTS}}": fragments["tutorial_results"],
+        "{{CANONICAL_HYBRID_RESULTS}}": fragments["hybrid_results"],
+        "{{CANONICAL_CROSS_CONDITION_TABLE}}": fragments["cross_condition_table"],
+        "{{CANONICAL_CROSS_CONDITION_RESULTS}}": fragments["cross_condition_results"],
+    }
+    for marker, replacement in replacements.items():
+        if text.count(marker) != 1:
+            raise RuntimeError(f"Expected exactly one canonical marker {marker!r}.")
+        text = text.replace(marker, replacement)
     first, separator, body = text.partition("\n")
     expected = f"# {TITLE}"
     if first != expected or not separator:
@@ -53,6 +66,7 @@ def main() -> None:
             check=True,
         )
     latex = destination.read_text(encoding="utf-8")
+    two_column = r"\begin{longtable}[]{@{}ll@{}}"
     three_column = r"\begin{longtable}[]{@{}lll@{}}"
     five_column = r"\begin{longtable}[]{@{}lrrrr@{}}"
     latex = latex.replace(
@@ -68,6 +82,11 @@ def main() -> None:
     latex = latex.replace(
         three_column,
         r"\begin{longtable}[]{@{}P{0.25\textwidth}P{0.33\textwidth}P{0.29\textwidth}@{}}",
+    )
+    latex = latex.replace(
+        two_column,
+        r"\begin{longtable}[]{@{}p{0.29\textwidth}p{0.65\textwidth}@{}}",
+        1,
     )
     latex = latex.replace(
         five_column,
@@ -94,12 +113,10 @@ def main() -> None:
     # LaTeX figures so every substantive manuscript reference resolves through
     # an explicit label.  This avoids relying on manually typed figure numbers.
     figures = {
-        "fig1_pareto_front.pdf": (1, "fig:pareto-tradeoff"),
+        "fig1_conservation_error_comparison.pdf": (1, "fig:conservation-error-comparison"),
         "fig6_split_design.pdf": (2, "fig:split-design"),
         "fig5_benchmark_workflow.pdf": (3, "fig:benchmark-workflow"),
-        "fig3_lambda_sensitivity.pdf": (4, "fig:lambda-sensitivity"),
-        "fig2_dry_area_trace.pdf": (5, "fig:dry-area-traces"),
-        "fig4_loss_curves.pdf": (6, "fig:training-histories"),
+        "fig2_dry_area_trace.pdf": (4, "fig:dry-area-traces"),
     }
     for filename, (number, label) in figures.items():
         pattern = re.compile(

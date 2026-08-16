@@ -22,6 +22,12 @@ public_release/
 *.run.xml
 *.synctex.gz
 
+# Locally generated verification output; the dated audit reports record results.
+test_logs/
+reproduced_cmame_*/
+
 # Source data and checkpoints are intentionally external.
 data/
 checkpoints/
+
+*.zip

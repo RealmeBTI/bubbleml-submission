@@ -1,0 +1,392 @@
+{
+  "canonical_tutorial": {
+    "artifact": "benchmark_results/resolution_control_48x48/benchmark_results.json",
+    "bootstrap": {
+      "rng_seed": 123,
+      "samples": 10000
+    },
+    "commit": [
+      "71ccf511439d8837c177989a8d3afb0a82edbe8e"
+    ],
+    "device": "cuda",
+    "means": {
+      "gwrmse": {
+        "tfno": 10.375603603446972,
+        "unet": 10.371006200654561
+      },
+      "interface_temperature_jump_mae": {
+        "tfno": 11.11254122451888,
+        "unet": 11.205309906900446
+      },
+      "interface_temperature_rmse": {
+        "tfno": 14.055588374996573,
+        "unet": 14.244119646981334
+      },
+      "mass_conservation_mae": {
+        "tfno": 0.21479248584662824,
+        "unet": 0.16562008963424343
+      }
+    },
+    "seeds": [
+      7,
+      17,
+      42,
+      100,
+      314,
+      1234,
+      2025,
+      2718,
+      4242,
+      7777,
+      9999
+    ],
+    "stored_ci_verification": "PASS",
+    "stored_ci_verification_failures": [],
+    "tfno_minus_unet": {
+      "gwrmse": {
+        "ci95_high": 0.05894272413430517,
+        "ci95_low": -0.05759044812328926,
+        "exact_p": 0.890625,
+        "holm_p": 1.0,
+        "mean_tfno_minus_unet": 0.004597402792413325
+      },
+      "interface_temperature_jump_mae": {
+        "ci95_high": 0.025479007160725896,
+        "ci95_low": -0.2203219094991548,
+        "exact_p": 0.1962890625,
+        "holm_p": 1.0,
+        "mean_tfno_minus_unet": -0.09276868238156427
+      },
+      "interface_temperature_rmse": {
+        "ci95_high": 0.0673182505738479,
+        "ci95_low": -0.47490005109236993,
+        "exact_p": 0.234375,
+        "holm_p": 1.0,
+        "mean_tfno_minus_unet": -0.18853127198476083
+      },
+      "mass_conservation_mae": {
+        "ci95_high": 0.053855332934945294,
+        "ci95_low": 0.04447743574313748,
+        "exact_p": 0.0009765625,
+        "holm_p": 0.021484375,
+        "mean_tfno_minus_unet": 0.049172396212384825
+      }
+    }
+  },
+  "cross_condition": {
+    "archive_sha256": "2eba140d74cbb7b01a55f0684227dea94306aea516a0f864831485d31d25f655",
+    "artifact": "benchmark_results/multitraj96/report_summary.json",
+    "device": "cuda: NVIDIA Tesla T4",
+    "excluded_stored_models": [
+      "hybrid_div",
+      "hybrid_tfno"
+    ],
+    "means": {
+      "tfno": {
+        "gwrmse": 11.5973996866,
+        "interface_temperature_jump_mae": 8.7655255038,
+        "interface_temperature_rmse": 14.5206865674,
+        "mass_conservation_mae": 0.1298886675
+      },
+      "unet": {
+        "gwrmse": 11.5029148722,
+        "interface_temperature_jump_mae": 8.5756723649,
+        "interface_temperature_rmse": 13.9057123129,
+        "mass_conservation_mae": 0.1156013438
+      }
+    },
+    "resolution": [
+      96,
+      96
+    ],
+    "seeds": [
+      42,
+      100,
+      1234,
+      2025,
+      9999
+    ],
+    "source_status": "stored T-FNO/U-Net summary; per-seed metrics are not retained locally; retired-pipeline intervention fields in the source artifact are excluded",
+    "split": {
+      "excluded_tutorial": [
+        100,
+        103,
+        106
+      ],
+      "test": [
+        98,
+        110
+      ],
+      "train": [
+        79,
+        85,
+        90,
+        95
+      ],
+      "validation": [
+        81
+      ],
+      "windows": {
+        "test": 322,
+        "train": 644,
+        "validation": 161
+      }
+    },
+    "tfno_minus_unet": {
+      "gwrmse": {
+        "ci95_high": 0.145339263,
+        "ci95_low": 0.0436303658,
+        "exact_p": 0.0625,
+        "holm_p": 1.0,
+        "mean_tfno_minus_unet": 0.0944848144
+      },
+      "interface_temperature_jump_mae": {
+        "ci95_high": 0.1993483378,
+        "ci95_low": 0.1808027765,
+        "exact_p": 0.0625,
+        "holm_p": 1.0,
+        "mean_tfno_minus_unet": 0.1898531389
+      },
+      "interface_temperature_rmse": {
+        "ci95_high": 0.9094066386,
+        "ci95_low": 0.3190584371,
+        "exact_p": 0.0625,
+        "holm_p": 1.0,
+        "mean_tfno_minus_unet": 0.6149742546
+      },
+      "mass_conservation_mae": {
+        "ci95_high": 0.020847014,
+        "ci95_low": 0.0091453443,
+        "exact_p": 0.0625,
+        "holm_p": 1.0,
+        "mean_tfno_minus_unet": 0.0142873237
+      }
+    }
+  },
+  "exploratory_96x96": {
+    "artifact": "benchmark_results/resolution_control_96x96/benchmark_results.json",
+    "bootstrap": {
+      "rng_seed": 123,
+      "samples": 10000
+    },
+    "commit": [
+      "433b14370edb845042ab33ca6a56e3cf5dc99b7e"
+    ],
+    "device": "cuda",
+    "means": {
+      "gwrmse": {
+        "tfno": 10.531710711226824,
+        "unet": 10.423029548444013
+      },
+      "interface_temperature_jump_mae": {
+        "tfno": 8.70070325747072,
+        "unet": 8.486377837330743
+      },
+      "interface_temperature_rmse": {
+        "tfno": 15.916745110861331,
+        "unet": 15.454554700050728
+      },
+      "mass_conservation_mae": {
+        "tfno": 0.2326062633698568,
+        "unet": 0.18354151976819527
+      }
+    },
+    "seeds": [
+      7,
+      17,
+      42,
+      100,
+      314,
+      1234,
+      2025,
+      2718,
+      4242,
+      7777,
+      9999
+    ],
+    "stored_ci_verification": "BLOCKED",
+    "stored_ci_verification_failures": [
+      "exploratory 96x96 gwrmse ci95_low: recomputed 0.061878445350026311, stored 0.063370437078829514",
+      "exploratory 96x96 gwrmse ci95_high: recomputed 0.15668424688672178, stored 0.15571360148165919",
+      "exploratory 96x96 interface_temperature_jump_mae ci95_low: recomputed 0.15937871398508888, stored 0.160870121905206",
+      "exploratory 96x96 interface_temperature_jump_mae ci95_high: recomputed 0.26433284471679702, stored 0.26427686976364917",
+      "exploratory 96x96 interface_temperature_rmse ci95_low: recomputed 0.17979291296999361, stored 0.18781302133873948",
+      "exploratory 96x96 interface_temperature_rmse ci95_high: recomputed 0.77178793922351452, stored 0.76074058273588274",
+      "exploratory 96x96 mass_conservation_mae ci95_low: recomputed 0.044317919061226389, stored 0.044155730743567309",
+      "exploratory 96x96 mass_conservation_mae ci95_high: recomputed 0.054402968953792312, stored 0.054494134032819469"
+    ],
+    "tfno_minus_unet": {
+      "gwrmse": {
+        "ci95_high": 0.15668424688672178,
+        "ci95_low": 0.06187844535002631,
+        "exact_p": 0.0009765625,
+        "holm_p": 0.021484375,
+        "mean_tfno_minus_unet": 0.10868116278281144
+      },
+      "interface_temperature_jump_mae": {
+        "ci95_high": 0.264332844716797,
+        "ci95_low": 0.15937871398508888,
+        "exact_p": 0.0009765625,
+        "holm_p": 0.021484375,
+        "mean_tfno_minus_unet": 0.21432542013997766
+      },
+      "interface_temperature_rmse": {
+        "ci95_high": 0.7717879392235145,
+        "ci95_low": 0.1797929129699936,
+        "exact_p": 0.009765625,
+        "holm_p": 0.078125,
+        "mean_tfno_minus_unet": 0.46219041081060264
+      },
+      "mass_conservation_mae": {
+        "ci95_high": 0.05440296895379231,
+        "ci95_low": 0.04431791906122639,
+        "exact_p": 0.0009765625,
+        "holm_p": 0.021484375,
+        "mean_tfno_minus_unet": 0.04906474360166151
+      }
+    }
+  },
+  "hybrid_cuda_intervention": {
+    "artifact": "audit/kaggle_hybrid_cuda_rerun_2026-08-14/hybrid_cuda_rerun/benchmark_results/benchmark_results.json",
+    "baseline_identity": "PASS",
+    "checkpoint_commit": [
+      "71ccf511439d8837c177989a8d3afb0a82edbe8e"
+    ],
+    "device": "cuda",
+    "divergence": {
+      "ci95_high": -0.06653817410936194,
+      "ci95_low": -0.07454106214785754,
+      "holm_p": 0.00048828125,
+      "hybrid_mean": 0.09527721242212324,
+      "lambda_div": 0.3,
+      "margin": 0.008292845428963615,
+      "mean_hybrid_minus_unet": -0.0703428772121202,
+      "noninferior": true,
+      "one_sided_exact_p": 0.00048828125,
+      "unet_mean": 0.16562008963424343
+    },
+    "gate_artifacts": [
+      "audit/kaggle_hybrid_cuda_rerun_2026-08-14/hybrid_cuda_rerun/hybrid_noninferiority.json",
+      "audit/kaggle_hybrid_cuda_rerun_2026-08-14/hybrid_cuda_rerun/divergence_noninferiority.json"
+    ],
+    "runtime": {
+      "cuda_available": true,
+      "cuda_device_count": 2,
+      "gpus": [
+        {
+          "capability": [
+            7,
+            5
+          ],
+          "index": 0,
+          "name": "Tesla T4",
+          "total_memory_bytes": 15636037632
+        },
+        {
+          "capability": [
+            7,
+            5
+          ],
+          "index": 1,
+          "name": "Tesla T4",
+          "total_memory_bytes": 15636037632
+        }
+      ],
+      "platform": "Linux-6.12.90+-x86_64-with-glibc2.35",
+      "python": "3.12.13",
+      "timestamp_utc": "2026-08-14T09:15:02.905363+00:00",
+      "torch": "2.10.0+cu128",
+      "torch_cuda": "12.8"
+    },
+    "seeds": [
+      7,
+      17,
+      42,
+      100,
+      314,
+      1234,
+      2025,
+      2718,
+      4242,
+      7777,
+      9999
+    ],
+    "zero_penalty": {
+      "interface_temperature_jump_mae": {
+        "comparator": "tfno",
+        "holm_noninferiority_p": 0.00146484375,
+        "margin": 0.7887777907739986,
+        "mean_hybrid_minus_comparator": -0.13354995354242097,
+        "n_seeds": 11,
+        "noninferior": true,
+        "noninferiority_sign_flip_p": 0.00048828125,
+        "paired_bootstrap_ci95_high": -0.07435233462940544,
+        "paired_bootstrap_ci95_low": -0.19482797325037066,
+        "seeds": [
+          7,
+          17,
+          42,
+          100,
+          314,
+          1234,
+          2025,
+          2718,
+          4242,
+          7777,
+          9999
+        ],
+        "superior": true
+      },
+      "interface_temperature_rmse": {
+        "comparator": "tfno",
+        "holm_noninferiority_p": 0.00146484375,
+        "margin": 0.7540349168587817,
+        "mean_hybrid_minus_comparator": -0.13135410092369829,
+        "n_seeds": 11,
+        "noninferior": true,
+        "noninferiority_sign_flip_p": 0.00048828125,
+        "paired_bootstrap_ci95_high": 0.021122345804271518,
+        "paired_bootstrap_ci95_low": -0.2880427549060676,
+        "seeds": [
+          7,
+          17,
+          42,
+          100,
+          314,
+          1234,
+          2025,
+          2718,
+          4242,
+          7777,
+          9999
+        ],
+        "superior": false
+      },
+      "mass_conservation_mae": {
+        "comparator": "unet",
+        "holm_noninferiority_p": 1.0,
+        "margin": 0.008292845428963615,
+        "mean_hybrid_minus_comparator": 0.04152466532168668,
+        "n_seeds": 11,
+        "noninferior": false,
+        "noninferiority_sign_flip_p": 1.0,
+        "paired_bootstrap_ci95_high": 0.04631828700326552,
+        "paired_bootstrap_ci95_low": 0.036107659476922994,
+        "seeds": [
+          7,
+          17,
+          42,
+          100,
+          314,
+          1234,
+          2025,
+          2718,
+          4242,
+          7777,
+          9999
+        ],
+        "superior": false
+      }
+    }
+  }
+}

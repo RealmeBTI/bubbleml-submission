@@ -110,17 +110,17 @@ def main() -> None:
     args = parser.parse_args()
     output_dir = args.output_dir if args.output_dir.is_absolute() else ROOT / args.output_dir
 
-    phase1 = load("benchmark_results/phase1_gpu_decisive_tfno_unet_n11/benchmark_results.json")
-    archived = phase1["pairwise_model_minus_unet"]["tfno"]
+    tutorial = load("benchmark_results/resolution_control_48x48/benchmark_results.json")
+    archived = tutorial["pairwise_model_minus_unet"]["tfno"]
     expected = {
-        "gwrmse": (-0.056980467330325885, -0.12313951359960194, 0.009464373092082262, 0.146484375, 1.0),
-        "interface_temperature_rmse": (-0.5018974921378221, -0.7406543421216985, -0.28300856147977455, 0.001953125, 0.03515625),
-        "interface_temperature_jump_mae": (-0.4314661138707942, -0.5395414996946403, -0.34029931149834947, 0.0009765625, 0.021484375),
-        "mass_conservation_mae": (0.04493574010462246, 0.038529476489046255, 0.05122262928164988, 0.0009765625, 0.021484375),
+        "gwrmse": (0.004597402792413325, -0.05759044812328926, 0.05894272413430517, 0.890625, 1.0),
+        "interface_temperature_rmse": (-0.18853127198476083, -0.47490005109236993, 0.0673182505738479, 0.234375, 1.0),
+        "interface_temperature_jump_mae": (-0.09276868238156427, -0.2203219094991548, 0.025479007160725896, 0.1962890625, 1.0),
+        "mass_conservation_mae": (0.049172396212384825, 0.04447743574313748, 0.053855332934945294, 0.0009765625, 0.021484375),
     }
-    lines = ["Phase 1 tutorial split (T-FNO minus U-Net; lower error is better):"]
+    lines = ["Canonical CUDA 48x48 tutorial split (T-FNO minus U-Net; lower error is better):"]
     for metric, target in expected.items():
-        seeds, differences = paired_values(phase1, "tfno", "unet", metric)
+        seeds, differences = paired_values(tutorial, "tfno", "unet", metric)
         if len(seeds) != 11:
             raise AssertionError(f"{metric}: expected 11 paired seeds, found {len(seeds)}")
         mean = fmean(differences)
@@ -133,25 +133,25 @@ def main() -> None:
         assert_close(f"{metric} Holm p", float(row["holm_bonferroni_p"]), target[4])
         lines.append(f"  {metric}: mean={mean:+.8f}, CI=[{target[1]:+.8f}, {target[2]:+.8f}], p={p_value:.9f}, Holm={target[4]:.8f}")
 
-    divergence = load("benchmark_results/lambda_sensitivity_030_n11/benchmark_results.json")
-    noninferiority = load("benchmark_results/lambda_sensitivity_030_n11/divergence_noninferiority.json")
+    divergence = load("audit/kaggle_hybrid_cuda_rerun_2026-08-14/hybrid_cuda_rerun/benchmark_results/benchmark_results.json")
+    noninferiority = load("audit/kaggle_hybrid_cuda_rerun_2026-08-14/hybrid_cuda_rerun/divergence_noninferiority.json")
     seeds, differences = paired_values(divergence, "hybrid_div", "unet", "mass_conservation_mae")
     margin = float(noninferiority["protocol"]["margin"])
     shifted = [value - margin for value in differences]
     p_value = exact_lower_sign_flip(shifted)
     result = noninferiority["result"]
-    assert_close("divergence mean", fmean(differences), -0.07212217173708434)
-    assert_close("divergence hybrid mean", fmean(float(divergence["raw_seed_metrics"]["hybrid_div"][str(seed)]["mass_conservation_mae"]) for seed in seeds), 0.09373473684218797)
-    assert_close("U-Net mean", fmean(float(divergence["raw_seed_metrics"]["unet"][str(seed)]["mass_conservation_mae"]) for seed in seeds), 0.1658569085792723)
+    assert_close("divergence mean", fmean(differences), -0.0703428772121202)
+    assert_close("divergence hybrid mean", fmean(float(divergence["raw_seed_metrics"]["hybrid_div"][str(seed)]["mass_conservation_mae"]) for seed in seeds), 0.09527721242212324)
+    assert_close("U-Net mean", fmean(float(divergence["raw_seed_metrics"]["unet"][str(seed)]["mass_conservation_mae"]) for seed in seeds), 0.16562008963424343)
     assert_close("non-inferiority p", p_value, 0.00048828125)
-    assert_close("archived NI CI low", float(result["paired_bootstrap_ci95_low"]), -0.07939723733408292)
-    assert_close("archived NI CI high", float(result["paired_bootstrap_ci95_high"]), -0.0653462299536067)
+    assert_close("archived NI CI low", float(result["paired_bootstrap_ci95_low"]), -0.07454106214785754)
+    assert_close("archived NI CI high", float(result["paired_bootstrap_ci95_high"]), -0.06653817410936194)
     if result["noninferior"] is not True:
         raise AssertionError("archived non-inferiority decision is not true")
     lines.extend([
         "Divergence hybrid (lambda_div=0.30) versus U-Net mass conservation:",
-        f"  hybrid mean=0.09373474, U-Net mean=0.16585691, difference={fmean(differences):+.8f}",
-        f"  archived CI=[-0.07939724, -0.06534623], exact one-sided p={p_value:.9f}, noninferior=True",
+        f"  hybrid mean=0.09527721, U-Net mean=0.16562009, difference={fmean(differences):+.8f}",
+        f"  archived CI=[-0.07454106, -0.06653817], exact one-sided p={p_value:.9f}, noninferior=True",
     ])
 
     rollout = load("benchmark_results/phase4_chf_rollout/rollout_results.json")
@@ -165,4 +165,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
