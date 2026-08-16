@@ -32,5 +32,3 @@ Secondary email: sbmahafujbondhon@gmail.com\
 Phone: +880 1865375578
 
 ---
-
-*Single author and corresponding author: S. B. Mahafuj Bondhon. Confirm the funding statement, preprint status, required biography/photo, and generative-AI disclosure before submission.*

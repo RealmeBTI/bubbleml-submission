@@ -320,3 +320,8 @@ This research received no specific grant from any funding agency in the public, 
 ## Declaration of competing interests
 
 The author declares that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
+---
+
+## Declaration of generative AI and AI-assisted technologies in the writing process
+
+During the preparation of this work, the author used Large Language Models (Claude, ChatGPT, Gemini) in order to improve language clarity, formatting readability, and grammatical polish. OpenAI Codex and Antigravity were used for LaTeX formatting and repository-audit assistance. After using these services, the author reviewed and edited the content as needed and takes full responsibility for the content of the published article.

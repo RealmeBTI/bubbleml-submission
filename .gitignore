@@ -29,3 +29,5 @@ reproduced_cmame_*/
 # Source data and checkpoints are intentionally external.
 data/
 checkpoints/
+
+*.zip
