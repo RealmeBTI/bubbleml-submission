@@ -60,9 +60,9 @@ During the preparation of this work, the author used Large Language Models (Clau
 
 The primary dataset used in this study is the publicly available BubbleML Pool-Boiling Subcooled FC-72 dataset (Hassan et al., *BubbleML: A Multiphase Multiphysics Dataset and Benchmarks for Machine Learning*, NeurIPS 2023 Datasets and Benchmarks Track), available at the official HPCForge/BubbleML repository and its associated hosting locations. The exact source release and checksums used by this study are documented in `CHECKSUMS.md`; this repository does not redistribute the raw data.
 
-Code, retained machine-readable result artifacts, configurations, and statistical-analysis scripts are publicly available in the verified release:
+Code, retained machine-readable result artifacts, configurations, statistical-analysis scripts, and the verified checkpoint-retaining CUDA intervention reviewer bundle (`hybrid_cuda_rerun_48x48_n11_reviewer_bundle.zip`, SHA-256 `1a73240957cc1a3375a1e146c76772b5551080e232926df9b4abefa33fa0a349`) supporting Section 4.2 are publicly available in the verified `v1.1.0` release:
 
-- GitHub repository: https://github.com/RealmeBTI/bubbleml-submission
+- GitHub release: https://github.com/RealmeBTI/bubbleml-submission/releases/tag/v1.1.0
 - Version archive DOI: https://doi.org/10.5281/zenodo.21858198
 
-The checkpoint-retaining CUDA intervention bundle (`hybrid_cuda_rerun_48x48_n11_reviewer_bundle.zip`, SHA-256 `1a73240957cc1a3375a1e146c76772b5551080e232926df9b4abefa33fa0a349`) is packaged and verified. The repository includes documentation with environment setup instructions, pinned dependency versions, and stored-result reproduction instructions. Raw data, complete raw checkpoints, and complete cross-condition exports remain external or unavailable as documented in `ARTIFACT_GAPS.md`.
+The repository includes documentation with environment setup instructions, pinned dependency versions, and stored-result reproduction instructions. Raw data, complete raw checkpoints, and complete cross-condition exports remain external or unavailable as documented in `ARTIFACT_GAPS.md`.

@@ -296,12 +296,12 @@ The canonical tutorial analysis is generated from `benchmark_results/resolution_
 
 ## Data availability
 
-The primary data are the publicly available BubbleML Pool-Boiling Subcooled FC-72 dataset; the exact source release and checksums are documented in `CHECKSUMS.md`. The repository does not redistribute the raw data. Code, retained stored-result artifacts, configurations, and statistical-analysis scripts in the prior public `v1.0.4` archive are available at:
+The primary data are the publicly available BubbleML Pool-Boiling Subcooled FC-72 dataset; the exact source release and checksums are documented in `CHECKSUMS.md`. The repository does not redistribute the raw data. Code, retained stored-result artifacts, configurations, statistical-analysis scripts, and the verified checkpoint-retaining CUDA intervention reviewer bundle (`hybrid_cuda_rerun_48x48_n11_reviewer_bundle.zip`, SHA-256 `1a73240957cc1a3375a1e146c76772b5551080e232926df9b4abefa33fa0a349`) supporting Section 4.2 are publicly available in the verified `v1.1.0` release:
 
-- Repository: https://github.com/RealmeBTI/bubbleml-submission
-- Version archive: https://doi.org/10.5281/zenodo.21858198
+- GitHub release: https://github.com/RealmeBTI/bubbleml-submission/releases/tag/v1.1.0
+- Version archive DOI: https://doi.org/10.5281/zenodo.21858198
 
-The checkpoint-retaining CUDA intervention rerun supporting Section 4.2 is preserved and checksum-verified locally but is not yet part of a new public immutable release; it must be archived in that release before submission. Raw data, complete cross-condition exports, and other unavailable artifacts remain bounded as documented in `ARTIFACT_GAPS.md`.
+Raw data, complete cross-condition exports, and other unavailable artifacts remain bounded as documented in `ARTIFACT_GAPS.md`.
 
 ---
 
